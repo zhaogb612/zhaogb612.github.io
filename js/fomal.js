@@ -55,7 +55,7 @@ function tonav() {
     position = scroll;
   });
   //修复没有弄右键菜单的童鞋无法回顶部的问题
-  document.getElementById("page-name").innerText = document.title.split(" | U7's Blog🍋")[0];
+  document.getElementById("page-name").innerText = document.title.split(" | 主站博客🍋")[0];
 }
 
 function scrollToTop() {
@@ -1316,27 +1316,7 @@ function share() {
 
 /* 分享按钮 end */
 
-//----------------------------------------------------------------
 
-/* 恶搞标题 start */
-//动态标题
-var OriginTitile = document.title;
-var titleTime;
-document.addEventListener('visibilitychange', function () {
-  if (document.hidden) {
-    //离开当前页面时标签显示内容
-    document.title = '👻U7在这呐~';
-    clearTimeout(titleTime);
-  } else {
-    //返回当前页面时标签显示内容
-    document.title = '💀抓到CC啦～';
-    //两秒后变回正常标题
-    titleTime = setTimeout(function () {
-      document.title = OriginTitile;
-    }, 2000);
-  }
-});
-/* 恶搞标题 end */
 
 //----------------------------------------------------------------
 
