@@ -350,7 +350,7 @@ document.addEventListener("copy", function () {
     new Vue({
       data: function () {
         this.$notify({
-          title: "哎嘿！复制成功🍬",
+          title: "哎嘿！复制成功",
           message: "若要转载最好保留原文链接哦，给你一个大大的赞！",
           position: 'top-left',
           offset: 50,
@@ -371,7 +371,7 @@ document.onkeydown = function (e) {
       new Vue({
         data: function () {
           this.$notify({
-            title: "你已被发现😜",
+            title: "你已被发现",
             message: "小伙子，扒源记住要遵循GPL协议！",
             position: 'top-left',
             offset: 50,
@@ -2861,17 +2861,17 @@ if (window.localStorage.getItem("fpson") == undefined || window.localStorage.get
     if (now > 1000 + lastTime) {
       var fps = Math.round((frame * 1000) / (now - lastTime));
       if (fps <= 5) {
-        var kd = `<span style="color:#bd0000">卡成ppt🤢</span>`
+        var kd = `<span style="color:#bd0000">卡成ppt</span>`
       } else if (fps <= 15) {
-        var kd = `<span style="color:red">电竞级帧率😖</span>`
+        var kd = `<span style="color:red">电竞级帧率</span>`
       } else if (fps <= 25) {
-        var kd = `<span style="color:orange">有点难受😨</span>`
+        var kd = `<span style="color:orange">有点难受</span>`
       } else if (fps < 35) {
-        var kd = `<span style="color:#9338e6">不太流畅🙄</span>`
+        var kd = `<span style="color:#9338e6">不太流畅</span>`
       } else if (fps <= 45) {
-        var kd = `<span style="color:#08b7e4">还不错哦😁</span>`
+        var kd = `<span style="color:#08b7e4">还不错哦</span>`
       } else {
-        var kd = `<span style="color:#39c5bb">十分流畅🤣</span>`
+        var kd = `<span style="color:#39c5bb">十分流畅</span>`
       }
       document.getElementById("fps").innerHTML = `FPS:${fps} ${kd}`;
       frame = 0;
@@ -2903,7 +2903,7 @@ if (localStorage.getItem("reset_4") == undefined) {
     new Vue({
       data: function () {
         this.$notify({
-          title: "提示🍒",
+          title: "提示(>▽<)",
           message: " (｡･∀･)ﾉﾞ由于网站部分设置项更新，当前已为您重置所有设置，祝您愉快！",
           position: 'top-left',
           offset: 50,
