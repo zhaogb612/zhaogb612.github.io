@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:4000/box/rsdjs/index.html</loc>
+    <loc>http://localhost:4000/box/projects/rsdjs/index.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:4000/box/projects/index.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:4000/box/projects/dujitang/index.html</loc>
     <lastmod>2026-04-10</lastmod>
   </url>
   <url>
-    <loc>http://localhost:4000/box/dujitang/index.html</loc>
+    <loc>http://localhost:4000/box/projects/answerbook/index.html</loc>
     <lastmod>2026-04-10</lastmod>
   </url>
   <url>
-    <loc>http://localhost:4000/box/answerbook/index.html</loc>
-    <lastmod>2026-04-10</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:4000/box/random-image/index.html</loc>
+    <loc>http://localhost:4000/box/projects/random-image/index.html</loc>
     <lastmod>2026-04-10</lastmod>
   </url>
   <url>
