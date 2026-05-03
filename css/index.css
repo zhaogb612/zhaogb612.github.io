@@ -1984,6 +1984,9 @@ figure.highlight pre .javascript .function {
 .error404 #error-wrap .error-content .error-img img {
   background-color: #9c27b0;
 }
+.error404 #error-wrap .error-content .error-img img.dark-mode {
+  display: none;
+}
 .error404 #error-wrap .error-content .error-info {
   display: -webkit-inline-box;
   display: -moz-inline-box;
@@ -2021,6 +2024,7 @@ figure.highlight pre .javascript .function {
 .error404 #error-wrap .error-content .error-info .error_title {
   margin-top: -0.6em;
   font-size: 9em;
+  color: #000;
 }
 @media screen and (max-width: 768px) {
   .error404 #error-wrap .error-content .error-info .error_title {
@@ -2032,9 +2036,22 @@ figure.highlight pre .javascript .function {
   word-break: break-word;
   font-size: 1.6em;
   -webkit-line-clamp: 2;
+  color: #333;
 }
 .error404 + #rightside {
   display: none;
+}
+html[data-theme="dark"] .error404 #error-wrap .error-content .error-img img.light-mode {
+  display: none;
+}
+html[data-theme="dark"] .error404 #error-wrap .error-content .error-img img.dark-mode {
+  display: block;
+}
+html[data-theme="dark"] .error404 #error-wrap .error-content .error-info .error_title {
+  color: #fff;
+}
+html[data-theme="dark"] .error404 #error-wrap .error-content .error-info .error_subtitle {
+  color: #ccc;
 }
 .article-sort {
   margin-left: 10px;
@@ -8081,46 +8098,234 @@ a:hover {
 
 /* 开关按钮 */
 .settings input[type="checkbox"] {
-  width: 37px;
+  width: 42px;
   height: 20px;
   position: relative;
-  border: 1px solid #000000;
-  background-color: #fdfdfd;
+  border: none;
+  background-color: #f0f0f0;
   border-radius: 12px;
-  background-clip: content-box;
   display: inline-block;
   -webkit-appearance: none;
   user-select: none;
   outline: none;
   transform: translateY(5px);
+  margin: 0 8px;
+  transition: all 0.3s ease-in-out;
 }
 .settings input[type="checkbox"]:before {
   content: "";
   width: 14px;
   height: 14px;
   position: absolute;
-  top: 2px;
+  top: 3px;
   left: 3px;
-  border-radius: 10px;
-  background-color: #000;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 }
 .settings input[type="checkbox"]:checked {
   background-color: var(--theme-color) !important;
-  border-color: var(--theme-color) !important;
 }
 .settings input[type="checkbox"]:checked:before {
-  left: 19px;
+  left: 25px;
   background-color: white !important;
+  border-radius: 4px;
 }
-.settings input[type="checkbox"] {
-  transition: border background-color box-shadow;
+
+/* Bangumi页面样式 */
+.bangumi-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.settings input[type="checkbox"]:before {
-  transition: left 0.2s;
+
+.bangumi-tab {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: var(--trans-light);
+  backdrop-filter: var(--backdrop-filter);
+  border: none;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
 }
-.settings input[type="checkbox"]:checked {
-  background-color: var(--theme-color) !important;
+
+.bangumi-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.bangumi-active {
+  background: var(--theme-color) !important;
+  color: white !important;
+}
+
+.bangumi-item {
+  display: flex;
+  background: var(--trans-light);
+  backdrop-filter: var(--backdrop-filter);
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.bangumi-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bangumi-picture {
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.bangumi-picture img {
+  width: 120px !important;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.bangumi-picture img:hover {
+  transform: scale(1.05);
+}
+
+.bangumi-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bangumi-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.bangumi-title a {
+  color: var(--theme-color);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.bangumi-title a:hover {
+  color: var(--text-bg-hover);
+  text-shadow: 0 0 8px rgba(156, 39, 176, 0.5);
+}
+
+.bangumi-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: var(--meta-color);
+}
+
+.bangumi-info-item {
+  display: flex;
+  align-items: center;
+}
+
+.bangumi-info-label {
+  margin-right: 5px;
+  font-weight: 500;
+}
+
+.bangumi-info-item-score {
+  color: var(--theme-color);
+  font-weight: bold;
+}
+
+.bangumi-summary {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-color);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.bangumi-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+.bangumi-pagination button {
+  padding: 6px 12px;
+  border-radius: 15px;
+  background: var(--trans-light);
+  backdrop-filter: var(--backdrop-filter);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
+}
+
+.bangumi-pagination button:hover {
+  background: var(--theme-color);
+  color: white;
+}
+
+.bangumi-pagenum {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--theme-color);
+}
+
+/* 夜间模式适配 */
+[data-theme="dark"] .bangumi-item,
+[data-theme="dark"] .bangumi-tab,
+[data-theme="dark"] .bangumi-pagination button {
+  background: var(--trans-dark);
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  .bangumi-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .bangumi-picture {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .bangumi-picture img {
+    width: 150px !important;
+    height: 210px;
+  }
+  
+  .bangumi-meta {
+    justify-content: center;
+  }
+  
+  .bangumi-tabs {
+    gap: 8px;
+  }
+  
+  .bangumi-tab {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+/* 开关按钮动画效果 */
 .settings input[type="checkbox"]:checked:before {
   transition: left 0.2s;
 }
@@ -8134,6 +8339,7 @@ a:hover {
 .settings input[type="checkbox"]:active::before {
   background-color: white !important;
 }
+
 .content-text {
   margin-right: 5px;
 }
