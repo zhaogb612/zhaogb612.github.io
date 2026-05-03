@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://localhost:4000/posts/8a2b3c4d.html</loc>
+    <lastmod>2026-05-03</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:4000/posts/6a5b4c3d.html</loc>
+    <lastmod>2026-05-03</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:4000/posts/7b8c9d0e.html</loc>
+    <lastmod>2026-05-03</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:4000/posts/v2ray-advanced-guide.html</loc>
     <lastmod>2026-05-02</lastmod>
   </url>
@@ -9,11 +21,11 @@
     <lastmod>2026-05-02</lastmod>
   </url>
   <url>
-    <loc>http://localhost:4000/posts/5594021a.html</loc>
+    <loc>http://localhost:4000/posts/2499971b.html</loc>
     <lastmod>2026-05-01</lastmod>
   </url>
   <url>
-    <loc>http://localhost:4000/posts/2499971b.html</loc>
+    <loc>http://localhost:4000/posts/5594021a.html</loc>
     <lastmod>2026-05-01</lastmod>
   </url>
   <url>
