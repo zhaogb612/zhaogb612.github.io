@@ -2028,15 +2028,22 @@ figure.highlight pre .javascript .function {
 }
 @media screen and (max-width: 768px) {
   .error404 #error-wrap .error-content .error-info .error_title {
-    font-size: 8em;
+    font-size: 4.5em;
+    margin-top: -0.4em;
   }
 }
 .error404 #error-wrap .error-content .error-info .error_subtitle {
-  margin-top: -3em;
+  margin-top: -1.5em;
   word-break: break-word;
   font-size: 1.6em;
   -webkit-line-clamp: 2;
   color: #333;
+}
+@media screen and (max-width: 768px) {
+  .error404 #error-wrap .error-content .error-info .error_subtitle {
+    font-size: 1.2em;
+    margin-top: -1em;
+  }
 }
 .error404 + #rightside {
   display: none;
