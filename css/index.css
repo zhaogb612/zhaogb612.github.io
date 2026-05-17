@@ -6699,6 +6699,12 @@ div#archive {
   background: rgba(0, 0, 0, 0.95) !important;
 }
 
+/* 站点存活卡片（getloli moe counter） */
+#aside-content .card-getloli img {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
 /* 夜间模式遮罩 */
 [data-theme="dark"] #recent-posts > .recent-post-item,
 [data-theme="dark"] #aside-content .card-widget,
