@@ -3016,7 +3016,7 @@ function setSnow() {
 
 // 帧率监测开关
 if (localStorage.getItem("fpson") == undefined) {
-  localStorage.setItem("fpson", "1");
+  localStorage.setItem("fpson", "0");
 }
 function fpssw() {
   if (document.getElementById("fpson").checked) {
