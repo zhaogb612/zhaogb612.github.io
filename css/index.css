@@ -6703,6 +6703,14 @@ div#archive {
 #aside-content .card-getloli img {
   border-radius: 8px;
   max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  padding: 4px;
+}
+
+#aside-content .card-getloli .item-content {
+  overflow: visible !important;
+  padding: 4px 0;
 }
 
 /* 夜间模式遮罩 */
