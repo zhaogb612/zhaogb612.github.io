@@ -9679,6 +9679,141 @@ hr:before {
   transition: all 0.3s ease-in-out;
 }
 
+/* ========== 密码输入界面美化 ========== */
+.hbe-container {
+  max-width: 500px !important;
+  margin: 40px auto !important;
+  padding: 40px 30px !important;
+  background: var(--card-bg, #fff) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border: var(--border-style, 1px solid #eee) !important;
+  text-align: center !important;
+  overflow: visible !important;
+}
+
+/* 加密标题 */
+.hbe-content::before {
+  content: "此文章被加密";
+  display: block;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.hbe-content {
+  padding: 0 !important;
+  font-size: 100% !important;
+}
+
+/* 输入框容器 - 取消默认动画 */
+.hbe-input-default {
+  overflow: visible !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+/* 输入框 */
+.hbe-input-field-default {
+  width: 100% !important;
+  max-width: 320px !important;
+  float: none !important;
+  display: block !important;
+  margin: 0 auto 20px !important;
+  padding: 12px 16px !important;
+  font-size: 15px !important;
+  color: #333 !important;
+  background: #f5f6fa !important;
+  border: 2px solid transparent !important;
+  border-radius: 10px !important;
+  opacity: 1 !important;
+  text-align: center !important;
+  transition: border-color 0.3s, box-shadow 0.3s !important;
+  box-sizing: border-box !important;
+}
+
+.hbe-input-field-default:focus {
+  border-color: var(--theme-color, rgb(179, 71, 241)) !important;
+  box-shadow: 0 0 0 3px rgba(179, 71, 241, 0.15) !important;
+  background: #fff !important;
+}
+
+/* 标签文字 */
+.hbe-input-label-default {
+  position: static !important;
+  width: auto !important;
+  float: none !important;
+  display: block !important;
+  text-align: center !important;
+  padding: 0 !important;
+  margin-bottom: 16px !important;
+  pointer-events: auto !important;
+  color: #666 !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.hbe-input-label-default::before,
+.hbe-input-label-default::after {
+  display: none !important;
+}
+
+.hbe-input-label-content-default {
+  padding: 0 !important;
+  color: #888 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* 按钮 */
+.hbe-button {
+  width: auto !important;
+  min-width: 140px !important;
+  height: auto !important;
+  padding: 10px 32px !important;
+  background: var(--theme-color, rgb(179, 71, 241)) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  text-indent: 0 !important;
+  text-shadow: none !important;
+  box-shadow: 0 4px 12px rgba(179, 71, 241, 0.3) !important;
+  cursor: pointer !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+.hbe-button:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(179, 71, 241, 0.4) !important;
+}
+
+.hbe-button:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(179, 71, 241, 0.3) !important;
+}
+
+/* 去掉按钮箭头装饰 */
+.hbe-button::after {
+  display: none !important;
+}
+
+/* 解密后清除卡片样式 */
+.hbe-container.hbe-decrypted {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
 .search-dialog {
   position: fixed;
   top: 10%;

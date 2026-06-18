@@ -6,7 +6,7 @@
   <link href="http://localhost:4000/atom.xml" rel="self"/>
   
   <link href="http://localhost:4000/"/>
-  <updated>2026-05-16T09:00:00.000Z</updated>
+  <updated>2026-06-18T13:30:00.000Z</updated>
   <id>http://localhost:4000/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Folia 唯美 PC 音乐播放器推荐</title>
+    <link href="http://localhost:4000/posts/4f6g7h8i.html"/>
+    <id>http://localhost:4000/posts/4f6g7h8i.html</id>
+    <published>2026-06-18T13:30:00.000Z</published>
+    <updated>2026-06-18T13:30:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Folia-唯美-PC-音乐播放器推荐">Folia 唯美 PC 音乐播放器推荐</h1><p>大家好～今天给大家推荐一款颜值爆表的开源音乐播放器 —— Folia (ゝω·)ノ</p><hr><h2 id="一、为什么推荐-Folia">一、为什么推荐 Folia</h2><p>市面上的音乐播放器很多，但大多数界面设计停留在「功能堆砌」的阶段，压根没考虑过美感这件事。Folia 不一样——它从诞生起就把「审美」放在了第一位，主打绚丽唯美的动态歌词展示，堪称「PC 端最漂亮的音乐播放器」。</p><p>一句话概括：<strong>Folia 不仅是个播放器，更是一件桌面艺术品。</strong></p><table><thead><tr><th>特性</th><th>说明</th></tr></thead><tbody><tr><td><strong>极致颜值</strong></td><td>动态歌词特效、渐变色彩、玻璃质感，视觉冲击力拉满</td></tr><tr><td><strong>开源免费</strong></td><td>MIT 协议，代码完全开源</td></tr><tr><td><strong>AI 驱动</strong></td><td>基于 Google Gemini 的 AI 主题生成</td></tr><tr><td><strong>网易云音源</strong></td><td>接入网易云音乐接口，海量曲库</td></tr><tr><td><strong>在线部署</strong></td><td>PWA 支持，可在 Vercel 一键部署</td></tr><tr><td><strong>技术现代</strong></td><td>React + TypeScript 构建</td></tr></tbody></table><hr><h2 id="二、核心亮点">二、核心亮点</h2><h3 id="2-1-拒绝审美降级-——-唯美的动态歌词">2.1 拒绝审美降级 —— 唯美的动态歌词</h3><p>Folia 最抓眼球的就是它的歌词展示效果。不同于传统播放器单调的歌词行，Folia 采用了：</p><ul><li>动态渐变色彩随音乐流动</li><li>毛玻璃质感的背景叠加</li><li>字体动画与歌曲情绪呼应</li><li>支持「苍蓝音阶」等多种歌词主题风格</li></ul><p>播放音乐时，歌词在屏幕上如流水般舒展，配合精致的视觉设计，整个桌面瞬间提升格调。</p><h3 id="2-2-AI-自动生成主题">2.2 AI 自动生成主题</h3><p>Folia 集成了 Google Gemini AI，能根据歌曲内容自动生成相匹配的视觉主题——无需手动调色，AI 帮你搞定。</p><h3 id="2-3-艺术画廊模式">2.3 艺术画廊模式</h3><p>不只单首播放，Folia 还可以把你喜欢的歌曲做成「音乐画廊」，将私人曲库变成一面艺术墙。这在同类播放器中非常少见。</p><hr><h2 id="三、技术架构">三、技术架构</h2><table><thead><tr><th>维度</th><th>技术选型</th></tr></thead><tbody><tr><td>前端框架</td><td>React + TypeScript</td></tr><tr><td>样式方案</td><td>Tailwind CSS</td></tr><tr><td>构建工具</td><td>Vite</td></tr><tr><td>部署平台</td><td>Vercel（支持一键部署）</td></tr><tr><td>PWA</td><td>支持，可安装到桌面</td></tr><tr><td>AI 引擎</td><td>Google Gemini</td></tr><tr><td>音源后端</td><td>NeteaseCloudMusicApiEnhanced</td></tr></tbody></table><p>Folia 本质上是一个 Web 应用，通过 PWA 技术可以像原生软件一样安装到桌面使用，同时享受 Web 的跨平台便利。</p><hr><h2 id="四、安装与部署">四、安装与部署</h2><h3 id="4-1-一键部署（推荐）">4.1 一键部署（推荐）</h3><p>项目支持在 Vercel 上免费一键部署，部署后即可通过浏览器访问，也支持安装为 PWA 桌面应用。</p><p>部署前需要准备：</p><table><thead><tr><th>环境变量</th><th>说明</th></tr></thead><tbody><tr><td><code>GEMINI_API_KEY</code></td><td>Google Gemini API Key（用于 AI 主题生成）</td></tr><tr><td><code>VITE_NETEASE_API_BASE</code></td><td>网易云音乐 API 实例地址</td></tr></tbody></table><h3 id="4-2-本地运行">4.2 本地运行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/chthollyphile/folia-major.git</span><br><span class="line"><span class="built_in">cd</span> folia-major</span><br><span class="line">npm install</span><br><span class="line"><span class="built_in">cp</span> .env.example .env.local</span><br><span class="line"><span class="comment"># 编辑 .env.local 填入你的 API Key</span></span><br><span class="line">vercel dev</span><br></pre></td></tr></table></figure><h3 id="4-3-直接下载">4.3 直接下载</h3><p>GitHub Releases 页面提供打包好的版本，下载即可使用。如果下载速度慢，也可以使用 UP 主提供的网盘链接。</p><hr><h2 id="五、B-站演示视频">五、B 站演示视频</h2><p>UP 主 <a href="https://space.bilibili.com/125429/">@4mtx</a> 制作了多期 Folia 的介绍与演示视频，强烈推荐配合观看，动态效果远比文字描述震撼 (´・ω·`)</p><h3 id="【Folia播放器】拒绝审美降级！这是你见过最唯美的PC音乐播放器">【Folia播放器】拒绝审美降级！这是你见过最唯美的PC音乐播放器</h3><iframe src="https://player.bilibili.com/player.html?bvid=BV13LLo6WE1j&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"></iframe><h3 id="【Folia播放器】零门槛！一分钟体验高逼格动态歌词桌面">【Folia播放器】零门槛！一分钟体验高逼格动态歌词桌面</h3><iframe src="https://player.bilibili.com/player.html?bvid=BV1KcG26GEZQ&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"></iframe><h3 id="【Folia播放器】把喜欢的歌全部挂在墙上">【Folia播放器】把喜欢的歌全部挂在墙上</h3><iframe src="https://player.bilibili.com/player.html?bvid=BV1KxEa6nEYV&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400px"></iframe><hr><h2 id="六、缺点与不足">六、缺点与不足</h2><table><thead><tr><th>问题</th><th>说明</th></tr></thead><tbody><tr><td><strong>需要自行部署后端</strong></td><td>依赖网易云 API，需要自行部署或配置</td></tr><tr><td><strong>AI 功能有门槛</strong></td><td>需要 Google Gemini API Key，获取有一定门槛</td></tr><tr><td><strong>仅支持网易云</strong></td><td>必须联网不支持其他应用</td></tr><tr><td><strong>Web 应用本质</strong></td><td>非原生桌面软件，部分体验不如原生应用</td></tr><tr><td><strong>移动端适配有限</strong></td><td>主要面向桌面端设计</td></tr><tr><td><strong>AI 主题不稳定</strong></td><td>偶尔生成的配色不够理想</td></tr></tbody></table><hr><h2 id="七、适合人群">七、适合人群</h2><ul><li>桌面美化爱好者，追求极致视觉体验</li><li>网易云音乐用户，希望换个漂亮的播放器界面</li><li>喜欢动态歌词效果的用户</li><li>对开源项目感兴趣、愿意折腾部署的技术党</li></ul><blockquote><p><strong>小提示</strong>：如果你更看重功能全面性而非颜值，洛雪音乐助手等传统播放器可能更合适 (´・ω·`)</p></blockquote><hr><h2 id="八、下载与链接">八、下载与链接</h2><table><thead><tr><th>资源</th><th>地址</th></tr></thead><tbody><tr><td>GitHub 仓库</td><td><a href="https://github.com/chthollyphile/folia-major">chthollyphile/folia-major</a></td></tr><tr><td>Releases 下载</td><td><a href="https://github.com/chthollyphile/folia-major/releases">GitHub Releases</a></td></tr><tr><td>演示视频</td><td><a href="https://www.bilibili.com/video/BV13LLo6WE1j/">B站 BV13LLo6WE1j</a></td></tr><tr><td>备用网盘</td><td><a href="https://pan.quark.cn/s/557520d4f2f0">夸克网盘</a> 提取码：<code>LaaV</code></td></tr></tbody></table><hr><h2 id="九、总结">九、总结</h2><p>Folia 是目前我用过最好看的 PC 音乐播放器，没有之一。它重新定义了「音乐播放器的颜值上限」，动态歌词效果堪称艺术品级别 (๑•̀ㅂ•́)و✧</p><p>虽然它需要一定的部署成本、只支持网易云音源，但如果你是个颜值党、桌面美化爱好者，Folia 绝对值得你花一小时折腾一下——当歌词在桌面上流光溢彩的那一刻，一切都值了。</p><p><strong>项目地址</strong>：<a href="https://github.com/chthollyphile/folia-major">https://github.com/chthollyphile/folia-major</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Folia-唯美-PC-音乐播放器推荐&quot;&gt;Folia 唯美 PC 音乐播放器推荐&lt;/h1&gt;
+&lt;p&gt;大家好～今天给大家推荐一款颜值爆表的开源音乐播放器 —— Folia (ゝω·)ノ&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;一、为什么推荐-Folia&quot;&gt;一、为什么推荐 F</summary>
+      
+    
+    
+    
+    <category term="软件推荐" scheme="http://localhost:4000/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    
+    
+    <category term="软件推荐" scheme="http://localhost:4000/tags/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LocalSend 局域网文件传输工具推荐</title>
+    <link href="http://localhost:4000/posts/b2c3d4e5.html"/>
+    <id>http://localhost:4000/posts/b2c3d4e5.html</id>
+    <published>2026-06-18T13:00:00.000Z</published>
+    <updated>2026-06-18T13:30:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="LocalSend-局域网文件传输工具推荐">LocalSend 局域网文件传输工具推荐</h1><p>大家好～今天给大家推荐一款开源跨平台文件传输神器 —— LocalSend (ゝω·)ノ</p><hr><h2 id="一、为什么推荐-LocalSend">一、为什么推荐 LocalSend</h2><p>跨设备传文件这件事，说起来简单，实际却很折腾 —— iPhone 和 Windows 不互通、微信限制文件大小还压缩画质、蓝牙慢到怀疑人生、各品牌「互传」协议各玩各的……</p><p>LocalSend 就是来解决这个痛点的：<strong>开源免费、不走云端、不限速度、不挑设备</strong>，只要在同一个 WiFi 下就能秒传。</p><table><thead><tr><th>特性</th><th>说明</th></tr></thead><tbody><tr><td><strong>完全免费</strong></td><td>MIT 开源协议，无广告、无内购</td></tr><tr><td><strong>无需注册</strong></td><td>不登录、不加好友，打开即用</td></tr><tr><td><strong>全平台覆盖</strong></td><td>Windows、macOS、Linux、Android、iOS</td></tr><tr><td><strong>局域网直传</strong></td><td>数据不经过云端，纯本地传输</td></tr><tr><td><strong>高速稳定</strong></td><td>千兆网络下可达 60~100 MB/s</td></tr><tr><td><strong>加密传输</strong></td><td>TLS + AES-256-GCM 端到端加密</td></tr></tbody></table><hr><h2 id="二、核心功能">二、核心功能</h2><h3 id="2-1-设备自动发现">2.1 设备自动发现</h3><p>同一局域网内的设备打开 LocalSend 后会自动互相发现，无需手动输入 IP。每台设备还会分配一个有趣别名，比如「欢乐的橘子」～</p><h3 id="2-2-丰富的传输内容">2.2 丰富的传输内容</h3><table><thead><tr><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>文件 / 文件夹</td><td>单个或批量发送，无大小限制</td></tr><tr><td>纯文本</td><td>验证码、链接、临时代码一键发送</td></tr><tr><td>剪贴板</td><td>手机复制 → 一键发到电脑粘贴</td></tr></tbody></table><h3 id="2-3-传输速度实测">2.3 传输速度实测</h3><table><thead><tr><th>传输方式</th><th>速度</th><th>1GB 文件耗时</th></tr></thead><tbody><tr><td>微信</td><td>~2 MB/s</td><td>~8 分钟</td></tr><tr><td>蓝牙</td><td>~0.8 MB/s</td><td>~20 分钟</td></tr><tr><td>USB 数据线</td><td>~35 MB/s</td><td>~30 秒</td></tr><tr><td><strong>LocalSend</strong></td><td><strong>60~100 MB/s</strong></td><td><strong>约 10~17 秒</strong></td></tr></tbody></table><blockquote><p>实际速度取决于路由器性能，5GHz WiFi 或千兆有线网络下体验最佳 (´・ω·`)</p></blockquote><hr><h2 id="三、安全机制">三、安全机制</h2><p>LocalSend 所有数据均在局域网内点对点直传，不经过任何第三方服务器：</p><ul><li>动态生成 <strong>TLS 证书</strong>，确保通信信道加密</li><li>采用 <strong>AES-256-GCM</strong> 算法端到端加密</li><li>设备间双向身份验证</li><li>传输数据完整性校验</li></ul><p>对于工作文档、私人照片等敏感内容，用它会比网盘中转踏实很多。</p><hr><h2 id="四、典型使用场景">四、典型使用场景</h2><table><thead><tr><th>场景</th><th>操作</th></tr></thead><tbody><tr><td>手机照片备份到电脑</td><td>选照片 → 点电脑 → 几十张原图半分钟搞定</td></tr><tr><td>跨品牌手机互传</td><td>iPhone ↔ 安卓，原画质不压缩</td></tr><tr><td>多设备办公</td><td>Mac ↔ Windows ↔ 平板，文档秒传</td></tr><tr><td>临时传文字</td><td>手机复制验证码 → 选文本发送 → 电脑直接粘贴</td></tr></tbody></table><hr><h2 id="五、缺点与不足">五、缺点与不足</h2><p>当然，LocalSend 也不是万能的 (´・ω・`)</p><table><thead><tr><th>问题</th><th>说明</th></tr></thead><tbody><tr><td><strong>必须同一局域网</strong></td><td>手机用流量、电脑连 WiFi 时无法使用</td></tr><tr><td><strong>依赖网络质量</strong></td><td>信号差或路由器负载高时速度下降，偶有中断</td></tr><tr><td><strong>功能单一</strong></td><td>纯传输工具，无云存储、无文件管理</td></tr><tr><td><strong>iOS 端体验受限</strong></td><td>后台接收不如安卓无感，需保持应用运行</td></tr><tr><td><strong>Windows 防火墙</strong></td><td>可能被防火墙拦截，需手动放行</td></tr><tr><td><strong>无外网传输</strong></td><td>不在同一网络时需要借助内网穿透等额外方案</td></tr></tbody></table><hr><h2 id="六、适合人群">六、适合人群</h2><ul><li>设备品牌杂、常跨系统传文件</li><li>经常传大文件的（视频、设计稿、安装包）</li><li>对隐私敏感，不愿走云端</li><li>多设备办公、学习</li></ul><blockquote><p><strong>小提示</strong>：如果你需要跨网络远程传输或云端同步管理，网盘仍是更好的选择。LocalSend 只专注于「局域网快传」这一件事 (´・ω·`)</p></blockquote><hr><h2 id="七、下载方式">七、下载方式</h2><table><thead><tr><th>平台</th><th>获取方式</th></tr></thead><tbody><tr><td>Windows</td><td><a href="https://localsend.org/">官网下载</a> 或 <code>winget install LocalSend.LocalSend</code></td></tr><tr><td>macOS</td><td>App Store 搜索「LocalSend」或 <code>brew install --cask localsend</code></td></tr><tr><td>Linux</td><td>Flatpak / AUR / 官方 deb 包</td></tr><tr><td>Android</td><td>Google Play / F-Droid 搜索「LocalSend」</td></tr><tr><td>iOS</td><td>App Store 搜索「LocalSend」</td></tr></tbody></table><hr><h2 id="八、总结">八、总结</h2><p>LocalSend 属于那种「用过就回不去」的工具。它没有花哨功能，也没有任何套路，就是纯粹把局域网传文件这件事做到了极致 (๑•̀ㅂ•́)و✧</p><p>开源、免费、无广告、速度快、全平台通吃 —— 如果你厌倦了微信压缩画质、数据线翻箱倒柜、各家互传协议互不兼容，LocalSend 绝对值得一试！</p><p><strong>项目地址</strong>：<a href="https://github.com/localsend/localsend">https://github.com/localsend/localsend</a></p><p><strong>官网</strong>：<a href="https://localsend.org/">https://localsend.org/</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;LocalSend-局域网文件传输工具推荐&quot;&gt;LocalSend 局域网文件传输工具推荐&lt;/h1&gt;
+&lt;p&gt;大家好～今天给大家推荐一款开源跨平台文件传输神器 —— LocalSend (ゝω·)ノ&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;一、为什么推荐-LocalSend</summary>
+      
+    
+    
+    
+    <category term="软件推荐" scheme="http://localhost:4000/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    
+    
+    <category term="软件推荐" scheme="http://localhost:4000/tags/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PDFgear 免费PDF编辑器推荐</title>
+    <link href="http://localhost:4000/posts/a1b2c3d4.html"/>
+    <id>http://localhost:4000/posts/a1b2c3d4.html</id>
+    <published>2026-06-18T08:00:00.000Z</published>
+    <updated>2026-06-18T08:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="PDFgear-免费-PDF-编辑器推荐">PDFgear 免费 PDF 编辑器推荐</h1><p>大家好～今天给大家推荐一款完全免费的 PDF 处理神器 —— PDFgear (ゝω·)ノ</p><hr><h2 id="一、为什么推荐-PDFgear">一、为什么推荐 PDFgear</h2><p>日常办公中，PDF 编辑几乎是个绕不开的需求。Adobe Acrobat 虽然功能强大，但动辄上千元的年费让不少个人用户望而却步。PDFgear 以「完全免费、无需注册、无水印」为卖点，在功能和体验上都交出了令人惊喜的答卷。</p><h3 id="核心亮点一览">核心亮点一览</h3><table><thead><tr><th>特性</th><th>说明</th></tr></thead><tbody><tr><td><strong>完全免费</strong></td><td>无订阅、无水印、无需注册账号</td></tr><tr><td><strong>AI 驱动</strong></td><td>内置 ChatGPT 驱动的 PDF Copilot，支持文档对话与智能摘要</td></tr><tr><td><strong>全平台覆盖</strong></td><td>Windows、macOS、iOS、Android 以及网页版</td></tr><tr><td><strong>轻量高效</strong></td><td>安装包远小于 Adobe Acrobat，启动速度快</td></tr><tr><td><strong>评分优秀</strong></td><td>在多个平台获得 4.9/5 的高分评价</td></tr></tbody></table><hr><h2 id="二、主要功能介绍">二、主要功能介绍</h2><h3 id="2-1-PDF-编辑">2.1 PDF 编辑</h3><p>像编辑 Word 一样编辑 PDF —— 自由修改文本、图片、形状、签名、链接、表单字段等。对于日常的文档微调完全够用。</p><h3 id="2-2-PDF-转换">2.2 PDF 转换</h3><table><thead><tr><th>转换类型</th><th>支持格式</th></tr></thead><tbody><tr><td>PDF 转其他</td><td>Word、Excel、PPT、TXT、JPG、PNG、HTML 等</td></tr><tr><td>其他转 PDF</td><td>Word、Excel、PPT、图片等</td></tr><tr><td>批量转换</td><td>支持多文件同时转换，保持原始排版</td></tr></tbody></table><p>特别值得一提的是 <strong>PDF 转 PPT</strong> 的效果，不少用户反馈其排版还原度甚至优于 Canva 等知名工具。</p><h3 id="2-3-OCR-文字识别">2.3 OCR 文字识别</h3><ul><li>支持 <strong>30+ 种语言</strong>的 OCR 识别</li><li>中文识别准确率约 <strong>95%</strong>，英文约 <strong>98.7%</strong></li><li>可处理扫描件和手机拍摄的文档</li></ul><h3 id="2-4-AI-助手（PDF-Copilot）">2.4 AI 助手（PDF Copilot）</h3><p>这是 PDFgear 区别于其他免费 PDF 工具的最大亮点：</p><ul><li>上传 PDF 后可直接与文档对话，快速提取关键信息</li><li>支持自然语言指令，如「帮我总结第三章内容」</li><li>长文档阅读效率大幅提升</li></ul><h3 id="2-5-其他实用功能">2.5 其他实用功能</h3><ul><li>PDF 合并与拆分</li><li>PDF 压缩（减小文件体积）</li><li>PDF 签名（手写签名、电子签名）</li><li>PDF 注释标注（高亮、下划线、批注等）</li><li>PDF 表单填写</li></ul><hr><h2 id="三、优点总结">三、优点总结</h2><table><thead><tr><th>维度</th><th>评价</th></tr></thead><tbody><tr><td><strong>价格</strong></td><td>完全免费，同类产品中最具性价比</td></tr><tr><td><strong>功能全面性</strong></td><td>覆盖编辑、转换、OCR、AI 等绝大多数日常需求</td></tr><tr><td><strong>上手难度</strong></td><td>界面简洁直观，无需学习成本</td></tr><tr><td><strong>AI 能力</strong></td><td>免费即可使用 GPT 驱动的文档助手</td></tr><tr><td><strong>多平台</strong></td><td>桌面端 + 移动端 + 网页版全覆盖</td></tr><tr><td><strong>更新频率</strong></td><td>持续迭代，功能不断完善</td></tr></tbody></table><hr><h2 id="四、缺点与不足">四、缺点与不足</h2><p>当然，作为一款免费软件，PDFgear 也存在一些不足之处 (´・ω・`)</p><table><thead><tr><th>问题</th><th>说明</th></tr></thead><tbody><tr><td><strong>大文件处理性能</strong></td><td>处理超大 PDF（如几百页）时偶尔卡顿或响应变慢</td></tr><tr><td><strong>高级编辑受限</strong></td><td>缺少「查找并替换」、「自由画笔绘制」等功能</td></tr><tr><td><strong>复杂排版兼容</strong></td><td>含有复杂表格或多栏排版的文档，编辑时可能出现格式偏移</td></tr><tr><td><strong>AI 摘要质量不稳定</strong></td><td>摘要准确度因文档类型而异，专业文献效果一般</td></tr><tr><td><strong>企业级功能缺失</strong></td><td>缺少高级权限管理、加密等企业安全功能</td></tr><tr><td><strong>多设备同步</strong></td><td>不支持跨设备云同步</td></tr><tr><td><strong>部分语言支持不足</strong></td><td>日文等少数语种识别较弱</td></tr></tbody></table><hr><h2 id="五、适合人群">五、适合人群</h2><ul><li>偶尔需要编辑 PDF 的个人用户</li><li>学生党，需要标注论文、转换课件</li><li>预算有限、不想为 Adobe 付费的小团队</li><li>轻度 PDF 处理需求，追求简洁高效体验</li></ul><blockquote><p><strong>小提示</strong>：如果你日常处理的 PDF 较为复杂（如专业排版书籍、法律合同等），建议仍然使用 Adobe Acrobat 等专业工具作为补充 (´・ω·`)</p></blockquote><hr><h2 id="六、下载方式">六、下载方式</h2><table><thead><tr><th>平台</th><th>获取方式</th></tr></thead><tbody><tr><td>Windows / macOS</td><td><a href="https://www.pdfgear.com/download/">官网免费下载</a></td></tr><tr><td>iOS</td><td>App Store 搜索「PDFgear」</td></tr><tr><td>Android</td><td>Google Play 搜索「PDFgear」</td></tr><tr><td>网页版</td><td><a href="https://www.pdfgear.com/online-tools/">在线工具页</a></td></tr></tbody></table><hr><h2 id="七、总结">七、总结</h2><p>PDFgear 可以说是目前免费 PDF 工具中的佼佼者，功能全面、上手简单、AI 加持，足以满足 90% 日常 PDF 处理场景。虽然在大文件处理和企业级功能上有所欠缺，但考虑到它「完全免费」的定位，这些缺点完全在可接受范围内。</p><p>如果你正在寻找一款 Adobe Acrobat 的免费替代品，PDFgear 绝对值得一试 (๑•̀ㅂ•́)و✧</p><p><strong>官网地址</strong>：<a href="https://www.pdfgear.com/">https://www.pdfgear.com/</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;PDFgear-免费-PDF-编辑器推荐&quot;&gt;PDFgear 免费 PDF 编辑器推荐&lt;/h1&gt;
+&lt;p&gt;大家好～今天给大家推荐一款完全免费的 PDF 处理神器 —— PDFgear (ゝω·)ノ&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;一、为什么推荐-PDFgear&quot;&gt;一</summary>
+      
+    
+    
+    
+    <category term="软件推荐" scheme="http://localhost:4000/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    
+    
+    <category term="软件推荐" scheme="http://localhost:4000/tags/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
   
   <entry>
     <title>桌面整理软件推荐</title>
@@ -51,17 +132,10 @@
     <published>2026-05-16T04:00:00.000Z</published>
     <updated>2026-05-16T04:00:00.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="平常-┬＿┬">平常(┬＿┬)</h1><p>好久没写日记了，今天来记录一下最近的生活状态。●▽●</p><hr><h2 id="一、高中学业合格性考试⊙﹏⊙b汗">一、高中学业合格性考试⊙﹏⊙b汗</h2><p>前几天参加了高中学业合格性考试，整体感觉还不错。考前有紧张，但合格难度不算高广的。不过真正进了考场，发现大部分题目都是基础内容，平时上课认真听讲的话，做题还是比较顺手的。</p><p>自我感觉良好，不出意外的话应该能顺利通过，接下来可以稍微放松一下了。</p><hr><h2 id="二、初中考试⊙﹏⊙‖∣">二、初中考试⊙﹏⊙‖∣</h2><p>相比之下，初中的考试就没那么乐观了。这次考试成绩有点差劲，看到成绩单的时候心情直接跌到谷底。仔细分析了一下，主要还是复习不够充分，有些知识点掌握得不够扎实。</p><hr><h2 id="三、最近肝的游戏">三、最近肝的游戏</h2><p>最近在玩的游戏太肝了，主要就是【异环】和【明日方舟：终末地】┗|｀O′|┛ 嗷~~<br>两款游戏一起玩简直是在透支自己的精力，有时候真想直接弃坑，但又舍不得……这就是&quot;沉没成本&quot;吧。（○｀ 3′○）</p><hr><p>今天就先写到这里吧，下次再来汇报近况。</p>]]></content>
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试!" data-whm="内容可能已被修改，但你仍然可以查看。">  <script id="hbeData" type="hbeData" data-hmacdigest="7e32d993af52513dca226a411bcb6fc6668e9d47ff7c3dc0d4db7cb3ff11bad4">241060047a15b392cae04ae581b56f6153691d20c458478177373062249600d945b23d53531b1ae9b8dd8eb9fe8788bb3d0e91f30f73c83d8c7763012b87f15aa39918489f50f23410c62bf0c0079aa2573a0e98b4eb3493f6d316ae4e7badc2933dcac55e0a3a39a135710da555b720c3403cfa2fc7bb4d319b1c3d3ab861f490985d97101b55b0e713d07ff1bc22932b109fd8d221d975cce10c3b373e3b7015861e4aed30e55ad6dee37d79f3d5357cfa1ec754f5e6602cc8d373a6a7ae39e7ce9ed3b711cd229179ebcb2073775c99ab45b2de53978a217958e04f05f24d94f99e3eb4d2a0217633bd04404a4cdf2923726242de6cac1e4c1e8bbde8f7f90b3fc90820b274798e26b075ea2e57cc3deb341ee5743c5a760f5181cf246010ec34d81bdc386a178b97dd4009e94fc75f35638c2e682f202b084d459042dc4843f0bea3c3606051462f4553508b13460d6db70f586c5e6d9cc8a4bad8f2a9b702d0d32c8c6f4d15ec8b4b159649ecdea3dff50e89e9e028e4d2d9fbd4ceb75ff14a57e4c67ebad7842f817768761bb629de9b149cad2e3dcb72f22e7d0786ec3600e199f7d67f7500eca967dd8606b2a7d61e6423d11624ad151c71ebb29bb0a55c80b5696afbc64cfb3548ff58ba8e22ca815069eaae1feaef0a744b2e260759b1fdf6784d1354928e23ca0f3e8d1f9bdbc7e5712b7f39c01281af0311996989e67a194664b8ae12445a5fa7b2ef4ec85bc6fbd3394e43b0a3943dd0848f2f0f700447c60f3037bf1c8baf4f172f2289f5bd160331505eb86bd7eb24f7acd001a86ea129f78360c0000bb952155d7162ccd8c3f265a42ec29e3988f4df6461b774fff2f14812e1f538366530b850ce4a27157a1b72f6e2e00581491bb0c5f2fcd4500f55e0eb941078760f83e7749b6a5f6d0361ab1d5524dae966b38d4e90a57ccc20bac657b34a5cc8abae12d7e1ccafbccccc2f0ab7c97b8b78620bcfcb3482d1f8d7e18ec29b7318a4668b89f58aebc7106f88bf8a53ca36f8a895a5902ce4ac53e87b3adc9c67c23b4f632b6a0547f32d67f16e48238e94c0d266c78e8088e9b3cd0d060312484a03f0b3d2b792f43274a64fc7dc7aee35c4a38211eb84b9e7972cc3064b8446ea7f6f963a6f5772dcfb9758af80100f6ec448c9ce46b3c21fd3d3d0b989cfd04039bfc46131d865b7941244dfacafe318416f7b3d8fb9734a7fbeee5140c399ffc226f172119ba9f583f88290d25f60151e34d3aa9448b154df91faef32a6c25401436bf8b5a822a87c87613dc1ae32e54857ebddd93ba5f749ffc296f5ffb6ae91bbe8b3f797e80f5732f04e1dd639007217de396d5a7420f22b9cdb9980ab264c384465d9d259e62be2940cf2e4bfad97d8aa2b5dc8ea6d4f72a6292985e96c20206f744faf8073c9afe8914467e5a448e13b1157647f7a6a957103420812682147483449086dc53a871f6726490afc6af761c39329a526931b4973d35b69fd28f1b232e581cb3cc24f3e6f3957da172768ae1456a7dd6fd7eff918ce7ce4166e1bb7c93ec1a2ff69d1bc5569b013e2ba1d54a27cccc8b81126dcf738abd7c57e9b84cf99abf57e0771c72b9bd8b791d80adeb5a502fd608b7d19ff4f320f0005e91d5cbf6a9edec965d58d49ca8110c6142cb1d6d9b2e2b19d380441c22ef7b07d3d367e823f84c8f00ba34d25325737f0d0d6689e2d1a3b0b7fd4bf305ffa93e705e613c072fe6e1addd7cf00f422824e6cbaa1945f255378ea76e1993023f385dae5b60f240d08922878f9be1ed9fa51ca43484b5b574db2eb44b2e1e1d10d294d49a82edfef79dc52c65e6934879ed0ecb0db9ae818604955092f231bf52f2210d89dee50d01a67302b7cb04975bdff4997d2276b212d1e04a96ef6bd2be9fbd786e2e533138176eb8e7f86eba517a508d361c0bb2ebee8821e07ff1b2ba325580346ae324fad0c76d36796b979b589e86fb4</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;平常-┬＿┬&quot;&gt;平常(┬＿┬)&lt;/h1&gt;
-&lt;p&gt;好久没写日记了，今天来记录一下最近的生活状态。●▽●&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;一、高中学业合格性考试⊙﹏⊙b汗&quot;&gt;一、高中学业合格性考试⊙﹏⊙b汗&lt;/h2&gt;
-&lt;p&gt;前几天参加了高中学业合格性考试，整体感觉还</summary>
-      
+    <summary type="html">这是一篇加密文章，请输入密码后继续阅读。</summary>
     
     
     
