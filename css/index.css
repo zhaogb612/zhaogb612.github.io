@@ -9814,6 +9814,18 @@ hr:before {
   border: none !important;
 }
 
+/* 文章页内容区随右侧菜单一同撑满高度，消除底部大片空白 */
+#content-inner.layout {
+  align-items: stretch !important;
+}
+#content-inner.layout > div:first-child:not(.recent-posts) {
+  align-self: stretch !important;
+}
+#content-inner.layout > div:first-child:not(.recent-posts) > #article-container,
+#content-inner.layout > div:first-child:not(.recent-posts) > .post-content {
+  min-height: calc(100% - 100px) !important;
+}
+
 .search-dialog {
   position: fixed;
   top: 10%;
