@@ -9814,16 +9814,231 @@ hr:before {
   border: none !important;
 }
 
-/* 文章页内容区随右侧菜单一同撑满高度，消除底部大片空白 */
-#content-inner.layout {
-  align-items: stretch !important;
+/* ========== 追番页面美化 ========== */
+/* 标签栏 */
+.bangumi-tabs {
+  margin-bottom: 24px !important;
+  margin-top: 8px !important;
+  text-align: center !important;
 }
-#content-inner.layout > div:first-child:not(.recent-posts) {
-  align-self: stretch !important;
+
+.bangumi-tab {
+  display: inline-block;
+  padding: 8px 24px !important;
+  margin: 0 6px !important;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 0 !important;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s, border-color 0.25s;
 }
-#content-inner.layout > div:first-child:not(.recent-posts) > #article-container,
-#content-inner.layout > div:first-child:not(.recent-posts) > .post-content {
-  min-height: calc(100% - 100px) !important;
+
+.bangumi-tab:hover {
+  color: var(--theme-color, rgb(179, 71, 241));
+  border-bottom-color: var(--theme-color, rgb(179, 71, 241));
+}
+
+.bangumi-active {
+  background: transparent !important;
+  color: var(--theme-color, rgb(179, 71, 241)) !important;
+  font-weight: 600;
+  border-radius: 0 !important;
+  border-bottom: 2px solid var(--theme-color, rgb(179, 71, 241));
+}
+
+/* 卡片容器 - 直线分隔符 */
+.bangumi-item {
+  position: relative;
+  clear: both;
+  padding: 18px 0 !important;
+  border-bottom: 1px solid #e8e8e8 !important;
+  min-height: 180px;
+  border-radius: 0 !important;
+  transition: background 0.2s;
+}
+
+.bangumi-item:first-of-type {
+  border-top: 1px solid #e8e8e8 !important;
+}
+
+.bangumi-item:hover {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+/* 封面 */
+.bangumi-picture {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 100px !important;
+}
+
+.bangumi-picture img {
+  border-radius: 0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100px !important;
+  height: auto !important;
+  margin: 10px 0 !important;
+}
+
+/* 信息区域 */
+.bangumi-info {
+  padding-left: 120px !important;
+  margin-top: 8px !important;
+  min-height: 155px;
+}
+
+/* 标题 */
+.bangumi-title {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  margin-bottom: 6px;
+}
+
+.bangumi-title a {
+  color: #333;
+  text-decoration: none !important;
+  line-height: 1.3 !important;
+  transition: color 0.2s;
+}
+
+.bangumi-title a:hover {
+  color: var(--theme-color, rgb(179, 71, 241));
+}
+
+/* 元信息 - 直线分隔符 */
+.bangumi-info-items {
+  font-size: 12px;
+  color: #888 !important;
+  padding-top: 8px !important;
+  line-height: 1;
+  float: left;
+  width: 100%;
+  height: auto !important;
+  min-height: 38px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.bangumi-info-item {
+  display: inline-block;
+  width: 13%;
+  border-right: 1px solid #e0e0e0 !important;
+  text-align: center;
+  height: auto !important;
+  min-height: 34px;
+}
+
+.bangumi-info-label {
+  display: block;
+  line-height: 12px;
+  color: #aaa;
+  font-size: 11px;
+}
+
+.bangumi-info-item em {
+  display: block;
+  padding-top: 4px;
+  line-height: 17px;
+  font-style: normal;
+  font-weight: 600;
+  color: #555;
+}
+
+.bangumi-info-total {
+  padding-top: 8px;
+  display: block;
+  line-height: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.bangumi-info-item-score {
+  border-right: none !important;
+  width: 50px;
+}
+
+/* 进度条 - 直角 */
+.bangumi-info .bangumi-progress {
+  width: 100%;
+  height: 20px !important;
+  background-color: #f0f0f0 !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: center;
+  position: relative;
+  margin-top: 8px !important;
+}
+
+.bangumi-info .bangumi-progress-text {
+  z-index: 100;
+  position: relative;
+  color: #555 !important;
+  line-height: 20px !important;
+}
+
+.bangumi-info .bangumi-progress .progress-bar {
+  z-index: 50;
+  height: 100%;
+  background-color: var(--theme-color, rgb(179, 71, 241)) !important;
+  opacity: 0.3;
+  border-radius: 0 !important;
+  position: absolute;
+  top: 0;
+}
+
+/* 简介 */
+.bangumi-summary {
+  font-size: 12px !important;
+  color: #999;
+  margin-top: 10px !important;
+}
+
+.bangumi-summary > p {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 60px !important;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-height: 1.6 !important;
+}
+
+/* 评分星星 */
+.bangumi-my-comments {
+  border: 1px dashed #d0d0d0 !important;
+  padding: 6px 8px !important;
+  border-radius: 0 !important;
+  font-size: 12px;
+  color: #888;
+  margin-top: 8px;
+}
+
+/* 分页 */
+.bangumi-pagination {
+  margin-top: 20px !important;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.bangumi-button {
+  display: inline-block;
+  padding: 6px 16px !important;
+  margin: 0 4px;
+  border: 1px solid #ddd;
+  color: #666;
+  border-radius: 0 !important;
+  transition: all 0.2s;
+}
+
+.bangumi-button:hover {
+  background: var(--theme-color, rgb(179, 71, 241)) !important;
+  color: #fff !important;
+  border-color: var(--theme-color, rgb(179, 71, 241));
 }
 
 .search-dialog {
