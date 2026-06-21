@@ -1121,23 +1121,22 @@ function createtime1() {
   var dnum = Math.floor(days);
 
   var ascll = [
-    `欢迎来到u7u7🍋の小家!`,
-    `u7 and cc is now 🍭🍭🍭`,
+    `欢迎来到沙尘612の小家!`,
+    `沙尘612`,
     `
-        
-    ██╗   ██╗███████╗██╗   ██╗███████╗  ██████╗ ██████╗
-    ██║   ██║╚════██║██║   ██║╚════██║ ██╔════╝██╔════╝
-    ██║   ██║    ██╔╝██║   ██║    ██╔╝ ██║     ██║     
-    ██║   ██║   ██╔╝ ██║   ██║   ██╔╝  ██║     ██║     
-    ╚██████╔╝   ██║  ╚██████╔╝   ██║██╗╚██████╗╚██████╗
-     ╚═════╝    ╚═╝   ╚═════╝    ╚═╝╚═╝ ╚═════╝ ╚═════╝
-                                                       
-                                              
+  _// //      _//                               
+_//    _// _//   _//    _//     _//    _// _/   
+ _//      _//          _//       _//  _/     _//
+   _//    _//         _//        _//       _//  
+      _// _//       _/    _//    _//     _//    
+_//    _// _//   _//_//     _//  _//   _//      
+  _// //     _////    _// _//  _///// _//////// 
+                                                    
 `,
     "小站已经苟活",
     dnum,
     "天啦!",
-    "©2022 By U7",
+    "©2025 By 沙尘612",
   ];
 
   setTimeout(
@@ -1158,7 +1157,7 @@ function createtime1() {
 createtime1();
 
 function createtime2() {
-  var ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为「大聪明」`, `Photo captured: `, ` 🤪 `];
+  var ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为「大聪明」`, `Photo captured: `, ` ●０● `];
 
   setTimeout(
     console.log.bind(
@@ -1176,7 +1175,7 @@ function createtime2() {
   setTimeout(
     console.warn.bind(
       console,
-      "%c ⚡ Powered by u7u7🍋 %c 你正在访问u7u7🍋の小家",
+      "%c ⚡ Powered by 沙尘612 %c 你正在访问沙尘612の小家",
       "color:white; background-color:#f0ad4e",
       ""
     )
@@ -1286,8 +1285,8 @@ function share_() {
   try {
     // 截取标题
     var title = document.title;
-    var subTitle = title.endsWith("| u7u7🍋") ? title.substring(0, title.length - 14) : title;
-    navigator.clipboard.writeText('u7u7🍋的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
+    var subTitle = title.endsWith("| 沙尘612") ? title.substring(0, title.length - 14) : title;
+    navigator.clipboard.writeText('沙尘612的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
     new Vue({
       data: function () {
         this.$notify({
