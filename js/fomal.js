@@ -1115,7 +1115,7 @@ function changeMouseMode() {
 var now1 = new Date();
 
 function createtime1() {
-  var grt = new Date("13/09/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  var grt = new Date("01/01/2025 00:00:00"); //此处修改你的建站时间或者网站上线时间
   now1.setTime(now1.getTime() + 250);
   var days = (now1 - grt) / 1000 / 60 / 60 / 24;
   var dnum = Math.floor(days);
@@ -1124,14 +1124,12 @@ function createtime1() {
     `欢迎来到沙尘612の小家!`,
     `沙尘612`,
     `
-  _// //      _//                               
-_//    _// _//   _//    _//     _//    _// _/   
- _//      _//          _//       _//  _/     _//
-   _//    _//         _//        _//       _//  
-      _// _//       _/    _//    _//     _//    
-_//    _// _//   _//_//     _//  _//   _//      
-  _// //     _////    _// _//  _///// _//////// 
-                                                    
+███████╗ ██████╗ ██████╗ ██╗██████╗ 
+██╔════╝██╔════╝██╔════╝███║╚════██╗
+███████╗██║     ███████╗╚██║ █████╔╝
+╚════██║██║     ██╔═══██╗██║██╔═══╝ 
+███████║╚██████╗╚██████╔╝██║███████╗
+╚══════╝ ╚═════╝ ╚═════╝ ╚═╝╚══════╝                                                                                                                                                                                                  
 `,
     "小站已经苟活",
     dnum,
@@ -3477,7 +3475,7 @@ function createWinbox() {
 <h3>8. 自定义背景</h3>
 <details class="folding-tag" cyan><summary> 设置自定义背景 </summary>
               <div class='content'>
-              <p><center><input type="text" id="pic-link" size="70%" maxlength="1000" placeholder="请输入有效的图片链接，如 https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/image.webp"></center></p><p><center><button type="button" onclick="getPicture()" style="background:var(--theme-color);width:35%;padding: 5px 0px 7px 0px;border-radius:30px;color:white;line-height:2;">🌈切换背景🌈</button></center></p>
+              <p><center><input type="text" id="pic-link" size="70%" maxlength="1000" placeholder="请输入有效的图片链接"></center></p><p><center><button type="button" onclick="getPicture()" style="background:var(--theme-color);width:35%;padding: 5px 0px 7px 0px;border-radius:30px;color:white;line-height:2;">🌈切换背景🌈</button></center></p>
               </div>
             </details>
 
