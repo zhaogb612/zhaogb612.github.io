@@ -101,7 +101,7 @@ function getDistance(e1, n1, e2, n2) {
 
 function showWelcome() {
 
-  let dist = getDistance(120.13, 30.32, ipLoacation.result.location.lng, ipLoacation.result.location.lat); //这里换成自己的经纬度
+  let dist = getDistance(107.77, 32.98, ipLoacation.result.location.lng, ipLoacation.result.location.lat); //这里换成自己的经纬度
   let pos = ipLoacation.result.ad_info.nation;
   let ip;
   let posdesc;
@@ -287,7 +287,7 @@ function showWelcome() {
   try {
     //自定义文本和需要放的位置
     document.getElementById("welcome-info").innerHTML =
-      `<b><center>🎉 欢迎信息 🎉</center>&emsp;&emsp;欢迎来自 <span style="color:var(--theme-color)">${pos}</span> 的小伙伴，${timeChange}您现在距离站长约 <span style="color:var(--theme-color)">${dist}</span> 公里，当前的IP地址为： <span style="color:var(--theme-color)">${ip}</span>， ${posdesc}</b>`;
+      `<b style="font-size:13px;line-height:1.6">▎ 来自 <span style="color:var(--theme-color)">${pos}</span> ${timeChange}，距站长约 <span style="color:var(--theme-color)">${dist}</span> km<br>▎ IP: <span style="color:var(--theme-color)">${ip}</span> | ${posdesc}</b>`;
   } catch (err) {
     // console.log("Pjax无法获取#welcome-info元素🙄🙄🙄")
   }
