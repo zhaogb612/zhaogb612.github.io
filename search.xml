@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Sakura Nav 导航页 —— 你的动漫风格上网入口</title>
+      <link href="/posts/l5m6n7o8.html"/>
+      <url>/posts/l5m6n7o8.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Sakura-Nav-导航页-——-你的动漫风格上网入口">Sakura Nav 导航页 —— 你的动漫风格上网入口</h1><p>今天来聊聊本站自带的动漫风格导航页，也就是点开顶部菜单栏「<strong>网址导航</strong>」后看到的那个小天地。</p><blockquote><p><strong>直接访问</strong>：<a href="/box/nav/">点我打开导航页</a></p></blockquote><hr><h2 id="一、导航页是什么？🤔">一、导航页是什么？🤔</h2><p>这是一款自制的动漫主题导航页面，把日常常用的网站整理在一起，打开浏览器一键直达，再也不用在收藏夹里翻半天啦 (๑•̀ㅂ•́)و✧</p><p>内置的功能还挺丰富的：</p><table><thead><tr><th>功能</th><th>说明</th></tr></thead><tbody><tr><td>🌸 <strong>樱花飘落</strong></td><td>可开关的桌面樱花特效，配合速度/数量调节</td></tr><tr><td>🌓 <strong>主题切换</strong></td><td>浅色/深色模式自由切换，跟随系统也行</td></tr><tr><td>🌫️ <strong>背景模糊</strong></td><td>卡片和背景的毛玻璃模糊度可调</td></tr><tr><td>🎵 <strong>背景音乐</strong></td><td>内置 BGM 播放器，支持进度拖拽和音量调节</td></tr><tr><td>📅 <strong>迷你日历</strong></td><td>右下角显示实时时间日期</td></tr><tr><td>🔍 <strong>搜索栏</strong></td><td>一键搜索 Bing，找不到网站直接搜</td></tr><tr><td>➕ <strong>添加网站</strong></td><td>自己往导航页里加常用站点</td></tr><tr><td>🔄 <strong>拖拽排序</strong></td><td>长按拖拽调整网站卡片顺序</td></tr><tr><td>❌ <strong>右键删除</strong></td><td>右键长按 4s 删除自己添加的网站</td></tr><tr><td>↩️ <strong>返回顶部</strong></td><td>滚动后一键回到顶部</td></tr></tbody></table><hr><h2 id="二、页面截图">二、页面截图</h2><p>整个页面以「樱花」为主题，采用了毛玻璃（Glassmorphism）设计风格：</p><ul><li>标题用的是 <strong>Sacramento</strong> 英文字体 + <strong>马善政</strong> 中文字体</li><li>卡片半透明毛玻璃质感，配合渐变发光图标</li><li>深色模式自动切换背景图片</li><li>樱花飘落的粒子效果，可自由开关和调速</li></ul><hr><h2 id="三、功能使用指南">三、功能使用指南</h2><h3 id="3-1-左侧设置面板">3.1 左侧设置面板</h3><p>点击页面左上角的 ⚙️ 齿轮图标，可以打开侧边栏设置：</p><p><strong>主题切换</strong>：一键切换浅色/深色模式</p><p><strong>背景模糊</strong>：</p><ul><li>卡片模糊：调整导航卡片和面板的毛玻璃强度（0~20px）</li><li>背景模糊：调整背景图片的模糊程度（0~20px）</li><li>可一键重置为默认值</li></ul><p><strong>樱花飘落</strong>：</p><ul><li>开关樱花特效，懒人一键开启 ✨</li><li>飘落速度调节：0%~100%，从乌龟漫步到狂风暴雨</li><li>飘落数量调节：10~200 朵，自定义满天飞花</li></ul><p><strong>背景音乐</strong>：</p><ul><li>自动循环播放内置 BGM</li><li>支持播放/暂停、进度拖拽、音量调节</li><li>右下角有迷你播放器，最小化后不占地方</li></ul><h3 id="3-2-自定义网站">3.2 自定义网站</h3><p>点击导航网格最后的「<strong>添加网站</strong>」按钮，可以添加自定义网站：</p><ol><li>填写网站名称和 URL</li><li>选择一个喜欢的图标</li><li>选择分类</li><li>点击「添加」</li></ol><p>添加的网站会保存在浏览器的本地存储中，下次打开还在。</p><h3 id="3-3-管理网站">3.3 管理网站</h3><ul><li><strong>排序</strong>：鼠标拖拽网站卡片即可调整顺序，自动保存</li><li><strong>删除</strong>：在要删除的卡片上<strong>右键长按 4 秒</strong>，弹出确认后删除（仅限自定义添加的网站）</li></ul><blockquote><p>预置的固定网站（哔哩哔哩、网易云等）不可删除，确保常用网站一直都在 (｡･ω･｡)</p></blockquote><h3 id="3-4-迷你日历">3.4 迷你日历</h3><p>右下角的播放器上方有一个迷你日历组件，显示：</p><ul><li>当前时间（时:分）</li><li>星期 + 月日</li><li>年份</li></ul><p>点击播放器区域可以展开/收起日历，点击日历的「–」可以最小化，「×」可以关闭。</p><hr><h2 id="四、技术栈">四、技术栈</h2><table><thead><tr><th>技术</th><th>用途</th></tr></thead><tbody><tr><td><strong>HTML5</strong></td><td>页面结构</td></tr><tr><td><strong>CSS3</strong></td><td>样式 + 毛玻璃 + 动画 + 响应式</td></tr><tr><td><strong>JavaScript</strong></td><td>交互逻辑 + 本地存储 + 音频控制</td></tr><tr><td><strong>Font Awesome</strong></td><td>图标库</td></tr><tr><td><strong>Google Fonts</strong></td><td>艺术字体（Sacramento + 马善政）</td></tr></tbody></table><p>纯前端实现，所有用户自定义数据（添加的网站、主题偏好、模糊设置等）都存储在浏览器的 <code>localStorage</code> 中，无需后端数据库。</p><hr><h2 id="五、也可以自己做一个">五、也可以自己做一个</h2><p>如果你也想拥有一个属于自己的导航页，可以参考本站的 HTML 入门指南，从零开始写一个：</p><p><a href="/2026/07/14/HTML%E5%85%A5%E9%97%A8%E6%92%B0%E5%86%99%E6%8C%87%E5%8D%97/">👉 HTML 入门撰写指南</a></p><p>或者直接查看本导航页的源码，在 <code>source/box/nav/</code> 目录下，按需修改即可 (◕‿◕✿)</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 导航页源码结构 --&gt;</span></span><br><span class="line">box/nav/</span><br><span class="line">├── index.html        # 主页面</span><br><span class="line">├── style.css         # 样式文件</span><br><span class="line">├── script.js         # 交互脚本</span><br><span class="line">└── assets/</span><br><span class="line">    ├── images/       # 头像和背景图片</span><br><span class="line">    └── music/        # BGM 音频文件</span><br></pre></td></tr></table></figure><hr><h2 id="六、总结">六、总结</h2><p>这个导航页从设计到实现都围绕「樱花 × 动漫 × 毛玻璃」的风格，既好看又实用。如果你有想要添加的网站建议，或者发现什么 bug，欢迎在评论区留言 ( ﾟ∀ﾟ) ﾉ♡</p><p>那么，快去逛一逛导航页吧～ <a href="/box/nav/">点我直达</a> ✨</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Website实践 </tag>
+            
+            <tag> HTML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HTML 入门撰写指南 —— 从零开始打造你的第一个网页</title>
       <link href="/posts/h1i2j3k4.html"/>
       <url>/posts/h1i2j3k4.html</url>
@@ -20,9 +47,9 @@
       
         <tags>
             
-            <tag> 技术学习 </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> 技术学习 </tag>
             
         </tags>
       
@@ -494,9 +521,9 @@
       
         <tags>
             
-            <tag> 系统美化 </tag>
-            
             <tag> 工具推荐 </tag>
+            
+            <tag> 系统美化 </tag>
             
         </tags>
       
