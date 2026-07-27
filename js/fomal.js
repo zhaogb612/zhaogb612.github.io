@@ -351,7 +351,7 @@ document.addEventListener("copy", function () {
       data: function () {
         this.$notify({
           title: "哎嘿！复制成功",
-          message: "若要转载最好保留原文链接哦，给你一个大大的赞！",
+          message: "若要转载最好保留原文链接哦。O_o",
           position: 'top-left',
           offset: 50,
           showClose: true,
@@ -1076,7 +1076,7 @@ function changeMouseMode() {
       new Vue({
         data: function () {
           this.$notify({
-            title: "切换右键模式成功🍔",
+            title: "切换右键模式成功^o^",
             message: "当前鼠标右键已恢复为系统默认！",
             position: 'top-left',
             offset: 50,
@@ -1094,7 +1094,7 @@ function changeMouseMode() {
       new Vue({
         data: function () {
           this.$notify({
-            title: "切换右键模式成功🍔",
+            title: "切换右键模式成功^o^",
             message: "当前鼠标右键已更换为网站指定样式！",
             position: 'top-left',
             offset: 50,
@@ -2500,15 +2500,30 @@ if (m == 12 && dd == 25) {//圣诞节
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
-if (m == 8 && dd == 2) {//站长生日
+if (m == 6 && dd == 12) {//站长生日
   if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire("祝站长" + (y - 2003).toString() + "岁生日快乐！🥝");
+    Swal.fire("祝站长" + (y - 2010).toString() + "岁生日快乐！🥝");
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
 if (m == 6 && dd == 30) {//小猫咪生日
   if (sessionStorage.getItem("isPopupWindow") != "1") {
     Swal.fire("祝小猫咪" + (y - 1999).toString() + "岁生日快乐！🐱");
+    sessionStorage.setItem("isPopupWindow", "1");
+  }
+}
+
+// 元旦倒计时弹窗（12月及1月初显示）
+if ((m == 12) || (m == 1 && dd <= 3)) {
+  if (sessionStorage.getItem("isPopupWindow") != "1") {
+    let nextYear = m == 12 ? y + 1 : y;
+    let target = new Date(nextYear, 0, 1, 0, 0, 0);
+    let days = Math.ceil((target - new Date()) / 86400000);
+    if (days > 0) {
+      Swal.fire({ title: '元旦倒计时', text: '距离' + nextYear + '年元旦还有 ' + days + ' 天！', icon: 'info', confirmButtonText: '期待' });
+    } else if (days >= -3) {
+      Swal.fire({ title: 'Happy New Year! 🎉', text: nextYear + '年元旦快乐！', icon: 'success', confirmButtonText: '同乐' });
+    }
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
@@ -2692,71 +2707,7 @@ class Cursor {
 //----------------------------------------------------------------
 
 /* 新年倒计时 start */
-// let newYearTimer = null;
-// var newYear = () => {
-//   clearTimeout(newYearTimer);
-//   if (!document.querySelector('#newYear')) return;
-//   // 新年时间戳 and 星期对象
-//   let newYear = new Date('2023-01-22 00:00:00').getTime() / 1000,
-//     week = { 0: '周日', 1: '周一', 2: '周二', 3: '周三', 4: '周四', 5: '周五', 6: '周六' }
-
-//   time();
-
-//   // 补零函数
-//   function nol(h) { return h > 9 ? h : '0' + h; };
-
-//   function time() {
-//     // 现在 时间对象
-//     let now = new Date();
-
-//     // 右下角 今天
-//     document.querySelector('#newYear .today').innerHTML = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate() + ' ' + week[now.getDay()]
-
-//     // 现在与新年相差秒数
-//     let second = newYear - Math.round(now.getTime() / 1000);
-
-//     // 小于0则表示已经过年
-//     if (second < 0) {
-//       document.querySelector('#newYear .title').innerHTML = 'Happy New Year!';
-//       document.querySelector('#newYear .newYear-time').innerHTML = '<span class="happyNewYear">新年快乐</p>';
-//     } else {
-//       // 大于0则还未过年
-//       document.querySelector('#newYear .title').innerHTML = '距离2023年春节：'
-
-//       // 大于一天则直接渲染天数
-//       if (second > 86400) {
-//         document.querySelector('#newYear .newYear-time').innerHTML = `<span class="day">${Math.ceil(second / 86400)}<span class="unit">天</span></span>`
-//       } else {
-//         // 小于一天则使用时分秒计时。
-//         let h = nol(parseInt(second / 3600));
-//         second %= 3600;
-//         let m = nol(parseInt(second / 60));
-//         second %= 60;
-//         let s = nol(second);
-//         document.querySelector('#newYear .newYear-time').innerHTML = `<span class="time">${h}:${m}:${s}</span></span>`;
-//         // 计时
-//         newYearTimer = setTimeout(time, 1000);
-//       }
-//     }
-//   }
-
-//   // 元宝飘落
-//   jQuery(document).ready(function ($) {
-//     $('#newYear').wpSuperSnow({
-//       flakes: ['https://tuchuang.voooe.cn/images/2023/01/02/yb1.webp', 'https://tuchuang.voooe.cn/images/2023/01/02/yb2.webp', 'https://tuchuang.voooe.cn/images/2023/01/02/yb3.webp'],
-//       totalFlakes: '100',
-//       zIndex: '999999',
-//       maxSize: '30',
-//       maxDuration: '20',
-//       useFlakeTrans: false
-//     });
-//   });
-// }
-// // Pjax适配：若没有开启Pjax这里直接是newYear()即可
-// // 开了Pjax的用以下两句
-// document.addEventListener('pjax:complete', newYear);
-// document.addEventListener('DOMContentLoaded', newYear);
-
+// 已改为 Swal 弹窗形式，逻辑见下方节假日区域
 /* 新年倒计时 end */
 
 //----------------------------------------------------------------

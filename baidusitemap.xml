@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://localhost:4000/box/projects/index.html</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:4000/box/projects/base64/index.html</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:4000/posts/p9q0r1s2.html</loc>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:4000/posts/l5m6n7o8.html</loc>
     <lastmod>2026-07-14</lastmod>
   </url>
@@ -23,10 +35,6 @@
   <url>
     <loc>http://localhost:4000/posts/f5a8b2c3.html</loc>
     <lastmod>2026-07-11</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:4000/box/projects/index.html</loc>
-    <lastmod>2026-06-27</lastmod>
   </url>
   <url>
     <loc>http://localhost:4000/box/projects/meowtranslator/index.html</loc>
