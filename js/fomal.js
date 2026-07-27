@@ -629,7 +629,10 @@ function randomPost() {
   fetch('/baidusitemap.xml').then(res => res.text()).then(str => (new window.DOMParser()).parseFromString(str, "text/xml")).then(data => {
     let ls = data.querySelectorAll('url loc');
     while (true) {
-      let url = ls[Math.floor(Math.random() * ls.length)].innerHTML;
+      let raw = ls[Math.floor(Math.random() * ls.length)].innerHTML;
+      // 提取路径部分，拼上当前站点域名，避免 localhost 问题
+      let path = raw.replace(/^https?:\/\/[^\/]+/, '');
+      let url = location.origin + path;
       if (location.href == url) continue;
       location.href = url;
       return;
