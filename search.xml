@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>沙尘音乐</title>
+      <link href="/posts/5d3a7c91.html"/>
+      <url>/posts/5d3a7c91.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="沙尘音乐">沙尘音乐</h1><p>大家好～今天来介绍一下本博客自制的网页音乐播放器 —— <strong>沙尘音乐</strong> (ゝω·)ノ</p><p>纯前端开发，零依赖，打开浏览器就能听歌，无需安装。</p><hr><h2 id="一、核心特性">一、核心特性</h2><table><thead><tr><th>特性</th><th>说明</th></tr></thead><tbody><tr><td><strong>网易云音源</strong></td><td>海量曲库，多源自动轮换</td></tr><tr><td><strong>VIP 完整解析</strong></td><td>支持整首播放，告别 45 秒试听</td></tr><tr><td><strong>音频可视化</strong></td><td>柱状 / 波形 / 圆点三种频谱样式</td></tr><tr><td><strong>歌词展示</strong></td><td>卡拉 OK / 高亮放大等效果，支持翻译</td></tr><tr><td><strong>主题定制</strong></td><td>多套配色、封面、背景自由搭配</td></tr><tr><td><strong>快捷键</strong></td><td>全部按键可自定义</td></tr><tr><td><strong>部署灵活</strong></td><td>本地代理与静态直连双模式</td></tr></tbody></table><hr><h2 id="二、功能亮点">二、功能亮点</h2><ul><li><strong>搜索解析</strong>：优先走 VIP 完整解析接口（320kbps），主源挂了自动切换备用源</li><li><strong>可视化</strong>：WebAudio 频谱分析，灵敏度可调（0.5x~2.5x），波形是对称山丘形，动感十足</li><li><strong>歌词</strong>：卡拉 OK 逐字上色、高亮放大、仅高亮、无效果，字体/字号/对齐随意调</li><li><strong>外观</strong>：樱桃红/天空蓝/清新绿/葡萄紫/暖橙/自定义主题色，黑胶唱片/圆形/方形封面，默认/玻璃/毛玻璃/渐变/动态背景</li><li><strong>快捷键</strong>：默认 <code>空格</code> 播放暂停、<code>←/→</code> 切歌、<code>Ctrl+←/→</code> 快进快退、<code>↑/↓</code> 音量、<code>j</code> 静音、<code>k</code> 白天黑夜、<code>`</code> 沉浸模式、<code>Tab</code> 播放列表、<code>Ctrl+Alt+空格</code> 设置，全部可在设置面板录制修改</li><li><strong>播放列表</strong>：localStorage 持久化，支持列表循环/单曲循环/随机/顺序播放</li></ul><hr><h2 id="三、技术架构">三、技术架构</h2><p>原生 HTML + CSS + JS，HTML5 Audio + WebAudio 分析音频，搜索解析走网易云官方与祈杰 Meting-API，本地可用 Node 代理（server.js），静态部署自动切换直连模式。</p><hr><h2 id="四、在线体验">四、在线体验</h2><p>前往博客<strong>音乐盒页面</strong>即可使用：<a href="https://zhaogb612.github.io/life/music/">https://zhaogb612.github.io/life/music/</a></p><hr><h2 id="五、总结">五、总结</h2><p>功能齐全、颜值在线、部署零成本，想给自己的博客加个在线播放器的可以参考这个项目 (๑•̀ㅂ•́)و✧</p><blockquote><p>小贴士：数据仅供个人学习参考，请支持正版音乐哦～</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术实践 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术学习 </tag>
+            
+            <tag> HTML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>文件批量重命名工具 —— 一键搞定杂乱文件名</title>
       <link href="/posts/p9q0r1s2.html"/>
       <url>/posts/p9q0r1s2.html</url>
@@ -213,9 +240,9 @@
       
         <tags>
             
-            <tag> 系统优化 </tag>
-            
             <tag> 软件推荐 </tag>
+            
+            <tag> 系统优化 </tag>
             
         </tags>
       
