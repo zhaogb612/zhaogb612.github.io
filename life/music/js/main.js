@@ -188,9 +188,9 @@ const DEFAULT_SETTINGS = {
   lyricFont: 'mono',     // 歌词字体 default/serif/kaiti/fangsong/mono
   lyricSize: 'large',    // 歌词字号 small/medium/large
   visStyle: 'wave',      // 音频可视化样式 bar 柱状 / wave 波形 / dot 圆点
-  visGain: 1.0,          // 可视化波动灵敏度（0.5~2.5），影响柱高/圆点尺寸
+  visGain: 1.5,          // 可视化波动灵敏度（0.5~2.5），影响柱高/圆点尺寸
   background: 'dynamic', // 背景样式 default 默认 / glass 玻璃 / frosted 毛玻璃 / gradient 静态渐变 / dynamic 动态背景
-  panelOpacity: 10,      // 面板背景不透明度（0~100），控制左右面板与歌词背景的可见程度
+  panelOpacity: 5,      // 面板背景不透明度（0~100），控制左右面板与歌词背景的可见程度
   showTranslation: true, // 是否显示歌词翻译
   keybinds: {            // 自定义快捷键（组合键 -> 动作），空字符串表示未设置
     togglePlay: ' ',        // 播放 / 暂停
@@ -208,6 +208,7 @@ const DEFAULT_SETTINGS = {
     openSettings: 'Control+Alt+ ',  // 打开设置 Ctrl+Alt+空格
   },
   keybindVersion: 4,  // 快捷键默认值版本：升级时自动重置为新的默认绑定
+  settingsVersion: 2, // 设置默认值版本：升级时按需重置默认值（v2: 灵敏度默认 1.0→1.5）
 };
 /* 各背景样式的默认面板不透明度（%）：切换样式时重置为该默认值 */
 const PANEL_OPACITY_DEFAULTS = { default: 100, glass: 0, frosted: 26, gradient: 10, dynamic: 10 };
@@ -293,6 +294,11 @@ function loadSettings() {
     if (saved.keybindVersion !== DEFAULT_SETTINGS.keybindVersion) {
       s.keybinds = { ...DEFAULT_SETTINGS.keybinds };
       s.keybindVersion = DEFAULT_SETTINGS.keybindVersion;
+    }
+    // 设置默认值版本升级：v2 起灵敏度默认 1.0 → 1.5，同步已有用户已保存的值（其余设置不动）
+    if (saved.settingsVersion !== DEFAULT_SETTINGS.settingsVersion) {
+      s.visGain = DEFAULT_SETTINGS.visGain;
+      s.settingsVersion = DEFAULT_SETTINGS.settingsVersion;
     }
     return s;
   } catch {
@@ -611,9 +617,12 @@ function measureLrcWidth(text) {
     document.body.appendChild(_lrcMeasure);
   }
   _lrcMeasure.textContent = text;
+  // 以填充层自身的实际渲染字体为基准测量（卡拉OK填充宽度以填充层为准），
+  // 比读取整行样式更精确，避免字号过渡/字重差异导致行右端填充被裁剪
   const activeLine = lyricsBox.querySelector('.lyric-line.active');
-  if (activeLine) {
-    const cs = getComputedStyle(activeLine);
+  const ref = (activeLine && activeLine.querySelector('.l-kara-fill')) || activeLine;
+  if (ref) {
+    const cs = getComputedStyle(ref);
     _lrcMeasure.style.fontFamily = cs.fontFamily;
     _lrcMeasure.style.fontSize = cs.fontSize;
     _lrcMeasure.style.fontWeight = cs.fontWeight;
@@ -653,7 +662,12 @@ function updateLyric(index, immediate) {
   const lines = lyricsBox.children;
   if (!lines.length) return;
   const active = lyricsBox.querySelector('.lyric-line.active');
-  if (active) active.classList.remove('active');
+  if (active) {
+    // 旧高亮行的填充层残留着内联 clip/定位，失效时清空内联样式，避免卡拉OK彩色残留
+    const oldFill = active.querySelector('.l-kara-fill');
+    if (oldFill) oldFill.style.cssText = '';
+    active.classList.remove('active');
+  }
 
   const target = lines[index];
   if (!target) return;
@@ -672,6 +686,11 @@ function updateLyric(index, immediate) {
     const csLine = getComputedStyle(target);
     fill.dataset.karaPadLeft = parseFloat(csLine.paddingLeft || '0');
     fill.dataset.karaPadTop = parseFloat(csLine.paddingTop || '0');
+    // 缓存该行自身起止时间：updateKara 按行内进度裁剪，
+    // 跨行边界时（timeupdate 尚未同步新行）填充不会回退/闪烁
+    const curLine = lrcItems[index];
+    fill.dataset.karaT0 = String(curLine ? curLine.time : 0);
+    fill.dataset.karaT1 = String(index + 1 < lrcItems.length ? lrcItems[index + 1].time : (curLine ? curLine.time + 4 : 0));
   }
   updateKara();
 
@@ -711,12 +730,16 @@ function updateKara() {
     fill.style.clip = 'rect(0,0,0,0)'; // 完全隐藏填充层，避免额外颜色叠加
     return;
   }
-  const idx = findLrcIndex(audio.currentTime);
-  if (idx < 0) { fill.style.clip = 'rect(0,0,0,0)'; return; }
-  const it = lrcItems[idx];
-  const nextT = idx + 1 < lrcItems.length ? lrcItems[idx + 1].time : it.time + 4;
-  const dur = Math.max(0.1, nextT - it.time);
-  const p = Math.min(1, Math.max(0, (audio.currentTime - it.time) / dur));
+  // 3. 按当前行自身时间区间计算进度（updateLyric 时缓存）。
+  //    动画在行内约 80% 处即完成（提前收尾）：换行瞬间填充已是满色，
+  //    避免"歌词已换行、动画还没播完"的滞后观感
+  const t0 = parseFloat(fill.dataset.karaT0);
+  const t1 = parseFloat(fill.dataset.karaT1);
+  let p = 0;
+  if (Number.isFinite(t0) && Number.isFinite(t1)) {
+    const dur = Math.max(0.1, t1 - t0);
+    p = Math.min(1, Math.max(0, ((audio.currentTime - t0) / dur) / 0.8));
+  }
   const clipW = p * textW;
   // 裁剪出已播放的左侧宽度（其余部分隐藏），形成逐字推进的卡拉OK观感
   fill.style.clip = `rect(0, ${clipW}px, 9999px, 0)`;
@@ -813,6 +836,9 @@ function drawVisualizer() {
   const style = settings.visStyle || 'bar';
   // 用户可配置的灵敏度（0.5x~2.5x），限制范围避免失真
   const gain = Math.min(2.5, Math.max(0.5, Number(settings.visGain) || 1.2));
+  // 灵敏度以功率曲线施加（指数 = 1/增益）：增益越大，弱信号被放大得越明显；
+  // 曲线输出恒在 0~1 之间，不会像线性乘大数那样直接削顶失真，滑块全程可用
+  const sens = 1 / gain;
 
   if (style === 'wave') {
     // 频谱柱状：每根独立采样+独立高斯权重（中心高、两边低），帧间平滑 + 上下镜像绘制
@@ -835,7 +861,7 @@ function drawVisualizer() {
       for (let k = a; k < b; k++) if (visData[k] > mx) mx = visData[k];
       // 高频能量补偿
       const boost = 0.55 + 0.9 * (i / bars);
-      raw[i] = Math.min(1, (mx / 255) * boost * gain);
+      raw[i] = Math.pow(Math.min(1, (mx / 255) * boost), sens);
     }
     // 2. 每根独立乘高斯权重（中心最高，两端最低），不再镜像翻折
     const gauss = new Float32Array(bars);
@@ -899,8 +925,8 @@ function drawVisualizer() {
     let mx = 0;
     for (let k = a; k < b; k++) if (visData[k] > mx) mx = visData[k];
     // 能量补偿：高频本来就小，提升权重让它也能显示
-    const boost = (0.6 + 0.9 * (i / bars)) * gain;
-    raw[i] = Math.min(1, (mx / 255) * boost);
+    const boost = 0.6 + 0.9 * (i / bars);
+    raw[i] = Math.pow(Math.min(1, (mx / 255) * boost), sens);
   }
   // 帧间平滑（与 wave 一致）
   drawVisualizer._prevBar = drawVisualizer._prevBar || new Float32Array(bars);
@@ -981,7 +1007,7 @@ function retryUrl() {
     song._urlIdx = ((song._urlIdx || 0) + 1) % 2; // 0=祈杰完整解析 → 1=i-meto 签名链接
     audio.src = directPlayUrl(song, song._urlIdx);
   }
-  audio.load();
+  // 设 src 已触发浏览器加载，不显式调 audio.load() —— 避免 abort+restart 造成额外 waiting 事件和重复加载
   play();
 }
 
@@ -990,7 +1016,8 @@ function loadSong(song, autoplay) {
   state.current = song;
   state.index = song._index >= 0 ? song._index : -1;
   state.urlLoaded = false;
-  song._urlRefreshed = false; // 重置"链接失效已刷新"标记
+  state._advancing = false; // 重置“结尾推进”标记（进入新歌曲加载流程）
+  song._urlRefreshed = false; // 重置“链接失效已刷新”标记
   song._urlIdx = 0;           // 播放源从祈杰完整解析开始（出错时 retryUrl 切换）
   setLoading(true);
   renderSongInfo(song);
@@ -1021,7 +1048,6 @@ function loadSong(song, autoplay) {
     getLyric(song.lyric_id || song.id, song),
   ]).then(([rUrl, rPic, rLyr]) => {
     if (state.current !== song) return; // 用户已切换歌曲，丢弃过期结果
-    setLoading(false);
 
     const url = rUrl.status === 'fulfilled' ? rUrl.value : '';
     setCover(rPic.status === 'fulfilled' ? rPic.value : '');
@@ -1035,8 +1061,12 @@ function loadSong(song, autoplay) {
     if (url) {
       state.urlLoaded = true;
       audio.src = url;
+      // 设置 src 后浏览器自动开始加载，waiting 事件会触发 setLoading(true)；
+      // playing/canplay 会触发 setLoading(false)。这里不手动关 loading，
+      // 避免"loading→not loading→loading again"的闪烁
       if (autoplay) play();
     } else {
+      setLoading(false);
       console.error('获取播放链接失败：', song.name);
       toast('获取播放链接失败，点击播放可重试');
     }
@@ -1070,12 +1100,16 @@ function prev() {
 /* 歌曲自然结束时的行为（按播放模式） */
 function onEnded() {
   if (!state.playlist.length || state.index < 0) return;
+  if (state._advancing) return; // 已触发过结尾推进（ended / 兜底检测），防止重复切歌
+  state._advancing = true;
   if (playMode === 'single') {          // 单曲循环：重新播放当前歌曲
     audio.currentTime = 0;
     play();
+    state._advancing = false;
     return;
   }
   if (playMode === 'list' && state.index >= state.playlist.length - 1) {
+    state._advancing = false;
     return;                             // 顺序播放：列表播完自动停止
   }
   loadSong(state.playlist[nextIndex()], true);
@@ -1345,6 +1379,25 @@ function toggleDark() {
   toast(document.body.classList.contains('dark') ? '已切换为黑夜模式' : '已切换为白天模式');
 }
 btnDark.addEventListener('click', toggleDark);
+
+/* ---------------- 全屏模式 ---------------- */
+const btnFullscreen = document.getElementById('btnFullscreen');
+
+function toggleFullscreen() {
+  if (document.fullscreenElement) {
+    document.exitFullscreen().catch(() => { /* 忽略 */ });
+  } else {
+    document.documentElement.requestFullscreen().catch(() => toast('无法进入全屏，请检查浏览器权限'));
+  }
+}
+btnFullscreen.addEventListener('click', toggleFullscreen);
+
+/* 同步全屏状态：切换按钮图标与提示 */
+document.addEventListener('fullscreenchange', () => {
+  const fs = !!document.fullscreenElement;
+  document.body.classList.toggle('fs', fs);
+  btnFullscreen.title = fs ? '退出全屏' : '全屏';
+});
 
 /* ---------------- 沉浸模式（清屏）：隐藏顶栏与底栏，鼠标靠近边缘时临时显示 ---------------- */
 const CLEAN_KEY = 'jy-clean-mode';
@@ -1752,6 +1805,10 @@ audio.addEventListener('pause', () => {
   stopAnim();
 });
 audio.addEventListener('seeking', updateKara);
+/* 结尾兜底：部分代理流的音频数据比元数据时长略短，播放到头后浏览器可能不会触发
+   ended（歌曲卡在结尾、不自动切歌）。这里检测到播放位置已到结尾且不再前进时，
+   视为播完并触发 onEnded（内置去重，不会重复切歌） */
+let endStallT = -1;
 audio.addEventListener('timeupdate', () => {
   updateProgress();
   const idx = findLrcIndex(audio.currentTime);
@@ -1759,16 +1816,38 @@ audio.addEventListener('timeupdate', () => {
     lastLrcIndex = idx;
     updateLyric(idx, false);
   }
+  const d = audio.duration;
+  if (!state._advancing && !audio.paused && Number.isFinite(d) && d > 0 &&
+      audio.currentTime >= d - 0.5) {
+    if (audio.currentTime === endStallT) {
+      state._advancing = true;
+      onEnded();
+    } else {
+      endStallT = audio.currentTime;
+    }
+  } else {
+    endStallT = -1;
+  }
 });
 audio.addEventListener('loadedmetadata', () => {
   timeTotal.textContent = formatTime(audio.duration);
 });
-audio.addEventListener('waiting', () => setLoading(true));
-audio.addEventListener('playing', () => setLoading(false));
-audio.addEventListener('canplay', () => setLoading(false));
+/* waiting 防抖：浏览器在缓冲期间可能密集触发 waiting 事件（每次请求新数据块），
+   不加防抖会导致 loading 指示器闪烁。此处 300ms 内只响应第一次 waiting */
+let _waitTimer = 0;
+audio.addEventListener('waiting', () => {
+  if (_waitTimer) return; // 防抖：300ms 内忽略后续 waiting
+  setLoading(true);
+  _waitTimer = setTimeout(() => { _waitTimer = 0; }, 300);
+});
+audio.addEventListener('playing', () => { clearTimeout(_waitTimer); _waitTimer = 0; setLoading(false); });
+audio.addEventListener('canplay', () => { clearTimeout(_waitTimer); _waitTimer = 0; setLoading(false); });
 audio.addEventListener('ended', onEnded);
 audio.addEventListener('error', () => {
   if (state.loading) setLoading(false);
+  // 主动切歌/复位导致旧加载被中止（MEDIA_ERR_ABORTED），此类错误直接忽略，
+  // 避免误触发重试或跳歌（切歌“卡顿/失败”的主要来源之一）
+  if (audio.error && audio.error.code === MediaError.MEDIA_ERR_ABORTED) return;
   if (!state.urlLoaded || !state.current) return;
   const song = state.current;
   // 首次出错：若为代理模式则自动切直连重新解析（静态博客无 /api 代理时的兜底）；
@@ -1785,7 +1864,7 @@ audio.addEventListener('error', () => {
     return;
   }
   toast('播放出错，即将尝试下一首');
-  if (state.playlist.length && state.index >= 0) setTimeout(skipBroken, 600);
+  if (state.playlist.length && state.index >= 0) skipBroken();
 });
 
 /* ---------------- 快捷键 ---------------- */

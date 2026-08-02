@@ -206,6 +206,12 @@ body.modal-open { overflow: hidden; }
 body.dark .icon-btn .ico-moon { display: none; }
 body.dark .icon-btn .ico-sun { display: block; }
 
+/* 全屏按钮图标：进入全屏显示放大图标，全屏时切换为还原图标 */
+.icon-btn .ico-fs-in { display: block; }
+.icon-btn .ico-fs-out { display: none; }
+body.fs .icon-btn .ico-fs-in { display: none; }
+body.fs .icon-btn .ico-fs-out { display: block; }
+
 /* ---------- 主区域：左右分栏 ---------- */
 .player {
   flex: 1;
@@ -482,9 +488,13 @@ body.dark .icon-btn .ico-sun { display: block; }
   clip: rect(0, 0, 0, 0);      /* 默认完全隐藏，仅卡拉OK模式启用 */
 }
 
-/* 卡拉OK 模式：底色变中性灰，让彩色填充层对比清晰 */
-.lyrics-box.effect-karaoke .lyric-line.active .kara-bg { color: var(--text-2); font-weight: 500; text-shadow: none; }
+/* 卡拉OK 模式：底色变中性灰，让彩色填充层对比清晰（字重与填充层一致，避免宽窄错位残影） */
+.lyrics-box.effect-karaoke .lyric-line.active .kara-bg { color: var(--text-2); font-weight: 700; text-shadow: none; }
 .lyrics-box.effect-karaoke .lyric-line.active { color: var(--text-2); }
+/* 卡拉OK：字号/位移即时生效（不做过渡动画），保证填充层宽度测量与文字重叠精确，右端不截断 */
+.lyrics-box.effect-karaoke .lyric-line { transition: color 0.3s, text-shadow 0.3s; }
+/* 兜底：非高亮行的填充层一律裁剪隐藏（含残留的内联裁剪），任何情况下不出现歌词残留 */
+.lyrics-box .lyric-line:not(.active) .l-kara-fill { clip: rect(0, 0, 0, 0) !important; }
 /* 歌词效果：高亮放大（zoom）— 比普通 active 更明显的放大 + 更强阴影 */
 .lyrics-box.effect-zoom .lyric-line.active {
   font-size: calc(var(--l-active) * 1.22);

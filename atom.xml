@@ -40,9 +40,9 @@
     <category term="技术实践" scheme="http://localhost:4000/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
     
     
-    <category term="技术学习" scheme="http://localhost:4000/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="HTML" scheme="http://localhost:4000/tags/HTML/"/>
+    
+    <category term="技术学习" scheme="http://localhost:4000/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -123,9 +123,9 @@
     <category term="技术学习" scheme="http://localhost:4000/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="技术学习" scheme="http://localhost:4000/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="HTML" scheme="http://localhost:4000/tags/HTML/"/>
+    
+    <category term="技术学习" scheme="http://localhost:4000/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
