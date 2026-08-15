@@ -6423,6 +6423,8 @@ blockquote.pullquote.right {
   --trans-light: rgba(253, 253, 253, 0.88);
   --trans-dark: rgba(25, 25, 25, 0.88);
   --backdrop-filter: blur(6px);
+  --mobileday-bg: url(https://static.kivo.wiki/images/gallery/%E5%AE%98%E6%96%B9-%E5%A3%81%E7%BA%B8&%E8%B4%BA%E5%9B%BE/Default/34ccbc58d0ff50f284b63f4201e810dc3493282386545566.png);
+  --mobilenight-bg: url(https://static.kivo.wiki/images/gallery/6/BG_CS_PV5_54.jpg);
   /* 代码框行数背景色 */
   --hlnumber-bg: #282c34;
   /* 代码框顶部背景色 */
