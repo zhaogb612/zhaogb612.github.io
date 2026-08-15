@@ -3148,11 +3148,12 @@ function setBg(s) {
       bg.style.backgroundColor = "";
     }
   }
+  var mobileVars = s.charAt(0) == "#" ? "" : `
+    --mobileday-bg: ${s};
+    --mobilenight-bg: ${s};`;
   document.getElementById("defineBg").innerText = `:root{
     --default-bg: ${s};
-    --darkmode-bg: ${s};
-    --mobileday-bg: ${s};
-    --mobilenight-bg: ${s};
+    --darkmode-bg: ${s};${mobileVars}
   }`;
 }
 
