@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>终末地画廊下载器</title>
+      <link href="/posts/a8b1c2d3.html"/>
+      <url>/posts/a8b1c2d3.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="终末地画廊下载器">终末地画廊下载器</h1><p>逛终末地画廊的时候想批量扒图，但一张张右键保存实在太累了 (´；ω；`)</p><p>于是就有了这款<strong>终末地画廊下载器</strong>——基于 PySide6 打造，蓝白配色、方形简洁风格，专为站内图片资源批量爬取而生。</p><blockquote><p><strong>下载地址</strong>：<a href="https://pan.huang1111.cn/s/y5MLGU6">点我下载</a> 提取密码：<code>2026</code>（打包好的单文件，双击即用。）</p></blockquote><hr><h2 id="一、核心功能">一、核心功能</h2><table><thead><tr><th>功能</th><th>说明</th></tr></thead><tbody><tr><td><strong>URL 爬取</strong></td><td>输入目标页面地址，自动解析页面中所有图片资源</td></tr><tr><td><strong>图片预览</strong></td><td>点击列表项即可在右侧实时预览大图</td></tr><tr><td><strong>批量下载</strong></td><td>多线程并发下载，支持全选/反选/清空</td></tr><tr><td><strong>MacOS 风格标题栏</strong></td><td>红黄圆形关闭/最小化按钮，右侧布局</td></tr><tr><td><strong>自定义下载目录</strong></td><td>默认系统下载目录，可自由指定</td></tr><tr><td><strong>操作日志</strong></td><td>底部单行日志，实时显示当前操作状态</td></tr></tbody></table><hr><h2 id="二、使用教程">二、使用教程</h2><h3 id="2-1-爬取图片">2.1 爬取图片</h3><p>启动后默认填入目标网址，点击「<strong>爬取</strong>」按钮即可解析页面中所有图片。右侧列表会展示每张图片的缩略图和文件名。</p><h3 id="2-2-预览与筛选">2.2 预览与筛选</h3><p>点击列表中的图片可在右侧预览区域查看大图。使用「<strong>全选</strong>」「<strong>清空</strong>」「<strong>反选</strong>」按钮快速筛选需要下载的图片。</p><h3 id="2-3-下载">2.3 下载</h3><p>点击「<strong>下载</strong>」按钮，程序会自动创建 <code>ZmdPicture</code> 文件夹，将选中的图片批量保存到本地。下载过程中可随时点击「<strong>停止</strong>」中断。</p><hr><h2 id="三、技术特点">三、技术特点</h2><table><thead><tr><th>方面</th><th>说明</th></tr></thead><tbody><tr><td><strong>框架</strong></td><td>PySide6，LGPL 许可</td></tr><tr><td><strong>打包</strong></td><td>PyInstaller 单文件，无 CMD 弹窗</td></tr><tr><td><strong>多线程</strong></td><td>下载在独立 QThread 执行，界面不卡顿不闪退</td></tr><tr><td><strong>配色</strong></td><td>蓝白配色，方形直角按钮，统一简洁</td></tr><tr><td><strong>标题栏</strong></td><td>自定义无边框窗口，仿 macOS 红黄圆点按钮</td></tr></tbody></table><hr><h2 id="四、总结">四、总结</h2><p>小巧轻量、即开即用，适合需要批量保存站内图片资源的场景。如果对功能有建议或者遇到 bug，欢迎在评论区留言反馈 (๑•́ ▽ •̀๑)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术实践 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术实践 </tag>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>沙尘音乐</title>
       <link href="/posts/5d3a7c91.html"/>
       <url>/posts/5d3a7c91.html</url>
@@ -20,9 +47,9 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
             <tag> 技术学习 </tag>
+            
+            <tag> HTML </tag>
             
         </tags>
       
@@ -74,9 +101,9 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
             <tag> 技术实践 </tag>
+            
+            <tag> HTML </tag>
             
         </tags>
       
@@ -101,9 +128,9 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
             <tag> 技术学习 </tag>
+            
+            <tag> HTML </tag>
             
         </tags>
       
@@ -240,9 +267,9 @@
       
         <tags>
             
-            <tag> 软件推荐 </tag>
-            
             <tag> 系统优化 </tag>
+            
+            <tag> 软件推荐 </tag>
             
         </tags>
       

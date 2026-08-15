@@ -3112,48 +3112,42 @@ function changeBgColor() {
   changeBg(document.querySelector("#define_colors").value);
 }
 
-// 必应每日壁纸API
-let bingDayBg = screen.width <= 768 ? "url(https://bing.img.run/m.php)" : "url(https://bing.img.run/1920x1080.php)";
-// 必应历史壁纸API
-let bingHistoryBg = screen.width <= 768 ? "url(https://bing.img.run/rand_m.php)" : "url(https://bing.img.run/rand.php)";
-// EEE.DOG
-let EEEDog = "url(https://api.yimian.xyz/img?type=moe&size=1920x1080)";
-// 随机美图cdn.seovx.com
-let seovx = "url(https://cdn.seovx.com/?mom=302)";
-// picsum随机
-let picsum = "url(https://picsum.photos/1920/1080.webp)";
-// 小歪二次元
-// let waiDongman = "url(https://api.ixiaowai.cn/api/api.php)";
-//  小歪高清壁纸
-let waiBizhi = "url(https://api.ixiaowai.cn/gqapi/gqapi.php)";
-// 博天随机
-let btstu = "url(http://api.btstu.cn/sjbz/?lx=suiji)";
-// tuapi 动漫
-// let tuapi = "url(https://tuapi.eees.cc/api.php?category=dongman)";
-// unsplash随机 https://source.unsplash.com/random/1920x1080/daily (weekly)
-let unsplash = "url(https://source.unsplash.com/random/1920x1080/)";
+// ===== API壁纸接口 (来自 yumus.cn) =====
+// 必应壁纸
+let bingPcBg = "url(https://www.yumus.cn/api/?brand=bing&ua=pc)";
+let bingUhdBg = "url(https://www.yumus.cn/api/?brand=bing&ua=uhd)";
+let bingMoBg = "url(https://www.yumus.cn/api/?brand=bing&ua=m)";
+// 360壁纸 - 精选分类
+let qh4k = "url(https://www.yumus.cn/api/?target=img&brand=360&type=0)";    // 4K专区
+let qhDm = "url(https://www.yumus.cn/api/?target=img&brand=360&type=5)";    // 动漫卡通
+let qhFj = "url(https://www.yumus.cn/api/?target=img&brand=360&type=3)";    // 风景大片
+let qhYx = "url(https://www.yumus.cn/api/?target=img&brand=360&type=8)";    // 游戏壁纸
+let qhMc = "url(https://www.yumus.cn/api/?target=img&brand=360&type=7)";    // 萌宠动物
+let qhMm = "url(https://www.yumus.cn/api/?target=img&brand=360&type=1)";    // 美女模特
 
 
 // 更换背景(自己的代码)
 if (localStorage.getItem("blogbg") != undefined) {
   setBg(localStorage.getItem("blogbg"));
-} else {
-  document.getElementById("defineBg").innerText = `:root{
-    --default-bg: url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zypmoj.jpg);
-    --darkmode-bg:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-3lo9v3.webp);
-    --mobileday-bg: url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-wq9glp.webp);
-    --mobilenight-bg: url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-6o8ekw.webp);
-  }`;
 }
 // 切换背景主函数
 function changeBg(s) {
-  // 自定义颜色框
   defineColor = s.charAt(0) == "#" ? s : '#F4D88A';
   setBg(s);
   localStorage.setItem("blogbg", s);
 }
 // 设置背景属性
 function setBg(s) {
+  var bg = document.getElementById("web_bg");
+  if (bg) {
+    if (s.charAt(0) == "#") {
+      bg.style.backgroundColor = s;
+      bg.style.backgroundImage = "none";
+    } else {
+      bg.style.backgroundImage = s;
+      bg.style.backgroundColor = "";
+    }
+  }
   document.getElementById("defineBg").innerText = `:root{
     --default-bg: ${s};
     --darkmode-bg: ${s};
@@ -3340,8 +3334,7 @@ function createWinbox() {
 
 
 <h2>二、字体设置</h2>
-<div class="note warning modern"><p>非商免字体未经授权只能个人使用。本站为完全非商业、非盈利性质的网站，平时用于个人学习交流，如有侵权请联系站长删除，谢谢！ —— 致版权方</p>
-</div>
+<div class="note note-warning"><p>非商免字体未经授权只能个人使用。本站为完全非商业、非盈利性质的网站，平时用于个人学习交流，如有侵权请联系站长删除，谢谢！ —— 致版权方</p></div>
 <p id="swfs">
 <a class="swf" id="swf_ZhuZiAWan" href="javascript:;" rel="noopener external nofollow" style="font-family:'ZhuZiAWan'!important;color:black" onclick="setFont('ZhuZiAWan')">筑紫A丸标准体2.0</a>
 <a class="swf" id="swf_HYTMR" href="javascript:;" rel="noopener external nofollow" style="font-family:'HYTMR'!important;color:black" onclick="setFont('HYTMR')">汉仪唐美人</a>
@@ -3369,69 +3362,58 @@ function createWinbox() {
 <h2>四、背景设置</h2>
 <center><button onclick="resetBg()" style="background:var(--theme-color);display:block;width:35%;padding:15px 0;border-radius:30px;color:white;"><i class="fa-solid fa-arrows-rotate"></i>&nbsp;恢复默认背景</button></center>
 
-<h3>1. 二次元</h3>
-<details class="folding-tag" cyan><summary> 查看二次元背景 </summary>
-              <div class='content'>
-              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-72drx3.jpg)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-72drx3.jpg)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-dpzww3.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-dpzww3.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-j3z8pw.jpg)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-j3z8pw.jpg)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-k7o2z7.jpg)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-k7o2z7.jpg)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-l36282.jpg)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-l36282.jpg)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-m9jjp9.jpg)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-m9jjp9.jpg)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zygeko.jpg)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zygeko.jpg)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zyggly.jpg)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zyggly.jpg)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zyxvqy.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zyxvqy.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zyxz9v.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zyxz9v.webp)')"></a></div>
-              </div>
-            </details>
+<h3>1. API 壁纸</h3>
+<details style="margin:8px 0"><summary style="cursor:pointer;color:var(--theme-color);font-weight:bold">🎨 查看 API 壁纸（点击名称切换）</summary>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin:8px 0">
+<button onclick="changeBg('${bingPcBg}')" style="background:var(--theme-color);border:none;color:white;padding:5px 12px;border-radius:4px;cursor:pointer;font-size:12px">必应·每日</button>
+<button onclick="changeBg('${bingUhdBg}')" style="background:var(--theme-color);border:none;color:white;padding:5px 12px;border-radius:4px;cursor:pointer;font-size:12px">必应·4K</button>
+<button onclick="changeBg('${bingMoBg}')" style="background:var(--theme-color);border:none;color:white;padding:5px 12px;border-radius:4px;cursor:pointer;font-size:12px">必应·手机</button>
+<button onclick="changeBg('${qh4k}')" style="background:var(--theme-color);border:none;color:white;padding:5px 12px;border-radius:4px;cursor:pointer;font-size:12px">360·4K专区</button>
+<button onclick="changeBg('${qhDm}')" style="background:var(--theme-color);border:none;color:white;padding:5px 12px;border-radius:4px;cursor:pointer;font-size:12px">360·动漫</button>
+<button onclick="changeBg('${qhFj}')" style="background:var(--theme-color);border:none;color:white;padding:5px 12px;border-radius:4px;cursor:pointer;font-size:12px">360·风景</button>
+<button onclick="changeBg('${qhYx}')" style="background:var(--theme-color);border:none;color:white;padding:5px 12px;border-radius:4px;cursor:pointer;font-size:12px">360·游戏</button>
+<button onclick="changeBg('${qhMc}')" style="background:var(--theme-color);border:none;color:white;padding:5px 12px;border-radius:4px;cursor:pointer;font-size:12px">360·萌宠</button>
+<button onclick="changeBg('${qhMm}')" style="background:var(--theme-color);border:none;color:white;padding:5px 12px;border-radius:4px;cursor:pointer;font-size:12px">360·美女</button>
+</div>
+</details>
 
+<h3>2. 渐变色</h3>
+<details style="margin:8px 0"><summary style="cursor:pointer;color:var(--theme-color);font-weight:bold">🎨 查看渐变色背景</summary>
+<div class="bgbox">
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #544a7d, #ffd452)" onclick="changeBg('linear-gradient(to right, #544a7d, #ffd452)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)" onclick="changeBg('linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to left, #654ea3, #eaafc8)" onclick="changeBg('linear-gradient(to left, #654ea3, #eaafc8)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #feac5e, #c779d0, #4bc0c8)" onclick="changeBg('linear-gradient(to top, #feac5e, #c779d0, #4bc0c8)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #d3959b, #bfe6ba)" onclick="changeBg('linear-gradient(to top, #d3959b, #bfe6ba)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #8360c3, #2ebf91)" onclick="changeBg('linear-gradient(to top, #8360c3, #2ebf91)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #108dc7, #ef8e38)" onclick="changeBg('linear-gradient(to top, #108dc7, #ef8e38)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #355c7d, #6c5b7b, #c06c84)" onclick="changeBg('linear-gradient(to top, #355c7d, #6c5b7b, #c06c84)')"></a>
+</div>
+</details>
 
-<h3>2. 风景</h3>
+<h3>3. 纯色</h3>
+<details style="margin:8px 0"><summary style="cursor:pointer;color:var(--theme-color);font-weight:bold">🎨 查看纯色背景</summary>
+<div class="bgbox">
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ecb1b1" onclick="changeBg('#ecb1b1')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #d3ebac" onclick="changeBg('#d3ebac')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ace9ce" onclick="changeBg('#ace9ce')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #c1ebea" onclick="changeBg('#c1ebea')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #dee7f1" onclick="changeBg('#dee7f1')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #e9e3f2" onclick="changeBg('#e9e3f2')"></a>
+<a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #f7eff5" onclick="changeBg('#f7eff5')"></a>
+<input type="color" id="define_colors" class="box" autocomplete="on" value="${defineColor}" oninput="changeBgColor()"></input>
+</div>
+</details>
 
-<details class="folding-tag" cyan><summary> 查看风景背景 </summary>
-              <div class='content'>
-              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-85w1oj.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-85w1oj.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-kxgrpd.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-kxgrpd.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-kxgow1.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-kxgow1.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-jx7xp5.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-jx7xp5.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-rr13k7.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-rr13k7.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-qzqzjd.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-qzqzjd.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-o5mowl.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-o5mowl.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-x6geod.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-x6geod.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-gpgz7e.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-gpgz7e.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-85w63j.webp)" class="imgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-85w63j.webp)')"></a></div>
-              </div>
-            </details>
-
-<h3>3. 萌宠</h3>
-
-<details class="folding-tag" cyan><summary> 查看萌宠背景 </summary>
-              <div class='content'>
-              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/mc1.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/mc1.webp)')"></a></div>
-              </div>
-            </details>
-
-<h3>4. 渐变色</h3>
-<details class="folding-tag" cyan><summary> 查看渐变色背景 </summary>
-              <div class='content'>
-              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #544a7d, #ffd452)" onclick="changeBg('linear-gradient(to right, #544a7d, #ffd452)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)" onclick="changeBg('linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to left, #654ea3, #eaafc8)" onclick="changeBg('linear-gradient(to left, #654ea3, #eaafc8)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #feac5e, #c779d0, #4bc0c8)" onclick="changeBg('linear-gradient(to top, #feac5e, #c779d0, #4bc0c8)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #d3959b, #bfe6ba)" onclick="changeBg('linear-gradient(to top, #d3959b, #bfe6ba)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #8360c3, #2ebf91)" onclick="changeBg('linear-gradient(to top, #8360c3, #2ebf91)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #108dc7, #ef8e38)" onclick="changeBg('linear-gradient(to top, #108dc7, #ef8e38)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #355c7d, #6c5b7b, #c06c84)" onclick="changeBg('linear-gradient(to top, #355c7d, #6c5b7b, #c06c84)')"></a></div>
-              </div>
-            </details>
-
-
-<h3>5. 纯色</h3>
-<details class="folding-tag" cyan><summary> 查看纯色背景 </summary>
-              <div class='content'>
-              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ecb1b1" onclick="changeBg('#ecb1b1')"></a> <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #d3ebac" onclick="changeBg('#d3ebac')"></a> <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ace9ce" onclick="changeBg('#ace9ce')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #c1ebea" onclick="changeBg('#c1ebea')"></a> <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #dee7f1" onclick="changeBg('#dee7f1')"></a> <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #e9e3f2" onclick="changeBg('#e9e3f2')"></a> <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #f7eff5" onclick="changeBg('#f7eff5')"></a>  <input type="color" id="define_colors" href="javascript:;" rel="noopener external nofollow" class="box" autocomplete="on" value="${defineColor}" oninput="changeBgColor()"></input></div>
-              </div>
-            </details>
-
-
-
-<h3>6. 适配手机</h3>
-<details class="folding-tag" cyan><summary> 查看适配手机的背景 </summary>
-              <div class='content'>
-              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-wej86x.webp)" class="pimgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zyxz9v.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-vqlprl.webp)" class="pimgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-vqlprl.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-m9lxe9.webp)" class="pimgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-m9lxe9.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zy5kdy.webp)" class="pimgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-zy5kdy.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-yxomzg.webp)" class="pimgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-yxomzg.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-yxkkwg.webp)" class="pimgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-yxkkwg.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-gpgwde.webp)" class="pimgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-gpgwde.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-kxgrzq.webp)" class="pimgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-kxgrzq.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-288vgg_1440x2560.webp)" class="pimgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-288vgg_1440x2560.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-7pkv19.webp)" class="pimgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-7pkv19.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-j3mmdy.webp)" class="pimgbox" onclick="changeBg('url(https://u7imgblog.oss-cn-hangzhou.aliyuncs.com/blogbackground/wallhaven-j3mmdy.webp)')"></a></div>
-              </div>
-            </details>
-
-
-<h3>7. 壁纸API</h3>
-<details class="folding-tag" cyan><summary> 查看壁纸API系列背景 </summary>
-              <div class='content'>
-              <div class="bgbox"><a id="bingDayBox" rel="noopener external nofollow" style="background-image: ${bingDayBg}" class="box apiBox" onclick="changeBg('${bingDayBg}')"></a><a id="bingHistoryBox" rel="noopener external nofollow" style="background-image: ${bingHistoryBg}" class="box apiBox" onclick="changeBg('${bingHistoryBg}')"></a><a id="EEEDogBox" rel="noopener external nofollow" style="background-image: ${EEEDog}" class="box apiBox" onclick="changeBg('${EEEDog}')"></a><a id="seovxBox" rel="noopener external nofollow" style="background-image: ${seovx}" class="box apiBox" onclick="changeBg('${seovx}')"></a><a id="picsumBox" rel="noopener external nofollow" style="background-image: ${picsum}" class="box apiBox" onclick="changeBg('${picsum}')"></a><a id="waiBizhiBox" rel="noopener external nofollow" style="background-image: ${waiBizhi}" class="box apiBox" onclick="changeBg('${waiBizhi}')"></a><a id="btstuBox" rel="noopener external nofollow" style="background-image: ${btstu}" class="box apiBox" onclick="changeBg('${btstu}')"></a><a id="unsplashBox" rel="noopener external nofollow" style="background-image: ${unsplash}" class="box apiBox" onclick="changeBg('${unsplash}')"></a></div>
-              </div>
-            </details>
-
-
-<h3>8. 自定义背景</h3>
-<details class="folding-tag" cyan><summary> 设置自定义背景 </summary>
-              <div class='content'>
-              <p><center><input type="text" id="pic-link" size="70%" maxlength="1000" placeholder="请输入有效的图片链接"></center></p><p><center><button type="button" onclick="getPicture()" style="background:var(--theme-color);width:35%;padding: 5px 0px 7px 0px;border-radius:30px;color:white;line-height:2;">🌈切换背景🌈</button></center></p>
-              </div>
-            </details>
+<h3>4. 自定义背景</h3>
+<details style="margin:8px 0"><summary style="cursor:pointer;color:var(--theme-color);font-weight:bold">⚙ 设置自定义背景</summary>
+<p><center>
+<input type="text" id="pic-link" size="70%" maxlength="1000" placeholder="请输入有效的图片链接">
+</center></p>
+<p><center>
+<button type="button" onclick="getPicture()" style="background:var(--theme-color);width:35%;padding: 5px 0px 7px 0px;border-radius:30px;color:white;line-height:2;">🌈切换背景🌈</button>
+</center></p>
+</details>
 
 <br>
 <center><div style="font-size:1.2em;color:var(--theme-color);font-weight:bold;">------ ( •̀ ω •́ )y 到底啦 ------</div></center>

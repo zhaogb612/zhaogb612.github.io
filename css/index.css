@@ -6420,6 +6420,9 @@ blockquote.pullquote.right {
   --btn-bg: var(--theme-color) !important;
   --scrollbar-color: var(--theme-color) !important;
   --border-style: 1px solid rgba(169, 169, 169, 0.7);
+  --trans-light: rgba(253, 253, 253, 0.88);
+  --trans-dark: rgba(25, 25, 25, 0.88);
+  --backdrop-filter: blur(6px);
   /* 代码框行数背景色 */
   --hlnumber-bg: #282c34;
   /* 代码框顶部背景色 */
@@ -7299,6 +7302,24 @@ h6::before {
   }
   100% {
     -webkit-filter: blur(0px);
+  }
+}
+
+/* ===== 美化设置背景切换 - 移动端适配 ===== */
+@media screen and (max-width: 800px) {
+  #web_bg {
+    background-image: var(--mobileday-bg) !important;
+    background-attachment: local !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+  [data-theme="dark"] #web_bg {
+    background-image: var(--mobilenight-bg) !important;
+    background-attachment: local !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
   }
 }
 
