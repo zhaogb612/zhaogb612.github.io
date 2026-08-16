@@ -38,9 +38,9 @@
     <category term="技术实践" scheme="http://localhost:4000/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
     
     
-    <category term="Python" scheme="http://localhost:4000/tags/Python/"/>
-    
     <category term="技术实践" scheme="http://localhost:4000/tags/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    
+    <category term="Python" scheme="http://localhost:4000/tags/Python/"/>
     
   </entry>
   
@@ -68,9 +68,9 @@
     <category term="技术实践" scheme="http://localhost:4000/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
     
     
-    <category term="HTML" scheme="http://localhost:4000/tags/HTML/"/>
-    
     <category term="技术学习" scheme="http://localhost:4000/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="HTML" scheme="http://localhost:4000/tags/HTML/"/>
     
   </entry>
   
@@ -96,9 +96,9 @@
     <category term="软件推荐" scheme="http://localhost:4000/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
     
     
-    <category term="Python" scheme="http://localhost:4000/tags/Python/"/>
-    
     <category term="技术实践" scheme="http://localhost:4000/tags/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    
+    <category term="Python" scheme="http://localhost:4000/tags/Python/"/>
     
   </entry>
   
@@ -151,9 +151,9 @@
     <category term="技术学习" scheme="http://localhost:4000/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="HTML" scheme="http://localhost:4000/tags/HTML/"/>
-    
     <category term="技术学习" scheme="http://localhost:4000/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="HTML" scheme="http://localhost:4000/tags/HTML/"/>
     
   </entry>
   
@@ -296,9 +296,9 @@
     <category term="软件推荐" scheme="http://localhost:4000/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
     
     
-    <category term="软件推荐" scheme="http://localhost:4000/tags/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
-    
     <category term="系统优化" scheme="http://localhost:4000/tags/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="软件推荐" scheme="http://localhost:4000/tags/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   

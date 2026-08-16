@@ -288,30 +288,30 @@ var Notes = (function() {
   function batchDelete() {
     var ids = Object.keys(selectedIds);
     if (ids.length === 0) return;
-    if (!confirm('确定删除选中的 ' + ids.length + ' 条便签吗？此操作不可撤销。')) return;
+    showConfirmModal('批量删除', '确定删除选中的 ' + ids.length + ' 条便签吗？此操作不可撤销。', function() {
+      var idMap = {};
+      for (var i = 0; i < ids.length; i++) {
+        idMap[ids[i]] = true;
+      }
+      notes = notes.filter(function(n) { return !idMap[n.id]; });
+      saveNotes();
 
-    var idMap = {};
-    for (var i = 0; i < ids.length; i++) {
-      idMap[ids[i]] = true;
-    }
-    notes = notes.filter(function(n) { return !idMap[n.id]; });
-    saveNotes();
+      if (currentId && idMap[currentId]) {
+        currentId = null;
+        $('noteTitle').value = '';
+        $('noteBody').value = '';
+        $('noteCategory').value = '';
+        $('editorContent').style.display = 'none';
+        $('editorEmpty').style.display = 'flex';
+        $('notePreview').innerHTML = '';
+      }
 
-    if (currentId && idMap[currentId]) {
-      currentId = null;
-      $('noteTitle').value = '';
-      $('noteBody').value = '';
-      $('noteCategory').value = '';
-      $('editorContent').style.display = 'none';
-      $('editorEmpty').style.display = 'flex';
-      $('notePreview').innerHTML = '';
-    }
-
-    selectedIds = {};
-    updateCategoryFilter();
-    updateDatalist();
-    renderList();
-    updateBatchCount();
+      selectedIds = {};
+      updateCategoryFilter();
+      updateDatalist();
+      renderList();
+      updateBatchCount();
+    });
   }
 
   function selectAll() {
@@ -414,19 +414,20 @@ var Notes = (function() {
   // ========== 删除 ==========
   function deleteNote() {
     if (currentId === null) return;
-    if (!confirm('确定删除这条便签吗？')) return;
-    notes = notes.filter(function(n) { return n.id !== currentId; });
-    saveNotes();
-    currentId = null;
-    $('noteTitle').value = '';
-    $('noteBody').value = '';
-    $('noteCategory').value = '';
-    $('editorContent').style.display = 'none';
-    $('editorEmpty').style.display = 'flex';
-    $('notePreview').innerHTML = '';
-    updateCategoryFilter();
-    updateDatalist();
-    renderList();
+    showConfirmModal('删除便签', '确定删除这条便签吗？', function() {
+      notes = notes.filter(function(n) { return n.id !== currentId; });
+      saveNotes();
+      currentId = null;
+      $('noteTitle').value = '';
+      $('noteBody').value = '';
+      $('noteCategory').value = '';
+      $('editorContent').style.display = 'none';
+      $('editorEmpty').style.display = 'flex';
+      $('notePreview').innerHTML = '';
+      updateCategoryFilter();
+      updateDatalist();
+      renderList();
+    });
   }
 
   // ========== 置顶 ==========
@@ -660,7 +661,18 @@ var Notes = (function() {
 
   function toggleHeadingMenu() {
     var menu = $('headingMenu');
-    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    if (menu.style.display === 'none') {
+      // 计算按钮相对 editor-content 的位置
+      var btn = document.querySelector('.tb-btn-dropdown');
+      var btnRect = btn.getBoundingClientRect();
+      var editor = document.querySelector('.editor-content');
+      var editorRect = editor.getBoundingClientRect();
+      menu.style.top = (btnRect.bottom - editorRect.top + 4) + 'px';
+      menu.style.left = (btnRect.left - editorRect.left) + 'px';
+      menu.style.display = 'block';
+    } else {
+      menu.style.display = 'none';
+    }
   }
 
   function insertLine(content) {
@@ -673,60 +685,160 @@ var Notes = (function() {
     autoSave();
   }
 
+  // ========== 输入弹窗 ==========
+  var inputModalCallback = null;
+
+  function showInputModal(title, fields, cb) {
+    var body = $('inputModalBody');
+    var html = '';
+    for (var i = 0; i < fields.length; i++) {
+      var f = fields[i];
+      html += '<div class="modal-section">';
+      html += '<span class="modal-label">' + f.label + '</span>';
+      html += '<input class="modal-input" id="inputField' + i + '" type="' + (f.type || 'text') + '" placeholder="' + (f.placeholder || '') + '" value="' + (f.value || '') + '">';
+      html += '</div>';
+    }
+    body.innerHTML = html;
+    $('inputModalTitle').textContent = title;
+    $('inputModal').style.display = 'flex';
+    inputModalCallback = cb;
+    // 聚焦第一个输入框
+    setTimeout(function() {
+      var first = document.getElementById('inputField0');
+      if (first) first.focus();
+    }, 100);
+  }
+
+  function closeInputModal() {
+    $('inputModal').style.display = 'none';
+    inputModalCallback = null;
+  }
+
+  // ========== 确认弹窗 ==========
+  var confirmModalCallback = null;
+  function showConfirmModal(title, msg, cb) {
+    $('confirmModalTitle').textContent = title;
+    $('confirmModalMsg').textContent = msg;
+    $('confirmModal').style.display = 'flex';
+    confirmModalCallback = cb;
+  }
+  function closeConfirmModal() {
+    $('confirmModal').style.display = 'none';
+    confirmModalCallback = null;
+  }
+
+  // ========== 提示弹窗 ==========
+  function showAlertModal(title, msg) {
+    $('alertModalTitle').textContent = title;
+    $('alertModalMsg').textContent = msg;
+    $('alertModal').style.display = 'flex';
+  }
+  function closeAlertModal() {
+    $('alertModal').style.display = 'none';
+  }
+
+  // 确认按钮点击
+  document.addEventListener('DOMContentLoaded', function() {
+    var confirmBtn = document.getElementById('inputModalConfirm');
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', function() {
+        if (inputModalCallback) {
+          var values = [];
+          var i = 0;
+          while (document.getElementById('inputField' + i)) {
+            values.push(document.getElementById('inputField' + i).value);
+            i++;
+          }
+          inputModalCallback(values);
+        }
+        closeInputModal();
+      });
+    }
+    // 点击遮罩关闭
+    $('inputModal').addEventListener('click', function(e) {
+      if (e.target === this) closeInputModal();
+    });
+
+    // 确认弹窗事件
+    var confirmOkBtn = document.getElementById('confirmModalOk');
+    if (confirmOkBtn) {
+      confirmOkBtn.addEventListener('click', function() {
+        if (confirmModalCallback) confirmModalCallback();
+        closeConfirmModal();
+      });
+    }
+    $('confirmModal').addEventListener('click', function(e) {
+      if (e.target === this) closeConfirmModal();
+    });
+
+    // 提示弹窗事件
+    var alertOkBtn = document.getElementById('alertModalOk');
+    if (alertOkBtn) {
+      alertOkBtn.addEventListener('click', closeAlertModal);
+    }
+    $('alertModal').addEventListener('click', function(e) {
+      if (e.target === this) closeAlertModal();
+    });
+  });
+
   function insertLink() {
     var ta = getTextarea();
     var selected = ta.value.substring(ta.selectionStart, ta.selectionEnd);
-    var url = prompt('链接地址:', 'https://');
-    if (!url) return;
-    var text = selected || prompt('链接文字:', url);
-    if (text === null) return;
-    insertMarkdown('[' + (text || url) + '](', url + ')');
+    showInputModal('插入链接', [
+      { label: '链接地址', placeholder: 'https://', value: 'https://' },
+      { label: '链接文字', placeholder: '链接文字', value: selected }
+    ], function(vals) {
+      if (!vals[0]) return;
+      insertMarkdown('[' + (vals[1] || vals[0]) + '](', vals[0] + ')');
+    });
   }
 
   function insertImage() {
-    var ta = getTextarea();
-    var url = prompt('图片地址:', 'https://');
-    if (!url) return;
-    var alt = prompt('图片描述:', 'image');
-    if (alt === null) return;
-    insertMarkdown('![' + (alt || 'image') + '](', url + ')');
+    showInputModal('插入图片', [
+      { label: '图片地址', placeholder: 'https://', value: 'https://' },
+      { label: '图片描述', placeholder: '图片描述', value: 'image' }
+    ], function(vals) {
+      if (!vals[0]) return;
+      insertMarkdown('![' + (vals[1] || 'image') + '](', vals[0] + ')');
+    });
   }
 
   function insertTable() {
-    var cols = parseInt(prompt('表格列数 (2-10):', '3'), 10);
-    if (!cols || cols < 2 || cols > 10) return;
-    var rows = parseInt(prompt('表格行数 (2-20):', '3'), 10);
-    if (!rows || rows < 2 || rows > 20) return;
+    showInputModal('插入表格', [
+      { label: '表格列数 (2-10)', placeholder: '3', value: '3', type: 'number' },
+      { label: '表格行数 (2-20)', placeholder: '3', value: '3', type: 'number' }
+    ], function(vals) {
+      var cols = parseInt(vals[0], 10);
+      var rows = parseInt(vals[1], 10);
+      if (!cols || cols < 2 || cols > 10) return;
+      if (!rows || rows < 2 || rows > 20) return;
 
-    var table = '\n';
-    // 表头
-    table += '|';
-    for (var c = 0; c < cols; c++) {
-      table += ' 列' + (c + 1) + ' |';
-    }
-    table += '\n';
-    // 分隔线
-    table += '|';
-    for (c = 0; c < cols; c++) {
-      table += ' --- |';
-    }
-    table += '\n';
-    // 数据行
-    for (var r = 0; r < rows - 1; r++) {
+      var table = '\n';
       table += '|';
+      for (var c = 0; c < cols; c++) {
+        table += ' 列' + (c + 1) + ' |';
+      }
+      table += '\n|';
       for (c = 0; c < cols; c++) {
-        table += ' 内容 |';
+        table += ' --- |';
       }
       table += '\n';
-    }
+      for (var r = 0; r < rows - 1; r++) {
+        table += '|';
+        for (c = 0; c < cols; c++) {
+          table += ' 内容 |';
+        }
+        table += '\n';
+      }
 
-    var ta = getTextarea();
-    var start = ta.selectionStart;
-    var text = ta.value;
-    ta.value = text.substring(0, start) + table + text.substring(start);
-    ta.focus();
-    ta.selectionStart = ta.selectionEnd = start + table.length;
-    autoSave();
+      var ta = getTextarea();
+      var start = ta.selectionStart;
+      var text = ta.value;
+      ta.value = text.substring(0, start) + table + text.substring(start);
+      ta.focus();
+      ta.selectionStart = ta.selectionEnd = start + table.length;
+      autoSave();
+    });
   }
 
   // ========== 导出 ==========
@@ -762,7 +874,7 @@ var Notes = (function() {
   }
 
   function batchExport() {
-    if (notes.length === 0) { alert('没有便签可导出'); return; }
+    if (notes.length === 0) { showAlertModal('提示', '没有便签可导出'); return; }
     var exportNotes = notes;
     if (currentCatFilter) {
       exportNotes = notes.filter(function(n) { return (n.category || '').trim() === currentCatFilter; });
@@ -802,7 +914,7 @@ var Notes = (function() {
 
   function exportAsZip(exportNotes, format) {
     if (typeof JSZip === 'undefined') {
-      alert('ZIP 组件加载失败，将逐个下载文件');
+      showAlertModal('提示', 'ZIP 组件加载失败，将逐个下载文件');
       exportAsFiles(exportNotes, format);
       return;
     }
@@ -946,6 +1058,9 @@ var Notes = (function() {
     exportHTML: exportHTML,
     batchExport: batchExport,
     closeExportModal: closeExportModal,
+    closeInputModal: closeInputModal,
+    closeConfirmModal: closeConfirmModal,
+    closeAlertModal: closeAlertModal,
     doExport: doExport
   };
 })();

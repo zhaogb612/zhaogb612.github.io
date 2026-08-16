@@ -210,6 +210,12 @@
   border: 1px solid #e2e8f0;
 }
 .btn-cancel:hover { background: #f7fafc; }
+.btn-danger {
+  background: #e53e3e;
+  color: #fff;
+  border-color: #e53e3e;
+}
+.btn-danger:hover { background: #c53030; }
 
 /* 批量操作栏 */
 .batch-bar {
@@ -361,6 +367,7 @@
   padding-bottom: 0;
   overflow: hidden;
   min-height: 0;
+  position: relative;
 }
 
 .note-title {
@@ -767,6 +774,25 @@
 
 .modal-checkbox input[type="checkbox"] { accent-color: var(--color-purple, rgb(179, 71, 241)); }
 
+.modal-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e8ecf1;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  color: #4a5568;
+  background: #f7f9fc;
+  transition: all 0.2s;
+}
+.modal-input:focus {
+  border-color: var(--color-purple, rgb(179, 71, 241));
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(179, 71, 241, 0.08);
+}
+
 .modal-hint {
   display: block;
   font-size: 12px;
@@ -794,6 +820,10 @@
 [data-theme="dark"] .modal-radio:hover { background: rgba(179, 71, 241, 0.08); }
 [data-theme="dark"] .modal-close { color: #718096; }
 [data-theme="dark"] .modal-footer { border-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] .modal-input { background: #2d2d2d; color: #cbd5e0; border-color: #444; }
+[data-theme="dark"] .modal-input:focus { background: #333; }
+[data-theme="dark"] #confirmModalMsg,
+[data-theme="dark"] #alertModalMsg { color: #cbd5e0 !important; }
 
 @media (max-width: 480px) {
   .modal-box { width: 96vw; }
@@ -877,7 +907,6 @@
     display: flex;
     flex-direction: column;
   }
-
   .editor-content {
     flex: 1;
     display: flex;
@@ -885,6 +914,7 @@
     overflow: hidden;
     padding: 12px;
     padding-bottom: 0;
+    position: relative;
     min-height: 0;
   }
 
@@ -896,10 +926,11 @@
     flex-wrap: nowrap;
     padding: 8px 0;
     overflow-x: auto;
-    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent 100%);
   }
   .toolbar::-webkit-scrollbar { display: none; }
   .tb-btn { width: 26px; height: 26px; font-size: 11px; flex-shrink: 0; }
@@ -986,7 +1017,7 @@
   .editor-content { padding: 8px 10px; padding-bottom: 0; }
   .note-title { font-size: 16px; padding-bottom: 6px; }
 
-  .toolbar { padding: 6px 0; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+  .toolbar { padding: 6px 0; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent 100%); mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent 100%); }
   .toolbar::-webkit-scrollbar { display: none; }
   .tb-btn { width: 24px; height: 24px; font-size: 10px; flex-shrink: 0; }
   .tb-btn-toggle { width: auto; padding: 0 5px; font-size: 10px; flex-shrink: 0; }
