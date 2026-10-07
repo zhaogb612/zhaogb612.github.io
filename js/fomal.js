@@ -2785,7 +2785,7 @@ setInterval(() => {
 
 
 /* fps检测 start */
-if (window.localStorage.getItem("fpson") == undefined || window.localStorage.getItem("fpson") == "1") {
+if (window.localStorage.getItem("fpson") == "1") {
   var rAF = function () {
     return (
       window.requestAnimationFrame ||
@@ -2834,7 +2834,8 @@ if (window.localStorage.getItem("fpson") == undefined || window.localStorage.get
 
   loop();
 } else {
-  document.getElementById("fps").style = "display:none!important"
+  var fpsEl = document.getElementById("fps");
+  if (fpsEl) fpsEl.style.setProperty("display", "none", "important");
 }
 /* fps检测 end */
 

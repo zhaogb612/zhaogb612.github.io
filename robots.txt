@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# 静态资源，无需抓取，节省抓取配额
+Disallow: /js/
+Disallow: /css/
+Disallow: /live2d/
+Disallow: /box/nav/
+Disallow: /search.xml
+
+Sitemap: https://zhaogb612.github.io/sitemap.xml
+Sitemap: https://zhaogb612.github.io/baidusitemap.xml
+Sitemap: https://zhaogb612.github.io/atom.xml
