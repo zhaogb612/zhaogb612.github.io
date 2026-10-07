@@ -6422,7 +6422,7 @@ blockquote.pullquote.right {
 /* root伪类指定全局颜色 */
 :root {
   --blue-custom: #5ea6e5;
-  --loading-color: rgba(207, 246, 247, 0.92);
+  --loading-color: rgba(237, 224, 245, 0.92);
   --border-color: #c9c9c9;
   --color-red: rgb(241, 71, 71);
   --color-orange: rgb(241, 162, 71);
@@ -6625,9 +6625,10 @@ h1.post-title {
 center#name-container {
   position: absolute !important;
   width: fit-content !important;
-  left: 42% !important;
-  /* transform: translateX(-50%) !important; */
-  /* transform: translateY(-100%) !important; */
+  /* 用 left:50% + translateX(-50%) 真正居中：
+     标题文字长度会变（取自 document.title），写死百分比会随文字长度跑偏 */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }
 @media screen and (max-width: 768px) {
   center#name-container {
@@ -7734,24 +7735,24 @@ button#go-up:hover #percent {
 }
 @keyframes huxi_light {
   0% {
-    box-shadow: 0px 0px 1px 1px #36bafb;
+    box-shadow: 0px 0px 1px 1px var(--theme-color);
   }
   50% {
-    box-shadow: 0px 0px 5px 5px #36bafb;
+    box-shadow: 0px 0px 5px 5px var(--theme-color);
   }
   100% {
-    box-shadow: 0px 0px 1px 1px #36bafb;
+    box-shadow: 0px 0px 1px 1px var(--theme-color);
   }
 }
 @keyframes huxi_dark {
   0% {
-    box-shadow: 0px 0px 1px 1px #39c5bb;
+    box-shadow: 0px 0px 1px 1px var(--theme-color);
   }
   50% {
-    box-shadow: 0px 0px 5px 5px #39c5bb;
+    box-shadow: 0px 0px 5px 5px var(--theme-color);
   }
   100% {
-    box-shadow: 0px 0px 1px 1px #39c5bb;
+    box-shadow: 0px 0px 1px 1px var(--theme-color);
   }
 }
 
@@ -7789,6 +7790,12 @@ input#pic-link {
   background: url(/assets/avatar.png)
     no-repeat center center;
   background-size: cover;
+  /* 头像外圈：改成浅紫（原 #f0f0f2 是灰白） */
+  border-color: #e3cdf0;
+}
+/* 加载动画右下角的小圆点：改成主题紫（原 #6bdf8f 是绿） */
+#loading-box .loading-image-dot {
+  background: var(--theme-color);
 }
 /* 翻页按钮居中 */
 #pagination {

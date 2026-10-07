@@ -1,7 +1,38 @@
+// 复制文本到剪贴板（带降级方案）
+function copyText(text, done) {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done).catch(() => legacyCopy(text, done));
+        return;
+    }
+    legacyCopy(text, done);
+}
+
+function legacyCopy(text, done) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.cssText = "position:fixed;top:-9999px;opacity:0;";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); } catch (e) { window.prompt("请手动复制以下内容：", text); }
+    document.body.removeChild(ta);
+}
+
 var leonus = {
     linkCom: e => {
+        var text = "bf" == e
+            ? "```yml\n- name: \n  link: \n  avatar: \n  descr: \n  siteshot: \n```"
+            : "站点名称：\n站点地址：\n头像链接：\n站点描述：\n站点截图：";
+
+        // 页面若配置了评论系统，直接填入评论框
         var t = document.querySelector(".el-textarea__inner");
-        "bf" == e ? (t.value = "```yml\n", t.value += "- name: \n  link: \n  avatar: \n  descr: \n  siteshot: ", t.value += "\n```", t.setSelectionRange(15, 15)) : (t.value = "站点名称：\n站点地址：\n头像链接：\n站点描述：\n站点截图：", t.setSelectionRange(5, 5)), t.focus()
+        if (t) {
+            t.value = text;
+            t.focus();
+            return;
+        }
+
+        // 未配置评论系统：复制到剪贴板，粘贴到邮件 / QQ 里填写
+        copyText(text, () => window.alert("申请格式已复制，粘贴到邮件或 QQ 中填写即可 (๑•̀ㅂ•́)و✧"));
     },
     owoBig: () => {
         if (!document.getElementById("post-comment") || document.body.clientWidth < 768) return;
