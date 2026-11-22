@@ -1,0 +1,1122 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><div id="myscoll"></div><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="referrer" content="no-referrer"><title>黎曼猜想获 Lean 社区认证：Claude 参与的人机合作证明 | 沙尘612</title><meta name="keywords" content="黎曼猜想,数学,Lean,Claude"><meta name="author" content="沙尘612"><meta name="copyright" content="沙尘612"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="2026 年 11 月 20 日，Anthropic 数学家 Levent Alpöge 公开了一份与 Claude 合作完成的黎曼猜想证明，约 1700 万行 Lean 形式化代码；24 小时后 Lean&#x2F;Mathlib 社区联合声明&quot;完全确信证明正确&quot;。本文按新闻要素拆解事件全貌：黎曼猜想起底、Lean 核验的四道关卡、MIT 独立复验清单、尚未被证实的部分、学界反应，以及普通读者可以自己跟进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="黎曼猜想获 Lean 社区认证：Claude 参与的人机合作证明">
+<meta property="og:url" content="https://zhaogb612.github.io/posts/b7e9d2f4.html">
+<meta property="og:site_name" content="沙尘612">
+<meta property="og:description" content="2026 年 11 月 20 日，Anthropic 数学家 Levent Alpöge 公开了一份与 Claude 合作完成的黎曼猜想证明，约 1700 万行 Lean 形式化代码；24 小时后 Lean&#x2F;Mathlib 社区联合声明&quot;完全确信证明正确&quot;。本文按新闻要素拆解事件全貌：黎曼猜想起底、Lean 核验的四道关卡、MIT 独立复验清单、尚未被证实的部分、学界反应，以及普通读者可以自己跟进">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://static.kivo.wiki/images/gallery/E4.%E5%9B%BD%E6%9C%8D%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8F%92%E7%94%BB/%E5%AE%98%E6%96%B9%E8%B4%BA%E5%9B%BE/G0XwgBzXoAATjzr.jpg">
+<meta property="article:published_time" content="2026-11-22T13:40:00.000Z">
+<meta property="article:modified_time" content="2026-11-22T13:55:00.000Z">
+<meta property="article:author" content="沙尘612">
+<meta property="article:tag" content="黎曼猜想">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="Lean">
+<meta property="article:tag" content="Claude">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://static.kivo.wiki/images/gallery/E4.%E5%9B%BD%E6%9C%8D%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8F%92%E7%94%BB/%E5%AE%98%E6%96%B9%E8%B4%BA%E5%9B%BE/G0XwgBzXoAATjzr.jpg"><link rel="shortcut icon" href="https://static.kivo.wiki/images/gallery/28/07.png"><link rel="canonical" href="https://zhaogb612.github.io/posts/b7e9d2f4"><link rel="preconnect" href="//cdn.jsdelivr.net"/><meta name="msvalidate.01" content="F5CCDD31CBFABF413921C8DAC9729BA"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"已经过了","messageNext":"天了，文章内容可能已过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '黎曼猜想获 Lean 社区认证：Claude 参与的人机合作证明',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-11-22 21:55:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdmirror.com/ajax/libs/element-ui/2.15.7/theme-chalk/index.css"><style id="themeColor"></style><style id="rightSide"></style><style id="transPercent"></style><style id="blurNum"></style><style id="settingStyle"></style><span id="fps"></span><style id="defineBg"></style><style id="menu_shadow"></style><script src="https://cdn.jsdelivr.net/npm/echarts@6/dist/echarts.min.js"></script><style>#welcome-info{background:none!important;border-radius:0!important;padding:4px 8px!important}#anno-rotate{font-weight:600;color:var(--font-color);min-height:2.5em;display:flex;align-items:center;justify-content:flex-start;font-size:13px;line-height:1.5;padding:4px 8px;animation:fadeAnno .8s ease}@keyframes fadeAnno{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}</style><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper@1.0.12/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper@1.0.12/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="沙尘612" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/assets/avatar.png" onerror="onerror=null;src='/assets/r1.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">43</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-home"></use></svg><span class="menu_word" style="font-size:17px"> 首页</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--article"></use></svg><span class="menu_word" style="font-size:17px"> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-guidang1">                   </use></svg><span class="menu_word" style="font-size:17px"> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-sekuaibiaoqian">                   </use></svg><span class="menu_word" style="font-size:17px"> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-fenlei">                   </use></svg><span class="menu_word" style="font-size:17px"> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xiangzi"></use></svg><span class="menu_word" style="font-size:17px"> 八宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/box/gallery/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-tubiaozhizuomoban">                   </use></svg><span class="menu_word" style="font-size:17px"> 画廊</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/music/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-yinle">                   </use></svg><span class="menu_word" style="font-size:17px"> 八音盒</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/nav/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-zhifengche">                   </use></svg><span class="menu_word" style="font-size:17px"> 网址导航</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-shejiaoxinxi"></use></svg><span class="menu_word" style="font-size:17px"> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://www.travellings.cn/go"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-pengyouquan">                   </use></svg><span class="menu_word" style="font-size:17px"> 朋友</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/social/link/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-lianjie">                   </use></svg><span class="menu_word" style="font-size:17px"> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-liuyan">                   </use></svg><span class="menu_word" style="font-size:17px"> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-wangye"></use></svg><span class="menu_word" style="font-size:17px"> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/site/census/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--tongjibiao">                   </use></svg><span class="menu_word" style="font-size:17px"> 网站统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/echarts/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-shujutongji1">                   </use></svg><span class="menu_word" style="font-size:17px"> 文章统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/time/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xianxingshalou">                   </use></svg><span class="menu_word" style="font-size:17px"> 旧时光</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:randomPost()"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-suibiankankan"></use></svg><span class="menu_word" style="font-size:17px"> 随便逛逛</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/box/projects/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-qita"></use></svg><span class="menu_word" style="font-size:17px"> 项目</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-wode-wodedingdan"></use></svg><span class="menu_word" style="font-size:17px"> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-bilibili">                   </use></svg><span class="menu_word" style="font-size:17px"> 追番</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/game/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-youxishoubing">                   </use></svg><span class="menu_word" style="font-size:17px"> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/personal/about/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-paperplane">                   </use></svg><span class="menu_word" style="font-size:17px"> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">沙尘612</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-home"></use></svg><span class="menu_word" style="font-size:17px"> 首页</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--article"></use></svg><span class="menu_word" style="font-size:17px"> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-guidang1">                   </use></svg><span class="menu_word" style="font-size:17px"> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-sekuaibiaoqian">                   </use></svg><span class="menu_word" style="font-size:17px"> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-fenlei">                   </use></svg><span class="menu_word" style="font-size:17px"> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xiangzi"></use></svg><span class="menu_word" style="font-size:17px"> 八宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/box/gallery/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-tubiaozhizuomoban">                   </use></svg><span class="menu_word" style="font-size:17px"> 画廊</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/music/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-yinle">                   </use></svg><span class="menu_word" style="font-size:17px"> 八音盒</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/nav/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-zhifengche">                   </use></svg><span class="menu_word" style="font-size:17px"> 网址导航</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-shejiaoxinxi"></use></svg><span class="menu_word" style="font-size:17px"> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://www.travellings.cn/go"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-pengyouquan">                   </use></svg><span class="menu_word" style="font-size:17px"> 朋友</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/social/link/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-lianjie">                   </use></svg><span class="menu_word" style="font-size:17px"> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-liuyan">                   </use></svg><span class="menu_word" style="font-size:17px"> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-wangye"></use></svg><span class="menu_word" style="font-size:17px"> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/site/census/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--tongjibiao">                   </use></svg><span class="menu_word" style="font-size:17px"> 网站统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/echarts/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-shujutongji1">                   </use></svg><span class="menu_word" style="font-size:17px"> 文章统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/time/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xianxingshalou">                   </use></svg><span class="menu_word" style="font-size:17px"> 旧时光</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:randomPost()"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-suibiankankan"></use></svg><span class="menu_word" style="font-size:17px"> 随便逛逛</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/box/projects/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-qita"></use></svg><span class="menu_word" style="font-size:17px"> 项目</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-wode-wodedingdan"></use></svg><span class="menu_word" style="font-size:17px"> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-bilibili">                   </use></svg><span class="menu_word" style="font-size:17px"> 追番</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/game/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-youxishoubing">                   </use></svg><span class="menu_word" style="font-size:17px"> 游戏</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/personal/about/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-paperplane">                   </use></svg><span class="menu_word" style="font-size:17px"> 关于</span></a></li></ul></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"><div id="search-button"><a class="search faa-parent animated-hover" title="检索站内任何你想要的信息"><svg class="faa-tada icon" style="height:24px;width:24px;fill:currentColor;position:relative;top:6px" aria-hidden="true"><use xlink:href="#icon-valentine_-search-love-find-heart"></use></svg><span> 搜索</span></a></div><a class="meihua faa-parent animated-hover" onclick="toggleWinbox()" title="美化设置-自定义你的风格" id="meihua-button"><svg class="faa-tada icon" style="height:26px;width:26px;fill:currentColor;position:relative;top:8px" aria-hidden="true"><use xlink:href="#icon-tupian1"></use></svg></a><a class="sun_moon faa-parent animated-hover" onclick="switchNightMode()" title="浅色和深色模式转换" id="nightmode-button"><svg class="faa-tada" style="height:25px;width:25px;fill:currentColor;position:relative;top:7px" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon">       </use></svg></a><div id="toggle-menu"><a><i class="fas fa-bars fa-fw"></i></a></div></div></div></nav><div id="post-info"><h1 class="post-title">黎曼猜想获 Lean 社区认证：Claude 参与的人机合作证明</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><svg class="meta_icon post-meta-icon" style="width:30px;height:30px;position:relative;top:10px"><use xlink:href="#icon-rili"></use></svg><span class="post-meta-label">发表于 </span><time class="post-meta-date-created" datetime="2026-11-22T13:40:00.000Z" title="发表于 2026-11-22 21:40:00">2026-11-22</time><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:18px;height:18px;position:relative;top:5px"><use xlink:href="#icon-gengxin1"></use></svg><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-11-22T13:55:00.000Z" title="更新于 2026-11-22 21:55:00">2026-11-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:18px;height:18px;position:relative;top:5px"><use xlink:href="#icon-biaoqian"></use></svg><a class="post-meta-categories" href="/categories/%E6%97%B6%E4%BA%8B%E6%96%B0%E9%97%BB/">时事新闻</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><svg class="meta_icon post-meta-icon" style="width:25px;height:25px;position:relative;top:8px"><use xlink:href="#icon-charuword"></use></svg><span class="post-meta-label">字数总计:</span><span class="word-count">4387</span><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:20px;height:20px;position:relative;top:5px"><use xlink:href="#icon-shizhong"></use></svg><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="黎曼猜想获-Lean-社区认证：Claude-参与的人机合作证明，24-小时通过四道关卡">黎曼猜想获 Lean 社区认证：Claude 参与的人机合作证明，24 小时通过四道关卡</h1>
+<p>数学界的十一月末，被一份 61.6GB 的代码点燃了。</p>
+<p>故事的起因只有四页纸。11 月 20 日，Anthropic 的数学家 Levent Alpöge 在自己主页贴出几页说明（<a target="_blank" rel="noopener" href="http://alpo.ge/remark.pdf%EF%BC%89%EF%BC%8C%E5%AE%A3%E5%B8%83%E4%BB%96%E4%B8%8E">alpo.ge/remark.pdf），宣布他与</a> AI 模型 Claude 合作找到了黎曼猜想的证明，完整证明以约 1700 万行 Lean 形式化代码的形式公开。</p>
+<p>随后发生的事情，比证明本身更让人吃惊：24 小时内，Lean 与 Mathlib 社区发布联合声明，白纸黑字地写道——“我们完全确信 Alpöge 对黎曼猜想的证明是正确的，并祝贺他取得这一成就。”</p>
+<p>这是数学史上第一次，一个千禧年难题级别的结论，在&quot;人类审稿&quot;之前先被机器判了&quot;通过&quot;。这篇文章按新闻的要素把来龙去脉拆开讲，也会告诉你哪些部分其实还没有完成。</p>
+<h2 id="一、事件全貌：一条新闻需要的七要素">一、事件全貌：一条新闻需要的七要素</h2>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>谁 (Who)</td>
+<td>Levent Alpöge，土耳其裔美国数学家，供职于 AI 公司 Anthropic</td>
+</tr>
+<tr>
+<td>何时 (When)</td>
+<td>2026-11-20 公开证明；2026-11-21 Lean/Mathlib 社区发出联合认证声明</td>
+</tr>
+<tr>
+<td>何地 (Where)</td>
+<td>说明发布在个人主页 <a target="_blank" rel="noopener" href="http://alpo.ge">alpo.ge</a>，配套代码托管在 GitHub（Deicyde/riemann-hypothesis）</td>
+</tr>
+<tr>
+<td>何事 (What)</td>
+<td>黎曼猜想的完整证明，以约 1700 万行 Lean 形式化代码呈现</td>
+</tr>
+<tr>
+<td>如何 (How)</td>
+<td>人类确定研究方向，Claude 推进证明，Lean 证明内核逐行核验</td>
+</tr>
+<tr>
+<td>为什么 (Why)</td>
+<td>1859 年提出的百年级难题，与素数分布直接相关，2000 年列入千禧年七大难题</td>
+</tr>
+<tr>
+<td>然后呢</td>
+<td>克雷数学研究所尚未认定；数学界公认仍需多年消化理解</td>
+</tr>
+</tbody>
+</table>
+<h2 id="二、一条-24-小时的完整时间线">二、一条 24 小时的完整时间线</h2>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-09-17</td>
+<td>黎曼诞辰 200 周年</td>
+</tr>
+<tr>
+<td>2026-11-20</td>
+<td>Alpöge 在个人主页发布 remark.pdf 与 Lean 证明代码</td>
+</tr>
+<tr>
+<td>2026-11-20</td>
+<td>科学美国人、The Verge、Science、卫报、SiliconANGLE 等外媒密集报道</td>
+</tr>
+<tr>
+<td>2026-11-20</td>
+<td>陶哲轩当天发布博客：数学界消化这份证明仍需相当长时间</td>
+</tr>
+<tr>
+<td>2026-11-20 至 21</td>
+<td>社区数十人独立复现编译，导出的证明文件完全一致</td>
+</tr>
+<tr>
+<td>2026-11-21 13:55 (UTC)</td>
+<td>Lean 与 Mathlib 社区发布联合声明，宣布命题表述与证明均正确</td>
+</tr>
+<tr>
+<td>2026-11-22 04:35 (UTC)</td>
+<td>MIT 教授 Andrew Sutherland 更新独立核验页，全部检查通过</td>
+</tr>
+<tr>
+<td>2026-11-22</td>
+<td>澎湃新闻、第一财经等国内媒体跟进报道</td>
+</tr>
+</tbody>
+</table>
+<p>另注：11 月 20 日至 23 日，&quot;Riemann 200&quot;黎曼诞辰 200 周年学术研讨会正在深圳举行，Alpöge 的发布恰好落在会议期间。</p>
+<h2 id="三、黎曼猜想是什么：一个-167-年的老问题">三、黎曼猜想是什么：一个 167 年的老问题</h2>
+<p>1859 年，德国数学家波恩哈德·黎曼发表了一篇不到 10 页的论文《论小于给定数值的素数个数》。论文里他顺手提出了一个猜想，关于黎曼 ζ 函数非平凡零点的分布——从此&quot;顺手&quot;折磨了数学界 167 年。</p>
+<p>看不懂定义没关系，先看一张速查表：</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>一句话解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>黎曼 ζ 函数</td>
+<td>由无穷级数定义、再解析延拓到整个复平面的复变函数</td>
+</tr>
+<tr>
+<td>零点</td>
+<td>使 ζ(s) = 0 的复数 s</td>
+</tr>
+<tr>
+<td>平凡零点</td>
+<td>负偶数 -2、-4、-6……，早就被证明，不构成难点</td>
+</tr>
+<tr>
+<td>非平凡零点</td>
+<td>其余零点，全部落在带状区域 0 小于 Re(s) 小于 1 内</td>
+</tr>
+<tr>
+<td>临界线</td>
+<td>实部等于 1/2 的那条直线</td>
+</tr>
+<tr>
+<td>黎曼猜想</td>
+<td>所有非平凡零点的实部都等于 1/2，即全部落在临界线上</td>
+</tr>
+<tr>
+<td>为什么重要</td>
+<td>零点的分布直接决定素数的分布规律，牵动数论、密码学等一大片领域</td>
+</tr>
+</tbody>
+</table>
+<p>它的地位有多高：2000 年，克雷数学研究所把它列入&quot;千禧年七大难题&quot;，悬赏 100 万美元。一个多世纪里，数学家攻克了大量局部问题（证明非平凡零点无穷多、计算海量零点、证明临界带内的零点占比等），但没有任何一个完整证明获得广泛认可。</p>
+<h2 id="四、主角：Levent-Alpoge-是谁">四、主角：Levent Alpöge 是谁</h2>
+<p>Alpöge 是土耳其裔美国数学家，研究方向是数论。他目前供职于 Anthropic——没错，就是 Claude 背后的那家公司。外媒（科学美国人、卫报）都特意强调了他的双重身份：既是受过严格训练的数学家，又是 AI 公司的研究员。</p>
+<p>这个身份在新闻里是最容易被误读的一点：这并非&quot;Anthropic 官方宣布攻克黎曼猜想&quot;。Anthropic 公司层面没有发布任何公告，也没有参与核验流程；一切声明都来自 Alpöge 个人以及独立的数学社区。</p>
+<h2 id="五、证明是怎么-做-出来的：人类定方向，Claude-补盲区">五、证明是怎么&quot;做&quot;出来的：人类定方向，Claude 补盲区</h2>
+<p>Alpöge 此前披露过与 Claude 的协作方式，和&quot;让 AI 写代码&quot;完全是两回事（据第一财经报道）：</p>
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th>主导者</th>
+<th>具体内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>研究方向</td>
+<td>人类</td>
+<td>Alpöge 引导模型寻找合适的数学切入方向</td>
+</tr>
+<tr>
+<td>证明推进</td>
+<td>人类 + Claude</td>
+<td>Claude 在推进过程中展现出让他惊讶的能力</td>
+</tr>
+<tr>
+<td>收尾阶段</td>
+<td>Claude</td>
+<td>接近终点时，Claude 的进展速度远远超过了他本人</td>
+</tr>
+<tr>
+<td>最终核验</td>
+<td>机器</td>
+<td>全部推理写成 Lean 代码，由证明内核逐行检查</td>
+</tr>
+</tbody>
+</table>
+<p>一个关键事实是：目前公开的人机协作记录，无法准确区分哪些思想是 Claude 独立提出的、哪些来自数学家的指导。这个问题短时间内不会有明确答案。</p>
+<p>从数学内容上看，陶哲轩 11 月 20 日的博客初步判断：证明可能运用了朗兰兹纲领、算术几何等现代数学的重要成果。也就是说，这不是&quot;旧方法的堆砌&quot;，很可能包含此前人类没有找到的新思想——这也是后续最值得关注的部分。</p>
+<h2 id="六、Lean-是什么：为什么-机器说对-权重这么高">六、Lean 是什么：为什么&quot;机器说对&quot;权重这么高</h2>
+<p>要理解这次认证的分量，得先分清两件事：AI 生成一段自然语言&quot;证明&quot;（看起来合理，但可能全错），和 AI 生成一段能被证明内核逐行检查的形式化代码（原则上不可能蒙混过关）。</p>
+<p>Lean 是一种交互式定理证明器。数学定义、定理、推导全部写成形式化代码，由 Lean 的证明内核按形式逻辑规则逐步验证。任何一步推导不成立，代码就无法通过编译。换句话说：<strong>机器验证的不是&quot;输出像不像论文&quot;，而是&quot;每一步是否严格成立&quot;</strong>。</p>
+<p>Lean/Mathlib 社区的联合声明（已获 Lean 基金会和 Mathlib 计划背书）给出了四条认证标准，并确认全部满足：</p>
+<table>
+<thead>
+<tr>
+<th>关卡</th>
+<th>核验内容</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一关：命题表述正确</td>
+<td>代码证明的正是 Mathlib 库中经过数论专家审核的黎曼猜想标准定义</td>
+<td>通过</td>
+</tr>
+<tr>
+<td>第二关：代码可编译</td>
+<td>数十位研究者独立编译，全部无报错，导出的原始证明文件完全一致</td>
+<td>通过</td>
+</tr>
+<tr>
+<td>第三关：证明对象无误</td>
+<td>用 comparator 与 con-leche 两套独立工具比对，确认证明的定理与标准命题完全一致</td>
+<td>通过</td>
+</tr>
+<tr>
+<td>第四关：推导逻辑有效</td>
+<td>导出证明经 Lean 官方内核、con-leche、con-ron 及多个第三方独立检查器验证</td>
+<td>通过</td>
+</tr>
+</tbody>
+</table>
+<p>第三关专门排除形式化验证最著名的坑：“机器验证了一个很长的推导，但它证的根本不是黎曼猜想”。社区专门构建了一个只依赖 Mathlib 的隔离文件，用两套实现互相独立的比对工具确认——证明的结论就是标准命题。</p>
+<p>第四关同样重要：con-leche 与 con-ron 自带&quot;相对集合论的形式化正确性保证&quot;，即它们在机制上不可能放行一个假证明；核验还在&quot;惰性导出&quot;（inert export）上进行，隔离了源码中任何潜在恶意代码的影响。</p>
+<h2 id="七、独立核验：麻省理工把-检查员-也检查了一遍">七、独立核验：麻省理工把&quot;检查员&quot;也检查了一遍</h2>
+<p>除了社区声明，MIT 教授 Andrew Sutherland 搭建了公开的核验追踪页（<a target="_blank" rel="noopener" href="http://math.mit.edu/~drew/grh/">math.mit.edu/~drew/grh/</a> ，注明用 Claude Code 辅助完成检查），截至 11 月 22 日凌晨的关键结果：</p>
+<table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>结果</th>
+<th>关键数字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全部模块编译（Lean v4.33.1 / Mathlib v4.33.1）</td>
+<td>通过</td>
+<td>175,187 个模块，零报错</td>
+</tr>
+<tr>
+<td>五项主定理依赖的公理</td>
+<td>仅有三条</td>
+<td>propext、Classical.choice、Quot.sound</td>
+</tr>
+<tr>
+<td>Mathlib 文件与官方缓存一致性</td>
+<td>逐字节一致</td>
+<td>8,322 个 Mathlib 文件 + 378 个依赖文件</td>
+</tr>
+<tr>
+<td>沙箱独立重建（无网络、只读源码、另一台机器）</td>
+<td>通过</td>
+<td>与发布版本逐字节一致</td>
+</tr>
+<tr>
+<td>导出文件与发布版比对</td>
+<td>完全一致</td>
+<td>61,570,595,788 字节（约 61.6GB），SHA256 一致</td>
+</tr>
+<tr>
+<td>leanchecker 内核逐模块回放</td>
+<td>通过</td>
+<td>175,187 / 175,187，零拒绝</td>
+</tr>
+<tr>
+<td>nanoda（独立 Rust 内核）</td>
+<td>接受</td>
+<td>80 线程 27 分 42 秒</td>
+</tr>
+<tr>
+<td>con-leche / con-ron（独立比对）</td>
+<td>接受</td>
+<td>五项主定理全部&quot;由解法证得&quot;</td>
+</tr>
+<tr>
+<td>lean4lean 模块级检查</td>
+<td>通过</td>
+<td>175,187 / 175,187</td>
+</tr>
+</tbody>
+</table>
+<p>看懂这几行数字的意义：这不是&quot;一个人说没问题&quot;，而是多个团队、用不同语言实现的独立检查器各自验证，且验证对象是一份经得起逐字节比对的导出文件——这个过程在数学史上没有先例。</p>
+<p>顺带说一句：导出文件用 SHA256 保证&quot;一字未改&quot;，这和上次写压缩软件时说的&quot;发布方给了哈希，解压前先核对&quot;是同一套思路，只是这次核对的对象是 61.6GB 的数学证明。</p>
+<h2 id="八、冷静看：还有哪些没有完成">八、冷静看：还有哪些没有完成</h2>
+<p>媒体标题很热闹，但严谨地说，目前&quot;已被证明&quot;的适用范围有明确边界：</p>
+<table>
+<thead>
+<tr>
+<th>未完成/未覆盖项</th>
+<th>现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>克雷数学研究所认定</td>
+<td>仍将黎曼猜想列为未解决问题，未启动认定程序</td>
+</tr>
+<tr>
+<td>千禧年奖金评审</td>
+<td>按规则需正式发表、至少两年检验、学界广泛接受后才进入评审</td>
+</tr>
+<tr>
+<td>传统同行评议</td>
+<td>此次是形式化核验，不等同于人类审稿</td>
+</tr>
+<tr>
+<td>广义黎曼猜想</td>
+<td>认证对象是 Mathlib 版本的黎曼猜想命题，广义版本未走此路径</td>
+</tr>
+<tr>
+<td>可读性</td>
+<td>文字版证明估计超过 25 万页，未公开；公开的只有 4 页说明与代码</td>
+</tr>
+<tr>
+<td>数学共识</td>
+<td>陶哲轩、梅纳德等均表示：理解证明内部的思想仍需相当长时间</td>
+</tr>
+</tbody>
+</table>
+<p>梅纳德（菲尔兹奖得主、牛津大学教授）的说法很有代表性：如果证明经得起检验，这将是数学史上的里程碑；他倾向于认为证明成立，但其中的数学思想仍需时间理解。</p>
+<h2 id="九、学界与媒体反应一览">九、学界与媒体反应一览</h2>
+<table>
+<thead>
+<tr>
+<th>来源</th>
+<th>时间</th>
+<th>态度/角度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lean/Mathlib 社区联合声明</td>
+<td>11-21</td>
+<td>“完全确信证明正确”，四关全过</td>
+</tr>
+<tr>
+<td>科学美国人（第一波）</td>
+<td>11-20</td>
+<td>Anthropic 数学家称用 Claude 攻克最著名的数学难题</td>
+</tr>
+<tr>
+<td>科学美国人（第二波）</td>
+<td>11-20 至 21</td>
+<td>独立数学家确认证明&quot;几乎肯定为真&quot;</td>
+</tr>
+<tr>
+<td>卫报</td>
+<td>11-21</td>
+<td>两组团队独立验证了这一声明</td>
+</tr>
+<tr>
+<td>Science（AAAS）</td>
+<td>11-20</td>
+<td>AI 或已解最伟大的谜题，但人类读懂可能要数年</td>
+</tr>
+<tr>
+<td>The Verge</td>
+<td>11-20</td>
+<td>强调尚未被独立验证、克雷未接受、仅发布在个人网站</td>
+</tr>
+<tr>
+<td>澎湃新闻</td>
+<td>11-22</td>
+<td>AI 攻克黎曼猜想获认证，但读懂仍需时日</td>
+</tr>
+<tr>
+<td>第一财经</td>
+<td>11-22</td>
+<td>认证基于形式化核验，不等同人工审稿</td>
+</tr>
+</tbody>
+</table>
+<p>注意一个反差：11-20 当天的报道（Verge、Science）都在强调&quot;尚未独立验证&quot;，11-21 之后（卫报、科学美国人第二波、印度 Today）口径变成&quot;已获确认&quot;。新闻的生命周期在 48 小时内走完了一轮&quot;质疑到确认&quot;，这在数学史和新闻史上都不常见。</p>
+<h2 id="十、这件事的真正意义">十、这件事的真正意义</h2>
+<p>第一层，数学史。如果最终成立，这是 167 年来黎曼猜想的第一个完整证明，也是千禧年难题第一次被形式化验证的方式&quot;认证&quot;。</p>
+<p>第二层，AI 与数学协作的范式。此前的里程碑（AI 在国际数学奥赛拿金牌、辅助解决局部问题）和这次有本质区别：人机合作完成的证明，通过了最严格的形式化检验，触及了&quot;长期被认为需要顶尖人类创造力&quot;的基础数学问题。Claude 在这里的作用不是&quot;搜索引擎&quot;，而是研究协作者。</p>
+<p>第三层，AI 的双面性——这正好能接上之前几篇文章。银狐木马那篇里讲过，AI 把搜索引擎仿冒站点的成本压到了接近零，是攻击者的放大器；而这次，同一个技术路线上的 AI 在帮人类解决千禧年难题。工具本身不分善恶，看握在谁手里、用在哪个方向。</p>
+<p>第四层，可复现的工程标准。1700 万行代码、61.6GB 导出、多内核交叉验证、逐字节比对——这套&quot;形式化验证&quot;流水线未来会成为数学论文的新常态之一，也可能进入你日常接触的软件与安全领域（比如正规软件发布时给出的哈希与签名，本质是同一种信任模型）。</p>
+<h2 id="十一、你可以自己跟进：五个去处">十一、你可以自己跟进：五个去处</h2>
+<p>不用懂高等数学，也能跟踪这件事的后续：</p>
+<table>
+<thead>
+<tr>
+<th>去处</th>
+<th>看什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub：Deicyde/riemann-hypothesis</td>
+<td>证明代码仓库本体，可看编译状态与发布说明</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://math.mit.edu/~drew/grh/">math.mit.edu/~drew/grh/</a></td>
+<td>MIT 核验追踪页，剩余检查完成情况会持续更新</td>
+</tr>
+<tr>
+<td>Lean 社区博客（<a target="_blank" rel="noopener" href="http://leanprover-community.github.io">leanprover-community.github.io</a>）</td>
+<td>联合声明原文与四条认证标准</td>
+</tr>
+<tr>
+<td>Mathlib 文档中的 RiemannHypothesis 定义</td>
+<td>看看被证明的命题到底长什么样</td>
+</tr>
+<tr>
+<td>克雷数学研究所官网</td>
+<td>千禧年问题状态页，认定流程的官方信源</td>
+</tr>
+</tbody>
+</table>
+<p>想看门道又不想啃代码，可以对照本文第六节的&quot;四道关卡&quot;和第七节的核验表，逐条看官方页面的更新状态。</p>
+<h2 id="十二、总结">十二、总结</h2>
+<p>把这条新闻压缩成三句话：</p>
+<ol>
+<li>一位人类数学家与 AI 合作，给出了黎曼猜想的证明，全程以形式化代码呈现；</li>
+<li>证明在 24 小时内通过了 Lean/Mathlib 社区的联合认证和 MIT 的独立复验，这是形式化验证领域的历史性时刻；</li>
+<li>但&quot;机器验证正确&quot;不等于&quot;数学界已经理解&quot;——克雷研究所未认定、广义猜想未覆盖、25 万页的思想仍需多年消化。</li>
+</ol>
+<p>对普通读者，最值得记住的不是&quot;黎曼猜想被证明了&quot;，而是&quot;人类第一次拥有了一条让 AI 的数学成果接受严格检验的流水线&quot;。这条流水线会带数学家走多远，比单次证明更值得期待。</p>
+<p>(๑•̀ㅂ•́)و✧</p>
+<h2 id="参考来源">参考来源</h2>
+<h3 id="一手来源">一手来源</h3>
+<ul>
+<li>Lean 与 Mathlib 社区联合声明（2026-11-21）：<a target="_blank" rel="noopener" href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/">Lean verification of the Riemann Hypothesis</a></li>
+<li>MIT Andrew Sutherland 核验文件页（2026-11-22 更新）：<a target="_blank" rel="noopener" href="https://math.mit.edu/~drew/grh/">RH Lean proof: verification files</a></li>
+<li>原始公告（2026-11-20）：<a target="_blank" rel="noopener" href="https://alpo.ge/remark.pdf">alpo.ge/remark.pdf</a></li>
+<li>代码仓库：<a target="_blank" rel="noopener" href="https://github.com/Deicyde/riemann-hypothesis">GitHub Deicyde/riemann-hypothesis</a></li>
+<li>Mathlib 中的黎曼猜想定义：<a target="_blank" rel="noopener" href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/LSeries/RiemannZeta.html">RiemannHypothesis</a></li>
+</ul>
+<h3 id="媒体报道（按时间）">媒体报道（按时间）</h3>
+<ul>
+<li>Scientific American（2026-11-20）：<a target="_blank" rel="noopener" href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/">Anthropic mathematician claims to prove Riemann hypothesis</a></li>
+<li>Scientific American（2026-11-20 至 21）：<a target="_blank" rel="noopener" href="https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/">The AI Riemann hypothesis proof is almost certainly true, independent mathematicians attest</a></li>
+<li>Science / AAAS（2026-11-20）：<a target="_blank" rel="noopener" href="https://www.science.org/content/article/ai-may-have-solved-math-s-greatest-mystery-can-humans-understand-answer">AI may have solved math’s greatest mystery. Can humans understand the answer?</a></li>
+<li>The Verge（2026-11-20）：<a target="_blank" rel="noopener" href="https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem">Anthropic mathematician claims to have solved Millennium Prize problem with Claude</a></li>
+<li>SiliconANGLE（2026-11-20）：<a target="_blank" rel="noopener" href="https://siliconangle.com/2026/11/20/anthropic-researcher-claims-to-have-proven-riemann-hypothesis-using-claude/">Anthropic researcher claims proof using Claude</a></li>
+<li>The Guardian（2026-11-21）：<a target="_blank" rel="noopener" href="https://www.theguardian.com/technology/2026/nov/21/anthropic-riemann-hypothesis-solved-claude-ai">Two groups verify mathematician’s claim that Claude helped prove mathematics problem</a></li>
+<li>India Today（2026-11-22）：<a target="_blank" rel="noopener" href="https://www.indiatoday.in/technology/news/story/riemann-hypothesis-proof-declared-correct-claude-ai-helps-mathematician-make-history-3044287-2026-11-22">Riemann Hypothesis proof declared correct, Claude AI helps mathematician make history</a></li>
+<li>澎湃新闻（2026-11-22）：<a target="_blank" rel="noopener" href="https://www.thepaper.cn/newsDetail_forward_34534422">AI攻克黎曼猜想获Lean数学社区认证，但读懂它仍需时日</a></li>
+<li>第一财经（2026-11-22）：<a target="_blank" rel="noopener" href="https://www.yicai.com/news/103449169.html">黎曼猜想证明获认证：Claude参与攻克百年数学难题</a></li>
+<li>腾讯新闻（2026-11-21）：<a target="_blank" rel="noopener" href="https://news.qq.com/rain/a/20261121A07NPX00">黎曼猜想被证明了？是Claude与数学家联手，还是纯手工？</a></li>
+</ul>
+<h3 id="背景参考">背景参考</h3>
+<ul>
+<li>陶哲轩博客（2026-11-20，经腾讯新闻转载报道）：对证明可能使用朗兰兹纲领、算术几何的判断</li>
+<li>Kevin Buzzard / Xena 项目（2026-11-12）：<a target="_blank" rel="noopener" href="https://xenaproject.wordpress.com/2026/11/12/and-the-proof-is-checked-in-lean/">And the proof is checked in Lean（四条认证标准出处）</a></li>
+</ul>
+<h3 id="引用说明">引用说明</h3>
+<p>本文核心事实（发布日期、代码规模、声明全文口径、核验数字、克雷规则）均以上述一手来源与权威媒体报道交叉核对为准；陶哲轩、梅纳德的表述取自澎湃新闻与第一财经的转述。烈度较高的断言（如&quot;数学史上首次&quot;）限定在可检索的事实范围内，学界最终评价以克雷研究所及正式期刊发表为准。</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>黎曼猜想获 Lean 社区认证：Claude 参与的人机合作证明</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://zhaogb612.github.io/posts/b7e9d2f4.html">https://zhaogb612.github.io/posts/b7e9d2f4.html</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>沙尘612</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2026-11-22</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2026-11-22</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3/"><div class="tags-punctuation"><svg class="faa-tada icon" style="height:1.1em;width:1.1em;fill:currentColor;position:relative;top:2px;margin-right:3px" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian"></use></svg></div>黎曼猜想</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6/"><div class="tags-punctuation"><svg class="faa-tada icon" style="height:1.1em;width:1.1em;fill:currentColor;position:relative;top:2px;margin-right:3px" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian"></use></svg></div>数学</a><a class="post-meta__tags" href="/tags/Lean/"><div class="tags-punctuation"><svg class="faa-tada icon" style="height:1.1em;width:1.1em;fill:currentColor;position:relative;top:2px;margin-right:3px" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian"></use></svg></div>Lean</a><a class="post-meta__tags" href="/tags/Claude/"><div class="tags-punctuation"><svg class="faa-tada icon" style="height:1.1em;width:1.1em;fill:currentColor;position:relative;top:2px;margin-right:3px" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian"></use></svg></div>Claude</a></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/3d4e5f60.html"><img class="next-cover" src="https://static.kivo.wiki/images/gallery/E4.%E5%9B%BD%E6%9C%8D%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8F%92%E7%94%BB/%E5%AE%98%E6%96%B9%E8%B4%BA%E5%9B%BE/G0XwgBzXoAATjzr.jpg" onerror="onerror=null;src='/assets/r2.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">编程语言进化史：从机器码到 AI 时代，主流语言详解与优缺点全对比</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><svg class="meta_icon" style="width:22px;height:22px;position:relative;top:5px"><use xlink:href="#icon-mulu1"></use></svg><span style="font-weight:bold">目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E8%8E%B7-Lean-%E7%A4%BE%E5%8C%BA%E8%AE%A4%E8%AF%81%EF%BC%9AClaude-%E5%8F%82%E4%B8%8E%E7%9A%84%E4%BA%BA%E6%9C%BA%E5%90%88%E4%BD%9C%E8%AF%81%E6%98%8E%EF%BC%8C24-%E5%B0%8F%E6%97%B6%E9%80%9A%E8%BF%87%E5%9B%9B%E9%81%93%E5%85%B3%E5%8D%A1"><span class="toc-text">黎曼猜想获 Lean 社区认证：Claude 参与的人机合作证明，24 小时通过四道关卡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BA%8B%E4%BB%B6%E5%85%A8%E8%B2%8C%EF%BC%9A%E4%B8%80%E6%9D%A1%E6%96%B0%E9%97%BB%E9%9C%80%E8%A6%81%E7%9A%84%E4%B8%83%E8%A6%81%E7%B4%A0"><span class="toc-text">一、事件全貌：一条新闻需要的七要素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%80%E6%9D%A1-24-%E5%B0%8F%E6%97%B6%E7%9A%84%E5%AE%8C%E6%95%B4%E6%97%B6%E9%97%B4%E7%BA%BF"><span class="toc-text">二、一条 24 小时的完整时间线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9A%E4%B8%80%E4%B8%AA-167-%E5%B9%B4%E7%9A%84%E8%80%81%E9%97%AE%E9%A2%98"><span class="toc-text">三、黎曼猜想是什么：一个 167 年的老问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%B8%BB%E8%A7%92%EF%BC%9ALevent-Alpoge-%E6%98%AF%E8%B0%81"><span class="toc-text">四、主角：Levent Alpöge 是谁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%AF%81%E6%98%8E%E6%98%AF%E6%80%8E%E4%B9%88-%E5%81%9A-%E5%87%BA%E6%9D%A5%E7%9A%84%EF%BC%9A%E4%BA%BA%E7%B1%BB%E5%AE%9A%E6%96%B9%E5%90%91%EF%BC%8CClaude-%E8%A1%A5%E7%9B%B2%E5%8C%BA"><span class="toc-text">五、证明是怎么&quot;做&quot;出来的：人类定方向，Claude 补盲区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81Lean-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88-%E6%9C%BA%E5%99%A8%E8%AF%B4%E5%AF%B9-%E6%9D%83%E9%87%8D%E8%BF%99%E4%B9%88%E9%AB%98"><span class="toc-text">六、Lean 是什么：为什么&quot;机器说对&quot;权重这么高</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E7%8B%AC%E7%AB%8B%E6%A0%B8%E9%AA%8C%EF%BC%9A%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%E6%8A%8A-%E6%A3%80%E6%9F%A5%E5%91%98-%E4%B9%9F%E6%A3%80%E6%9F%A5%E4%BA%86%E4%B8%80%E9%81%8D"><span class="toc-text">七、独立核验：麻省理工把&quot;检查员&quot;也检查了一遍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%86%B7%E9%9D%99%E7%9C%8B%EF%BC%9A%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E6%B2%A1%E6%9C%89%E5%AE%8C%E6%88%90"><span class="toc-text">八、冷静看：还有哪些没有完成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%AD%A6%E7%95%8C%E4%B8%8E%E5%AA%92%E4%BD%93%E5%8F%8D%E5%BA%94%E4%B8%80%E8%A7%88"><span class="toc-text">九、学界与媒体反应一览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E8%BF%99%E4%BB%B6%E4%BA%8B%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89"><span class="toc-text">十、这件事的真正意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E4%BD%A0%E5%8F%AF%E4%BB%A5%E8%87%AA%E5%B7%B1%E8%B7%9F%E8%BF%9B%EF%BC%9A%E4%BA%94%E4%B8%AA%E5%8E%BB%E5%A4%84"><span class="toc-text">十一、你可以自己跟进：五个去处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-text">十二、总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%9D%A5%E6%BA%90"><span class="toc-text">参考来源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E6%89%8B%E6%9D%A5%E6%BA%90"><span class="toc-text">一手来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%8A%A5%E9%81%93%EF%BC%88%E6%8C%89%E6%97%B6%E9%97%B4%EF%BC%89"><span class="toc-text">媒体报道（按时间）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E5%8F%82%E8%80%83"><span class="toc-text">背景参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E8%AF%B4%E6%98%8E"><span class="toc-text">引用说明</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-color: transparent;"><div id="footer-wrap"><div id="ft"><div class="ft-item-1"><div class="t-top"><div class="t-t-l"><p class="ft-t t-l-t">格言^o^</p><div class="bg-ad"><div>再看看那个光点，它就在这里，这是家园，这是我们 —— 你所爱的每一个人，你认识的一个人，你听说过的每一个人，曾经有过的每一个人，都在它上面度过他们的一生✨</div><div class="btn-xz-box"><a class="btn-xz" target="_blank" rel="noopener" href="https://stellarium.org/">点击开启星辰之旅</a></div></div></div><div class="t-t-r"><p class="ft-t t-l-t">猜你想看o_O</p><ul class="ft-links"><li><a href="/comments/">留点什么</a><a href="/archives/">文章归档</a></li><li><a href="/categories/">文章分类</a><a href="/tags/">文章标签</a></li><li><a href="/site/time/">建设进程</a><a href="/site/census/">网站统计</a></li><li><a href="javascript:randomPost()">随便逛逛</a><a target="_blank" rel="noopener" href="https://www.travellings.cn/go">随机友站  </a></li><li><a href="/bangumis/game/">游戏</a><a href="/bangumis/">追番</a></li><li><a href="/box/gallery/">画廊</a><a href="/box/projects/">项目</a></li></ul></div></div></div><div class="ft-item-2"><p class="ft-t">推荐友链●▽●</p><div class="ft-img-group"><div class="img-group-item"><a target="_blank" rel="noopener" href="https://winmoes.com/" title="枫&amp;主题社"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwinmoes.com%2F?w=600" alt="Winmoes"/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://s.lycopoi.club/" title="莉可"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fs.lycopoi.club%2F?w=600" alt="莉可"/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="安知鱼"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fblog.anheyu.com%2F?w=600" alt="安知鱼"/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://butterfly.js.org/" title="Butterfly"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fbutterfly.js.org%2F?w=600" alt="Butterfly"/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://re.xcdream.com/" title="星尘幻梦"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fre.xcdream.com%2F?w=600" alt="枫&amp;主题社"/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://www.htmacg.cn/" title="墨韵先知"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.htmacg.cn%2F?w=600" alt="胡桃木实验室"/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://www.fomal.cc/" title="Fomalhaut"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.fomal.cc%2F?w=600" alt="Fomalhaut"/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://fffxx.com/" title="乐于分享"><img src="https://image.thum.io/get/allowJPG/wait/20/width/600/crop/950/https://fffxx.com/" alt="乐于分享"/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://www.angel-pe.cn/" title="Angel PE"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.angel-pe.cn%2F?w=600" alt="Angel PE"/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://firpe.cn/" title="FirPE"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Ffirpe.cn%2F?w=600" alt="FirPE"/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://www.hotpe.top/" title="HotPE"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.hotpe.top%2F?w=600" alt="HotPE"/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://akilar.top/" title="Akilar的糖果屋"><img src="https://image.thum.io/get/allowJPG/wait/20/width/600/crop/950/https://akilar.top/" alt="Akilar的糖果屋"/></a></div></div></div></div><div class="copyright">&copy;2025 - 2026 By 沙尘612</div><style>.framework-info {
+  margin-bottom: 3px;
+  color: #999;
+}
+
+.copyright {
+  margin-bottom: 3px;
+  color: #999;
+}
+
+.site-info {
+  margin-top: 3px;
+  background: transparent;
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.info-item {
+  margin: 3px 0;
+  font-size: 16px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .info-item {
+    font-size: 14px;
+  }
+}
+</style><div class="site-info"><div class="info-item"><span id="site-age">本站居然运行了 0 天 0 小时 0 分 0 秒 ●▽●</span></div><div class="info-item"><span id="voyager-distance">旅行者 1 号当前距离地球 0 千米，约为 0 个天文单位 o_O</span></div><div class="info-item"><span>可能是这个时代太坏了,感情泛滥,语言没有重量,随便说出口的喜欢与爱，配不上一颗赤诚的心 ⊙o⊙</span></div></div><script>// 网站运行时间计算
+function updateSiteAge() {
+  const startDate = new Date('2025-01-01T00:00:00'); // 网站开始运行时间
+  const now = new Date();
+  const diff = now - startDate;
+  
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  
+  document.getElementById('site-age').textContent = `本站居然运行了 ${days} 天 ${hours} 小时 ${minutes} 分 ${seconds} 秒 ●▽●`;
+}
+
+// 旅行者1号距离计算（模拟数据，实际应该从API获取）
+function updateVoyagerDistance() {
+  // 旅行者1号在2023年的距离约为230亿公里，每年增加约3.5亿公里
+  const baseDistance = 23000000000; // 230亿公里
+  const yearlyIncrease = 350000000; // 3.5亿公里/年
+  const startDate = new Date('2025-01-01');
+  const now = new Date();
+  const yearsPassed = (now - startDate) / (1000 * 60 * 60 * 24 * 365);
+  const currentDistance = baseDistance + yearlyIncrease * yearsPassed;
+  const astronomicalUnits = currentDistance / 149597870.7; // 1天文单位约为1.496亿公里
+  
+  document.getElementById('voyager-distance').textContent = `旅行者 1 号当前距离地球 ${Math.round(currentDistance).toLocaleString()} 千米，约为 ${astronomicalUnits.toFixed(0)} 个天文单位 o_O`;
+}
+
+// 初始化并定时更新
+updateSiteAge();
+updateVoyagerDistance();
+setInterval(updateSiteAge, 1000);
+setInterval(updateVoyagerDistance, 60000); // 每分钟更新一次旅行者1号距离</script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button class="share" type="button" title="右键模式" onclick="changeMouseMode()"><i class="fas fa-mouse"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog right_side"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button class="share" type="button" title="分享链接" onclick="share()"><i class="fas fa-share-nodes"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="fa fa-search"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="fas fa-comment"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:randomPost()"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:switchNightMode();"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.switchReadMode();"><i class="fa fa-book"></i><span>阅读模式</span></a><a class="rightMenu-item" href="/personal/about/"><i class="fa fa-info-circle"></i><span>关于博客</span></a><a class="rightMenu-item" href="javascript:toggleWinbox();"><i class="fas fa-cog"></i><span>美化设置</span></a><a class="rightMenu-item" href="javascript:rmf.fullScreen();"><i class="fas fa-expand"></i><span>切换全屏</span></a><a class="rightMenu-item" href="javascript:window.print();"><i class="fa-solid fa-print"></i><span>打印页面</span></a></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 5000);
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: '',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: '',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.staticfile.org/twikoo/1.6.8/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async src="https://cdn.jsdmirror.com/ajax/libs/vue/2.6.14/vue.min.js"></script><script async src="https://cdn.jsdmirror.com/ajax/libs/element-ui/2.15.7/index.js"></script><script async src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script><script defer src="https://cdn.jsdmirror.com/ajax/libs/sweetalert2/8.19.1/sweetalert2.all.js"></script><script>var annoList=['▎1.资源均来源于互联网，仅供学习参考','▎ 2.本站应用及软件不付费，收费均来自第三方网盘','▎ 3.内容仅供参考，不构成使用建议','▎ 4.如侵权请联系删除，转载注明出处','▎ 5.本站暂不开放评论区','▎ 6.已关闭友链申请，如需添加，请通过邮件联系'],idx=0,el=document.getElementById('anno-rotate');function showAnno(){if(el){el.innerHTML=annoList[idx];idx=(idx+1)%annoList.length;}}showAnno();setInterval(showAnno,4000);</script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/winbox@0.2.82/dist/winbox.bundle.min.js"></script><script async src="//at.alicdn.com/t/c/font_3586335_hsivh70x0fm.js"></script><script async src="//at.alicdn.com/t/c/font_3636804_gr02jmjr3y9.js"></script><script async src="//at.alicdn.com/t/c/font_3612150_kfv55xn3u2g.js"></script><script async src="//at.alicdn.com/t/c/font_5158270_fejy1z88wo9.js"></script><script async src="https://cdn.wpon.cn/2022-sucai/Gold-ingot.js"></script><canvas id="universe"></canvas><canvas id="snow"></canvas><script defer src="/js/fomal.js"></script><script>
+  (function () {
+    var SEL = 'a.social-icon[href$="/assets/QQ.jpg"],a.social-icon[href$="/assets/WeChat.png"]';
+    var built = false, overlay, img;
+
+    function build() {
+      var style = document.createElement('style');
+      style.textContent =
+        '.qqqr-mask{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.78);cursor:zoom-out;}' +
+        '.qqqr-mask.show{display:flex;}' +
+        '.qqqr-mask img{max-width:88vw;max-height:84vh;border-radius:12px;background:#fff;padding:6px;box-shadow:0 12px 40px rgba(0,0,0,.5);cursor:default;}' +
+        '.qqqr-close{position:absolute;top:16px;right:26px;font-size:36px;line-height:1;color:#fff;opacity:.75;cursor:pointer;user-select:none;}' +
+        '.qqqr-close:hover{opacity:1;}';
+      document.head.appendChild(style);
+
+      overlay = document.createElement('div');
+      overlay.className = 'qqqr-mask';
+      overlay.innerHTML = '<span class="qqqr-close" title="关闭">&times;</span>';
+      img = document.createElement('img');
+      img.alt = 'QQ 二维码';
+      overlay.appendChild(img);
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target !== img) close();
+      });
+      built = true;
+    }
+
+    function open(href) {
+      if (!built) build();
+      if (href) img.src = href;
+      overlay.classList.add('show');
+      document.documentElement.style.overflow = 'hidden';
+    }
+
+    function close() {
+      overlay.classList.remove('show');
+      document.documentElement.style.overflow = '';
+    }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      var a = t && t.closest ? t.closest(SEL) : null;
+      if (!a) return;
+      e.preventDefault();
+      e.stopPropagation();
+      open(a.getAttribute('href'));
+    }, true);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && built && overlay.classList.contains('show')) close();
+    });
+  })();
+</script>
+<script>
+  (function () {
+    // 邮箱清单：label 是用途标签，addr 是邮箱地址。要加邮箱就在这里加一行
+    var MAILS = [
+      { label: '主邮箱', addr: 'afgcddshhs@qq.com' },
+      { label: 'QQ 邮箱', addr: '1872696182@qq.com' },
+      { label: 'Gmail', addr: 'zhaogb612@gmail.com' }
+    ];
+    var SEL = 'a.social-icon[href^="mailto:"]';
+    var built = false, mask;
+
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (err) {}
+      document.body.removeChild(ta);
+    }
+
+    function copy(text, row) {
+      var tip = row.querySelector('.mailcard-tip');
+      function finish() {
+        row.classList.add('copied');
+        tip.textContent = '已复制';
+        setTimeout(function () {
+          row.classList.remove('copied');
+          tip.textContent = '复制';
+        }, 1400);
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(finish, function () {
+          fallbackCopy(text);
+          finish();
+        });
+      } else {
+        fallbackCopy(text);
+        finish();
+      }
+    }
+
+    function build() {
+      var style = document.createElement('style');
+      style.textContent =
+        '.mailcard-mask{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);}' +
+        '.mailcard-mask.show{display:flex;}' +
+        '.mailcard{width:min(92vw,400px);background:var(--card-bg,#fff);color:var(--font-color,#333);border-radius:14px;padding:18px 18px 12px;box-shadow:0 16px 48px rgba(0,0,0,.45);position:relative;}' +
+        '.mailcard-title{font-size:16px;font-weight:600;}' +
+        '.mailcard-sub{font-size:12px;opacity:.55;margin:2px 0 12px;}' +
+        '.mailcard-close{position:absolute;top:6px;right:14px;font-size:24px;line-height:1;cursor:pointer;opacity:.5;user-select:none;}' +
+        '.mailcard-close:hover{opacity:1;}' +
+        '.mailcard-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;margin-bottom:8px;border-radius:10px;background:rgba(127,127,127,.09);cursor:pointer;transition:background .2s;}' +
+        '.mailcard-row:hover{background:rgba(127,127,127,.18);}' +
+        '.mailcard-row.copied{background:rgba(66,160,255,.22);}' +
+        '.mailcard-row .m-label{display:block;font-size:12px;opacity:.6;line-height:1.4;}' +
+        '.mailcard-row .m-addr{font-size:14px;word-break:break-all;}' +
+        '.mailcard-tip{flex:none;font-size:12px;padding:4px 10px;border-radius:8px;background:rgba(127,127,127,.18);}';
+      document.head.appendChild(style);
+
+      mask = document.createElement('div');
+      mask.className = 'mailcard-mask';
+      mask.innerHTML =
+        '<div class="mailcard">' +
+          '<span class="mailcard-close" title="关闭">&times;</span>' +
+          '<div class="mailcard-title">我的邮箱</div>' +
+          '<div class="mailcard-sub">点击任意一行即可复制地址</div>' +
+          '<div class="mailcard-list"></div>' +
+        '</div>';
+      document.body.appendChild(mask);
+
+      var list = mask.querySelector('.mailcard-list');
+      MAILS.forEach(function (m) {
+        var row = document.createElement('div');
+        row.className = 'mailcard-row';
+        row.innerHTML = '<div><span class="m-label"></span><span class="m-addr"></span></div><span class="mailcard-tip">复制</span>';
+        row.querySelector('.m-label').textContent = m.label || '';
+        row.querySelector('.m-addr').textContent = m.addr;
+        row.addEventListener('click', function () {
+          copy(m.addr, row);
+        });
+        list.appendChild(row);
+      });
+
+      mask.querySelector('.mailcard-close').addEventListener('click', close);
+      mask.addEventListener('click', function (e) {
+        if (e.target === mask) close();
+      });
+      built = true;
+    }
+
+    function open() {
+      if (!built) build();
+      mask.classList.add('show');
+      document.documentElement.style.overflow = 'hidden';
+    }
+
+    function close() {
+      mask.classList.remove('show');
+      document.documentElement.style.overflow = '';
+    }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      var a = t && t.closest ? t.closest(SEL) : null;
+      if (!a) return;
+      e.preventDefault();
+      e.stopPropagation();
+      open();
+    }, true);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && built && mask.classList.contains('show')) close();
+    });
+  })();
+</script>
+<script>
+  (function () {
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', 'readonly');
+      ta.style.position = 'fixed';
+      ta.style.top = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) { }
+      document.body.removeChild(ta);
+    }
+
+    function copy(text, item) {
+      var tip = item.querySelector('.contact-copy');
+      if (!tip) return;
+      function done() {
+        item.classList.add('copied');
+        tip.textContent = '已复制';
+        setTimeout(function () {
+          item.classList.remove('copied');
+          tip.textContent = '复制';
+        }, 1400);
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+      } else {
+        fallbackCopy(text);
+        done();
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      var item = t && t.closest ? t.closest('.contact-grid .contact-item') : null;
+      if (!item) return;
+      var val = item.getAttribute('data-copy');
+      if (!val) {
+        var el = item.querySelector('.contact-value');
+        val = el ? el.textContent.trim() : '';
+      }
+      if (val) copy(val, item);
+    }, true);
+  })();
+</script>
+<meting-js server="netease" type="playlist" id="12752765418" fixed="true" autoplay="true" volume="0.5" order="random"></meting-js><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script>
+  const cdnPath = '/live2d/'
+  const config = {
+    path: {
+      homePath: '/',
+      modelPath: cdnPath + 'Resources/',
+      cssPath: cdnPath + 'waifu.css',
+      tipsJsonPath: cdnPath + 'waifu-tips.json',
+      tipsJsPath: cdnPath + 'waifu-tips.js',
+      live2dCorePath: cdnPath + 'Core/live2dcubismcore.min.js',
+      live2dSdkPath: cdnPath + 'live2d-sdk.js',
+    },
+    tools: [
+       'hitokoto',
+       'asteroids',
+       'express',
+       'switch-model',
+       'switch-texture',
+       'photo',
+       'quit',
+     ],
+    drag: {
+      enable: true,
+      direction: ['x', 'y'],
+    },
+    switchType: 'order',
+  }
+  if (screen.width >= 768) {
+    Promise.all([
+      loadExternalResource(config.path.cssPath, 'css'),
+      loadExternalResource(config.path.live2dCorePath, 'js'),
+      loadExternalResource(config.path.live2dSdkPath, 'js'),
+      loadExternalResource(config.path.tipsJsPath, 'js'),
+    ]).then(() => {
+      initWidget({
+        waifuPath: config.path.tipsJsonPath,
+        cdnPath: config.path.modelPath,
+        tools: config.tools,
+        dragEnable: config.drag.enable,
+        dragDirection: config.drag.direction,
+        switchType: config.switchType,
+      })
+    })
+  }
+  function loadExternalResource(url, type) {
+    return new Promise((resolve, reject) => {
+      let tag
+      if (type === 'css') {
+        tag = document.createElement('link')
+        tag.rel = 'stylesheet'
+        tag.href = url
+      } else if (type === 'js') {
+        tag = document.createElement('script')
+        tag.src = url
+      }
+      if (tag) {
+        tag.onload = () => resolve(url)
+        tag.onerror = () => reject(url)
+        document.head.appendChild(tag)
+      }
+    })
+  }
+</script>
+<script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/canvas-fluttering-ribbon.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="20px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.staticfile.org/meting/2.0.1/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show","#web_bg",".js-pjax","#bibi","body > title","#app","#tag-echarts","#posts-echart","#categories-echarts"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+  document.querySelectorAll('meting-js').forEach(el => {
+    if (el.aplayer && !el.meta.lock) el.aplayer.destroy()
+  })
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  document.querySelectorAll('meting-js').forEach(el => {
+    if (!el.aplayer) { el._init(); el._parse() }
+  })
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    if(!parent_div_git) return;
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/3d4e5f60.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://static.kivo.wiki/images/gallery/E4.%E5%9B%BD%E6%9C%8D%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8F%92%E7%94%BB/%E5%AE%98%E6%96%B9%E8%B4%BA%E5%9B%BE/G0XwgBzXoAATjzr.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2026-11-21</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/3d4e5f60.html&quot;);" href="javascript:void(0);" alt="">编程语言进化史：从机器码到 AI 时代，主流语言详解与优缺点全对比</a><div class="blog-slider__text">为什么世界上有几百种编程语言？本文用一条时间线讲清六次技术浪潮，逐一拆解 C、C++、Java、C#、Python、JavaScript、TypeScript、Go、Rust 等主流语言的诞生背景、设计哲学、适用场景与优缺点，附横向对比表、2026 年最新热度数据与按目标选语言的决策表。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/3d4e5f60.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/1a2f3c4d.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://static.kivo.wiki/images/gallery/E4.%E5%9B%BD%E6%9C%8D%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8F%92%E7%94%BB/%E5%AE%98%E6%96%B9%E8%B4%BA%E5%9B%BE/G0XwgBzXoAATjzr.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2026-11-21</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/1a2f3c4d.html&quot;);" href="javascript:void(0);" alt="">压缩软件是怎么运行的？一文讲清核心算法、常见格式与优缺点</a><div class="blog-slider__text">右键&quot;压缩&quot;到底发生了什么？本文从无损与有损的区别、LZ77 字典法与霍夫曼编码讲起，拆解 DEFLATE / LZMA / Zstandard 等核心算法，对比 ZIP、RAR、7z、gzip、xz、zstd 的真实优缺点，最后给出场景选型表、软件推荐与命令行实操。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/1a2f3c4d.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/f7e2b9a1.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://static.kivo.wiki/images/gallery/E4.%E5%9B%BD%E6%9C%8D%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8F%92%E7%94%BB/%E5%AE%98%E6%96%B9%E8%B4%BA%E5%9B%BE/008ybfh5gy1hjwsxxv7tqj33401r0b2e.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2026-11-05</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/f7e2b9a1.html&quot;);" href="javascript:void(0);" alt="">银狐木马：从底层运行原理到「搜索引擎投毒」的完整鉴别指南</a><div class="blog-slider__text">银狐（游蛇/谷堕大盗）为什么能绕过杀软、为什么总能排在搜索结果前排？本文从白加黑侧加载、数字签名的三个漏洞、内存加载与 APC 注入、BYOVD 内核致盲讲起，逐层拆解它的运行原理，再给出一套可执行的「真假官网 + 真假安装包」核对流程与自查脚本。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/f7e2b9a1.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/7876794c.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://static.kivo.wiki/images/gallery/4.%E5%AE%98%E6%96%B9-%E5%A3%81%E7%BA%B8&amp;%E8%B4%BA%E5%9B%BE/4anni_03.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2026-10-23</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/7876794c.html&quot;);" href="javascript:void(0);" alt="">PHP2Shell 漏洞分析：两个 9.2 分 RCE 的技术全貌</a><div class="blog-slider__text">2026 年 10 月 PHP 官方紧急修复两个 CVSS 9.2 的远程代码执行漏洞。本文从 longjmp 与 OOM、请求堆生命周期讲起，逐条拆解 4 个底层 bug、受影响版本、缓解措施与修复方案。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/7876794c.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/ea0b847d.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://static.kivo.wiki/images/gallery/4.%E5%AE%98%E6%96%B9-%E5%A3%81%E7%BA%B8&amp;%E8%B4%BA%E5%9B%BE/-ive%20alive.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2026-10-17</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/ea0b847d.html&quot;);" href="javascript:void(0);" alt="">Hexo 站点搭建与部署全流程</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/ea0b847d.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/b2f078f9.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://static.kivo.wiki/images/gallery/22/summer21-4.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2026-10-17</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/b2f078f9.html&quot;);" href="javascript:void(0);" alt="">家庭网络排查与优化指南</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/b2f078f9.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/b4d81e6a.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://static.kivo.wiki/images/gallery/22/4961c13d6b4d5fd39032c0bfd4daed1331377504.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2026-10-07</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/b4d81e6a.html&quot;);" href="javascript:void(0);" alt="">Hexo 博客 SEO 配置与收录排查教程</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/b4d81e6a.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/e9f2a7c4.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://static.kivo.wiki/images/gallery/E4.%E5%9B%BD%E6%9C%8D%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8F%92%E7%94%BB/%E5%AE%98%E6%96%B9%E8%B4%BA%E5%9B%BE/008ybfh5gy1hjwsxxv7tqj33401r0b2e.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2026-10-06</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/e9f2a7c4.html&quot;);" href="javascript:void(0);" alt="">杀毒软件运行原理与病毒拦截</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/e9f2a7c4.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper@1.0.12/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper@1.0.12/lib/swiper_init.js"></script><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('gitZone');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 320px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('gitZone') && (location.pathname ==='/site/census/'|| '/site/census/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("/api?null",['#d9e0df', '#c6e0dc', '#a8dcd4', '#9adcd2', '#89ded1', '#77e0d0', '#5fdecb', '#47dcc6', '#39dcc3', '#1fdabe', '#00dab9'],'null')
+    }
+  </script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --></body></html>
